@@ -1,6 +1,12 @@
 # Spletka - Web platform for Beauty Service providers 
 This is a preproduction build of a Angular+Node Docker containerized multitenant platform app for beauty service appointment booking.
 
+# How-To-Run
+* On Windows:
+1. Open Docker-Desktop
+2. Navigate to project folder
+3. run powershell script '.\run.ps1'
+
 # Features
 * Fully Web-based - no download required
 * Responsive, but Mobile-first UI/UX design - most, if not all, customers book appointments through their phone
