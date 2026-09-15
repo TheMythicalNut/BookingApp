@@ -1,0 +1,21 @@
+<div class="drum-container">
+  <!-- hours -->
+  <div class="col" #hCol (scroll)="onScroll('h', hCol)">
+    <div class="spacer"></div>
+    @for (t of hours; track t) {
+      <div class="item" [class.selected]="t===h">{{t}}</div>
+    }
+    <div class="spacer"></div>
+  </div>
+
+  <div class="sep">:</div>
+
+  <!-- minutes -->
+  <div class="col" #mCol (scroll)="onScroll('m', mCol)">
+    <div class="spacer"></div>
+    @for (t of minutes; track t) {
+      <div class="item" [class.selected]="t===m">{{t}}</div>
+    }
+    <div class="spacer"></div>
+  </div>
+</div>

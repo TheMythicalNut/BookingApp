@@ -1,0 +1,33 @@
+<div class="bg-[#F7F8FA] min-h-[100dvh]">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <my-studio-sidebar
+    [title]="getTitle()"
+    [options]="DashboardStates()"
+    [type]="'DASHBOARD'"
+    (select)="navigate($event)">
+    </my-studio-sidebar>
+  
+    <main class="padding-start p-2">
+        @switch (pageState()) {
+            @case ('MAIN') {
+                <dashboard-main class="w-full flex justify-center">
+                </dashboard-main>
+            }
+            @case ('SCHEDULE') {
+                <dashboard-schedule class="w-full flex justify-center">
+                </dashboard-schedule>
+            }
+            @case ('RESERVATIONS') {
+                <dashboard-reservations class="w-full flex justify-center">
+                </dashboard-reservations>
+            }
+            @case ('RATINGS') {
+                <dashboard-ratings class="w-full flex justify-center">
+                </dashboard-ratings>
+            }
+            @case ('CLIENTS') {}
+            @case ('STATISTICS') {}
+        }
+    </main>
+</div>

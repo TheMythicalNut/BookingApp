@@ -1,0 +1,125 @@
+<div class="w-full h-[calc(100vh)] overflow-hidden">
+    
+    <!-- DIRECT -->
+    <div class="transition-opacity duration-500"
+        [class.opacity-0]="!isDirect"
+        [class.max-h-0]="!isDirect"
+        [class.pointer-events-auto]="isDirect"
+        [class.pointer-events-none]="!isDirect">
+        
+        <div class="absolute top-3 left-1 right-1">
+            <app-request-status-message
+            [status]="sendStatus()">
+            </app-request-status-message>
+        </div>
+
+        <!-- MAIN BODY -->
+        <div class="w-full h-[calc(100vh)] flex flex-col gap-2 justify-center items-center  text-(--primary-color) p-2">
+            
+            <!-- TITLE -->
+            <div class="max-w-4xl w-full ps-1 mb-1 lora-500 text-2xl">{{'FAQS.TITLE_DIRECT' | translate}}</div>
+
+            <!-- EMAIL INPUT -->    
+            <app-text-field
+            class="w-full flex justify-center"
+            [init]="userEmail()"
+            [invalidMessage]="getInvalidEmailMessage()"
+            [title]="getEmailInputTitle()"
+            [validator]="emailValidator"
+            [placeholder]="getEmailPlaceholder()"
+            (onChange)="userEmail.set($event)"
+            (onValid)="validEmail.set($event)">
+            </app-text-field>
+            
+            <!-- QUESTION INPUT -->
+            <app-text-area
+            class="w-full flex justify-center"
+            [title]="getMessageInputTitle()"
+            [placeholder]="getMessagePlaceholder()"
+            (onChange)="message.set($event)">
+            </app-text-area>
+            
+            <!-- SEND MESSAGE BUTTON -->
+            <div class="flex flex-row justify-center">
+                <button 
+                    class="relative w-24 h-5 bg-gradient-to-r from-gray-900 to-black text-white font-medium rounded-md text-center overflow-hidden
+                        transition-all duration-300 ease-out
+                        hover:from-gray-800 hover:to-gray-900 hover:shadow-xl hover:scale-105 hover:brightness-110
+                        focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
+                        active:scale-95 active:shadow-inner active:brightness-90
+                        disabled:opacity-50
+                        group transform cursor-pointer"
+                    (click)="sendMessage()"
+                    [disabled]="!(validEmail() && message().length) || isSending()">
+                    
+                    <!-- Button content -->
+                    <span class="relative z-10 flex items-center justify-center">
+                        @if(!isSending()){ 
+                            <span class="transition-opacity duration-200">{{'BUTTON.SEND' | translate}}</span>
+                            }
+                        @else{ 
+                            <svg class="animate-spin h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                            </svg>
+                        }
+
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FAQ -->
+    <div class="transition-opacity duration-500"
+        [class.opacity-0]="isDirect"
+        [class.max-h-0]="isDirect"
+        [class.pointer-events-auto]="!isDirect"
+        [class.pointer-events-none]="isDirect">
+
+        <!-- Frequently Asked Questions -->
+        <div class="p-1 w-full h-[calc(90vh-128px)]">
+            <div class="bg-[#F3F4F6] w-full h-full rounded-lg text-(--primary-color)">
+                <!-- FAQ Header -->
+                <div class="flex flex-row gap-1 p-2">
+                    <!-- FAQ Header Leading Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <path d="M12 17h.01"/>
+                    </svg>
+                    <!-- FAQ Header Title -->
+                    <span class="roboto-500 text-lg">{{'FAQS.TITLE_FAQ' | translate}}</span>        
+                </div>
+
+                <!-- List of FAQs -->
+                <div class="p-1 h-[calc(90vh-128px-92px)] overflow-y-scroll scrollbar-none">
+                    @for (faq of filteredFAQs; track $index) {
+                        <div class="lora-500 mb-1">{{$index + 1}}. {{faq.QUESTION}}</div>
+                        <div class="ps-1 lora-400 mb-2  ">{{faq.ANSWER}}</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Input -->
+        <div class="p-2">
+            <app-text-input 
+            [value]="search()"
+            [placeholder]="searchPlaceholder()"
+            [leadingIcon]="'search'"
+            (changed)="searchChange($event)">
+            </app-text-input>
+        </div>
+        
+        <!-- Navigate To Direct -->
+        <div class="fixed bottom-0 mb-4 w-full p-1 pt-4">
+            <div class="text-center">
+                <div class="lora-400">{{'FAQS.ANSWER_NOT_FOUND.NORMAL' | translate}}</div>
+                <div class="roboto-400 ps-1 underline cursor-pointer" (click)="toDirect()">{{'FAQS.ANSWER_NOT_FOUND.UNDERLINED' | translate}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+@if(!singleDay() && hasCalendar()){
+    <!-- Month Calendar -->
+    <div class="space-y-4">
+        
+        <!-- Month Header -->
+        <div class="px-2 flex items-center justify-between">
+            <button
+                type="button"
+                aria-label="Previous month"
+                (click)="prevCalendar()"
+                class="h-4 w-4 flex items-center justify-center rounded-full bg-white shadow-sm 
+                text-(--secondary-color) transition-all duration-200
+                hover:bg-[color-mix(in_srgb,var(--primary-color)_12%,white)] hover:shadow-md active:scale-95
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-(--primary-color) focus-visible:ring-offset-2
+                disabled:opacity-40 disabled:shadow-none disabled:hover:bg-white cursor-pointer"
+                [disabled]="!hasPreviousIndex()">
+                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <h3 class="text-lg font-semibold text-(--primary-color)">
+                {{ monthName() }} {{ year() }}
+            </h3>
+
+            <button
+                type="button"
+                aria-label="Next month"
+                (click)="nextCalendar()"
+                class="
+                h-4 w-4 flex items-center justify-center rounded-full bg-white shadow-sm
+                text-(--secondary-color) transition-all duration-200
+                hover:bg-[color-mix(in_srgb,var(--primary-color)_12%,white)] hover:shadow-md active:scale-95
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-(--primary-color) focus-visible:ring-offset-2
+                disabled:opacity-40 disabled:shadow-none disabled:hover:bg-white cursor-pointer"
+                [disabled]="!hasNextIndex()">
+                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+
+
+        <!-- Calendar Grid -->
+        <div class="grid grid-cols-7 gap-1">
+            <!-- Week Day Headers -->
+            @for (day of weekDays(); track $index) {
+                <div class="text-center text-sm font-medium text-(--secondary-color) py-2">
+                    {{day}}
+                </div>
+            }
+
+            <!-- Calendar Days -->
+            @for (day of days(); track $index) {
+                <button
+                        (click)="onDayClick(day)"
+                        [class.opacity-30]="!day.isCurrentMonth || day.isDisabled"
+                        [class.rounded-full]="day.isSelected"
+                        [class.bg-(--tertiary-color)]="day.isSelected"
+                        [class.text-white]="day.isSelected"
+                        [class.text-gray-900]="!day.isCurrentMonth || day.isDisabled"
+                        [class.text-red]="day.isToday"
+                        class="text-center text-sm py-2 transition-colors duration-200 cursor-pointer">
+                    {{day.date.getDate()}}
+                </button>
+            }
+        </div>
+    </div>
+}

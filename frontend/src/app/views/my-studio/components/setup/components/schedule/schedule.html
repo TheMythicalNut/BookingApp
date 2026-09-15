@@ -1,0 +1,229 @@
+<!-- schedule.html -->
+<section
+  class="setup-section"
+  style="background-color: transparent; box-shadow: none;">
+
+  <!-- Title Section -->
+  <div class="bg-white shadow-md rounded-2xl p-4 lora-400 text-(--primary-color)">
+    <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ getTitle() }}</h2>
+    <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1">{{ getPar1() }}</p>
+
+    <app-error-message
+      class="grid transition-all duration-300 overflow-hidden"
+      [class.grid-rows-[0fr]]="!viewInvalid()"
+      [class.grid-rows-[1fr]]="viewInvalid()"
+      [title]="errorTitle()"
+      [body]="errorBody()">
+    </app-error-message>
+  </div>
+
+  <!-- Schedules -->
+  @for (schedule of schedules(); track $index; let si = $index) {
+
+    <div class="rounded-2xl border border-neutral-200 bg-white shadow-sm px-2 md:px-4 lg:px-6 transition-all"
+      [class.border-red-500]="hasAnyError()(si)"
+      [class.py-4]="isExpanded(schedule.localID!)"
+      [class.py-2]="!isExpanded(schedule.localID!)">
+
+    @if (!isExpanded(schedule.localID!)) {
+      <!-- Schedule Header -->
+      <div class="flex justify-between items-center cursor-pointer"
+        (click)="expandSchedule(schedule.localID!)">
+        <span class="text-sm font-medium text-neutral-500">
+          {{ si === 0 ? getTitle() : (getScheduleText() + ' ' + ( si + 1 )) }}
+        </span>
+
+        @if (si > 0) {
+          <button
+            type="button"
+            [attr.aria-label]="getRemoveScheduleText()"
+            (click)="removeSchedule(si)"
+            class="h-5 w-5 rounded-lg
+                    cursor-pointer
+                    border border-red-200 bg-white text-red-500
+                    flex items-center justify-center shadow-sm
+                    transition-all duration-200 hover:bg-red-50 hover:scale-105
+                    focus:outline-none focus:ring-2 focus:ring-red-500
+                    disabled:opacity-50 disabled:cursor-not-allowed">
+            ✕
+          </button>
+        }
+      </div>
+    } 
+    @else {
+
+        <!-- Schedule Header -->
+        <div class="w-full flex justify-between items-center">
+          <span class="text-sm font-medium text-neutral-500 cursor-pointer"
+          (click)="collapseSchedule(schedule.localID!)">
+            {{ si === 0 ? getTitle() : (getScheduleText() + ' ' + ( si + 1 )) }}
+          </span>
+
+
+          @if (si > 0) {
+            <button
+              type="button"
+              [attr.aria-label]="getRemoveScheduleText()"
+              (click)="removeSchedule(si)"
+              class="h-5 w-5 rounded-lg
+                    cursor-pointer
+                    border border-red-200 bg-white text-red-500
+                    flex items-center justify-center shadow-sm
+                    transition-all duration-200 hover:bg-red-50 hover:scale-105
+                    focus:outline-none focus:ring-2 focus:ring-red-500
+                    disabled:opacity-50 disabled:cursor-not-allowed">
+              ✕
+            </button>
+          }
+        </div>
+
+        <!-- Effective date range — only for non-first schedules -->
+        @if (si > 0) {
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start w-full min-w-0 pt-4">
+            <app-date-select
+              class="w-full min-w-0"
+              [init]="schedule.effectiveFrom ?? ''"
+              [title]="getEffectiveFromText()"
+              (onChange)="setEffectiveFrom(si, $event)">
+            </app-date-select>
+
+            <app-date-select
+              class="w-full min-w-0"
+              [init]="schedule.effectiveTo ?? ''"
+              [title]="getEffectiveToText()"
+              (onChange)="setEffectiveTo(si, $event)">
+            </app-date-select>
+          </div>
+        }
+
+        <!-- Days Grid -->
+        <div class="space-y-6 pt-4">
+
+          @for (day of schedule.days ?? []; track day.day ?? $index; let di = $index) {
+            <!-- Day Header -->
+            <div class="flex justify-between items-center transition-all"
+            [class.border-red-500]="hasErrorIndex()[si]?.[di]?.self">
+              <span class="text-sm font-medium text-neutral-500">
+                {{ day.day ? getDayName()(day.day) : '' }}
+              </span>
+
+              <app-checkbox
+                [checked]="day.open === true"
+                (checkedChange)="setDayOpen(si, di, $event)">
+              </app-checkbox>
+            </div>
+
+            <!-- Intervals — only shown when day is open -->
+            @if (day.open) {
+
+              <!-- Intervals -->
+              <div class="flex flex-col items-center gap-4 pb-4">
+
+                @for (interval of day.intervals; track $index; let ii = $index) {
+
+                <div
+                  class="relative rounded-2xl border border-neutral-200 bg-white p-2 sm:p-3 md:p-4 lg:p-6 shadow-sm
+                        transition-all duration-200 hover:shadow-md hover:ring-1 hover:ring-neutral-300 w-full"
+                  [class.border-red-500]="hasErrorIndex()[si][di].intervals[ii]"
+                  [class.opacity-50]="!day.open"
+                  [class.pointer-events-none]="!day.open">
+
+                  <!-- Interval Header -->
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="flex flex-col">
+                      <span class="text-sm lora-500 text-(--secondary-color)">
+                        {{ getIntervalText() + ' ' + (ii + 1) }}
+                      </span>
+                      <span class="text-xs lora-400 text-(--secondary-color)">
+                        {{ getDefineIntervalText() }}
+                      </span>
+                    </div>
+
+                    <button
+                      type="button"
+                      aria-label="Remove Interval"
+                      [disabled]="!day.open"
+                      (click)="removeInterval(si, di, ii)"
+                      class="h-5 w-5 rounded-full border border-red-200 bg-white text-red-500
+                            flex items-center justify-center shadow-sm
+                            transition-all duration-200 hover:bg-red-50 hover:scale-105
+                            focus:outline-none focus:ring-2 focus:ring-red-500
+                            disabled:opacity-50 disabled:cursor-not-allowed">
+                      ✕
+                    </button>
+                  </div>
+
+                  <!-- Time Inputs -->
+                  <div class="flex flex-wrap gap-[5dvw] justify-center items-end">
+                    <app-time-input
+                      [value]="interval.start"
+                      [label]="getstartText()"
+                      [disabled]="!day.open"
+                      (change)="onIntervalStartChange(si, di, ii, $event)">
+                    </app-time-input>
+
+                    <app-time-input
+                      [value]="interval.end"
+                      [label]="getendText()"
+                      [min]="interval.start"
+                      [disabled]="!day.open"
+                      (change)="onIntervalEndChange(si, di, ii, $event)">
+                    </app-time-input>
+                  </div>
+
+                  </div>
+                  }
+
+                <!-- Add Interval Button -->
+                <app-button
+                  [idleText]="getAddButtonText()"
+                  [disabled]="!day.open"
+                  [type]="'secondary'"
+                  (action)="addInterval(si, di)">
+                </app-button>
+              </div>
+
+            }
+          }
+
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Global Actions -->
+  <div class="flex flex-col items-center gap-2 mt-2">
+
+    <app-request-status-message
+      [status]="requestStatus()">
+    </app-request-status-message>
+
+    <app-notify-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!hasNotification()"
+    [class.grid-rows-[1fr]]="hasNotification()"
+    [title]="notifyTitle()"
+    [body]="notifyBody()"
+    ></app-notify-message>
+
+    <app-button
+      [idleText]="getAddScheduleButtonText()"
+      [type]="'secondary'"
+      (action)="addSchedule()">
+    </app-button>
+
+    <app-button
+      [disabled]="viewInvalid()"
+      [idleText]="getSaveButtonText()"
+      [type]="'outline'"
+      (action)="save()">
+    </app-button>
+
+    <app-button
+      [idleText]="getNextButtonText()"
+      (action)="next.emit()">
+    </app-button>
+
+  </div>
+
+</section>

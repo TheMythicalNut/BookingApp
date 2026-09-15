@@ -1,0 +1,174 @@
+<section class="setup-section"
+style="background-color: transparent; box-shadow: none; gap: calc(var(--spacing) * 2)">
+    <div class="bg-white shadow-md rounded-2xl p-2">
+        <div class="flex flex-row justify-between">
+            <h2 class="lora-500 text-md tracking-tight text-(--secondary-color) underline cursor-pointer hover:text-(--primary-color)" (click)="navStudioPage()">{{ title() }}</h2>
+            <p class="helper lora-400 text-sm leading-3 text-(--secondary-color)"> {{ currentDate() }} </p>
+        </div>
+    </div>
+
+    <div class="flex flex-col justify-around gap-2">
+        @if(actionsNeeded()){
+            <div class="rounded-2xl flex flex-col grow border border-neutral-200 bg-white shadow-sm py-2 px-2 md:px-4 lg:px-6 transition-all">
+                <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) border-b border-neutral-100 mb-2"> {{ actionsNeededTitle() }} </p>
+
+                <div class="flex flex-col gap-2">
+                @for (r of reservationsWithActionsNeeded(); track r.id) {
+                    <div class="border-b border-neutral-50 hover:bg-neutral-50 transition-colors">
+                        <p class="lora-500 text-(--primary-color)">{{ r.articleName }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">{{ r.categoryName }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">
+                            {{ formatDisplay(r.timeslot.date) }} {{ r.timeslot.start }} - {{ r.timeslot.end ? r.timeslot.end : computeEndTime(r.timeslot.start, r.duration) }}
+                        </p>
+                        @if (r.additionalNote) {
+                            <p class="lora-400 text-(--secondary-color) truncate" style="font-size: 12px; opacity: 0.7;" [title]="r.additionalNote">
+                                {{ r.additionalNote }}
+                            </p>
+                        }
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        @if(confirmRequest()?.id === r.id){
+                            @if(requestStatus() === 'idle'){
+                                <app-button
+                                [tint]="confirmRequest()!.status === 'COMPLETED' ? 'green' : 'red'"
+                                [idleText]="getConfirmButtonTitle()"
+                                [type]="'primary'"
+                                (action)="confirmUpdateResStatus()">
+                                </app-button>
+
+                                <app-button
+                                [idleText]="getCancelButtonTitle()"
+                                [type]="'secondary'"
+                                (action)="cancelUpdateResStatus()">
+                                </app-button>
+                            }
+                            @else {
+                                <app-request-status-message
+                                [status]="requestStatus()">
+                                </app-request-status-message>
+                            }
+                        }
+                        @else {
+                            <app-button
+                            [tint]="'green'"
+                            [idleText]="getCompletedButtonTitle()"
+                            [type]="'primary'"
+                            (action)="updateResStatus(r.id, 'COMPLETED')">
+                            </app-button>
+
+                            <app-button
+                            [tint]="'red'"
+                            [idleText]="getMissedButtonTitle()"
+                            [type]="'secondary'"
+                            (action)="updateResStatus(r.id, 'MISSED')">
+                            </app-button>
+                        }
+                    </div>
+                }
+                </div>
+            </div>
+        }   
+
+        <div class="rounded-2xl flex flex-col grow border border-neutral-200 bg-white shadow-sm py-2 px-2 md:px-4 lg:px-6 transition-all">
+            <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) border-b border-neutral-100 mb-2"> {{ todaysScheduleTitle() }} </p>
+            
+                <div class="flex flex-col gap-2">
+                @for (r of upcomingReservations(); track r.id) {
+                    <div class="border-b border-neutral-50 hover:bg-neutral-50 transition-colors cursor-pointer"
+                    (click)="activateReservation(r.id)">
+                        <p class="lora-500 text-(--primary-color)">{{ r.articleName }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">{{ r.categoryName }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">
+                            {{ r.timeslot.start }} - {{ r.timeslot.end ? r.timeslot.end : computeEndTime(r.timeslot.start, r.duration) }}
+                        </p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">{{ r.userPhone }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">{{ r.userEmail }}</p>
+                        @if (r.additionalNote) {
+                            <p class="lora-400 text-(--secondary-color) truncate" style="font-size: 12px; opacity: 0.7;" [title]="r.additionalNote">
+                                {{ r.additionalNote }}
+                            </p>
+                        }
+                    </div>
+                    
+                    @if (activatedReservationId() === r.id) {
+                        <div class="res-contact flex flex-wrap justify-around gap-2 items-center h-full">
+
+                            @if(confirmRequest()?.id === r.id){
+                                @if(requestStatus() === 'idle'){
+                                    <app-button
+                                    [tint]="'red'"
+                                    [idleText]="getConfirmButtonTitle()"
+                                    [type]="'primary'"
+                                    (action)="confirmUpdateResStatus()">
+                                    </app-button>
+
+                                    <app-button
+                                    [idleText]="getCancelButtonTitle()"
+                                    [type]="'secondary'"
+                                    (action)="cancelUpdateResStatus()">
+                                    </app-button>
+                                }
+                                @else {
+                                    <app-request-status-message
+                                    [status]="requestStatus()">
+                                    </app-request-status-message>
+                                }
+                            }
+                            @else {
+
+                                @if (r.userPhone) {
+                                    <a [href]="'tel:' + r.userPhone"
+                                    class="contact-btn"
+                                    [attr.aria-label]="'Call ' + r.userPhone">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        class="icon"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="m16 8 6-6"/>
+                                        <path d="M22 8V2h-6"/>
+                                        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                                    </svg>
+                                    </a>
+                                }
+
+                                @if (r.userEmail) {
+                                    <a [href]="'mailto:' + r.userEmail"
+                                    class="contact-btn"
+                                    [attr.aria-label]="'Email ' + r.userEmail">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        class="icon"
+                                        stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+                                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    </svg>
+                                    </a>
+                                }
+
+                                <a class="contact-btn cursor-pointer"
+                                (click)="navReservation(r.id); $event.stopPropagation()"
+                                [attr.aria-label]="'Modify'">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                    viewBox="0 0 24 24" 
+                                    fill="none" 
+                                    class="icon"
+                                    stroke="currentColor" 
+                                    stroke-width="2" 
+                                    stroke-linecap="round" 
+                                    stroke-linejoin="round">
+                                    <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>
+                                    <path d="m15 5 4 4"/>
+                                </svg>
+                                </a>
+                            }
+                        </div>
+                    }   
+                }
+                </div>
+        </div>
+    </div>
+</section>

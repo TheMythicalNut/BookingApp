@@ -1,0 +1,32 @@
+@if(isOpen()){
+<div class="fixed inset-0 z-50 flex items-end justify-center"
+    (click)="onBackdropClick()">
+    
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/25"></div>
+    
+    <!-- Modal Content -->
+    <div class="relative w-full max-w-4xl bg-white rounded-t-3xl shadow-2xl h-full max-h-[90dvh] overflow-hidden"
+        (click)="$event.stopPropagation()"
+        [class.reveal-modal]="isOpen()"
+        [class.hide-modal]="!isOpen()">
+
+        @if(loading()){
+            <app-spinner class="h-full"></app-spinner>
+        }
+        @else {
+            @switch (selectedType()) {
+                @case('studio'){
+                    <app-modal-studio (close)="onBackdropClick()"></app-modal-studio>
+                }
+                @case('service'){
+                    <app-modal-service (close)="onBackdropClick()"></app-modal-service>
+                }
+                @case('package'){
+                    <app-modal-package (close)="onBackdropClick()"></app-modal-package>
+                }
+            }
+        }
+    </div>
+</div>
+}

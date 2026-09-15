@@ -1,0 +1,40 @@
+
+<div (click)="reset()"
+    class="transition-transform duration-500 cursor-pointer">
+    @switch(true){
+        <!-- LOADING -->
+        @case(isLoading()){
+        <div class="px-1 h-12"
+            animate.enter="shown--transition"
+            animate.leave="hidden--transition">
+            <div class="border border-(--secondary-color) rounded-sm p-1">
+                <app-spinner></app-spinner>
+            </div>
+        </div>
+        }
+
+        <!-- SEND SUCCESS MESSAGE -->
+        @case(isSuccess()){
+        <div class="px-1 h-12"
+            animate.enter="shown--transition"
+            animate.leave="hidden--transition">
+            <div class="border border-(--secondary-color) rounded-sm p-1">
+                <div class="lora-500 text-(--primary-color)">{{getSuccessTitle()}}</div>
+                <div class="lora-400 text-(--secondary-color)">{{getSuccessMessage()}}</div>
+            </div>
+        </div>
+        }
+
+        @case(isFail()){
+        <!-- SEND FAILED MESSAGE -->
+        <div class="px-1 h-12"
+            animate.enter="shown--transition"
+            animate.leave="hidden--transition">
+            <div class="border border-(--secondary-color) rounded-sm p-1">
+                <div class="lora-500 text-(--primary-color)">{{getFailTitle()}}</div>
+                <div class="lora-400 text-(--secondary-color)">{{getFailMessage()}}</div>
+            </div>
+        </div>
+        }
+    }
+</div>

@@ -1,0 +1,60 @@
+<div class="w-full max-h-[calc(100vh-136px)] flex flex-col gap-2 py-4 text-(--primary-color) overflow-y-auto scrollbar-none">
+    <div class="text-center ps-1 mb-1 lora-500 text-2xl">{{getReservationTitle()}}</div>
+    <div class="px-2 flex flex-col gap-2 lora-400 text-md text-(--primary-color)">
+        <reservation-info-line
+        [left]="getStudioNameText()" 
+        [right]="getStudioName()">
+        </reservation-info-line>
+
+        <reservation-info-line
+        [left]="getServiceNameText()"
+        [right]="getServiceName()">
+        </reservation-info-line>
+
+        <reservation-info-line
+        [left]="getCategoryNameText()"
+        [right]="getCategory() | uppercase">
+        </reservation-info-line>
+
+        <reservation-info-line
+        [left]="getServiceTypeText()"
+        [right]="getServiceType()">
+        </reservation-info-line>
+        
+        
+        <hr class="text-(--secondary-color)">
+        @if(hasDiscount()){
+            <reservation-info-line
+            [left]="getPriceText()"
+            [right]="getDiscountPrice()">
+            </reservation-info-line>
+        }
+        @else {
+            <reservation-info-line
+            [left]="getPriceText()"
+            [right]="getPrice()">
+            </reservation-info-line>
+        }
+        <reservation-info-line
+        [left]="getDurationText()"
+        [right]="getDuration()">
+        </reservation-info-line>
+
+        <hr class="text-(--secondary-color)">
+        <reservation-info-line
+        [left]="getDateText()"
+        [right]="getTimeslot()">
+        </reservation-info-line>
+
+        <reservation-info-line
+        [left]="getAddressText()"
+        [right]="getAddress() + ', ' + getCity() + ', ' + getCountry()">
+        </reservation-info-line>
+        
+        <hr class="text-(--secondary-color)">
+        <reservation-info-line
+        [left]="getContactPhoneText()"
+        [right]="getContactPhone()">
+        </reservation-info-line>
+    </div>
+</div>

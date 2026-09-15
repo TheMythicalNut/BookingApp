@@ -1,0 +1,59 @@
+<!-- Header -->
+<div class="sticky top-0 bg-white border-b border-gray-200 px-3 py-4">
+    <div class="flex justify-between items-center">
+        <div class="flex flex-row items-center cursor-pointer"
+        (click)="navigateStudio()">
+            <h2 class="playfair-display-500 text-lg text-(--primary-color)">
+            {{ getName() }}
+            </h2>
+            <svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="text-(--secondary-color)">
+            <path d="M13 5H19V11" />
+            <path d="M19 5L5 19" />
+            </svg>
+        </div>
+        <button (click)="onClose()" class="text-(--primary-color) cursor-pointer">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div class="overflow-y-auto max-h-[calc(90vh-88px)] scrollbar-none">
+    <!-- HERO CAROUSEL -->
+    <studio-hero-carousel
+    [images]="getImages()"
+    [height]="getHeroHeight()"
+    ></studio-hero-carousel>
+
+    <!-- BOOK PRIMARY -->
+    <studio-button-book-primary>
+    </studio-button-book-primary>
+
+    <!-- OPEN STATUS -->
+    <studio-open-status>
+    </studio-open-status>
+
+    <!-- NAVIGATE TO MAPS -->
+    <studio-navigate-maps>
+    </studio-navigate-maps>
+
+    <studio-list-packages
+    [packageWidth]="getServiceSize()">
+    </studio-list-packages>
+
+    <studio-list-services
+    [serviceWidth]="getServiceSize()">
+    </studio-list-services>
+
+    <studio-working-days>
+    </studio-working-days>
+
+    <studio-contact-bar>
+    </studio-contact-bar>
+</div>

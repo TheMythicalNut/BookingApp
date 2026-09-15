@@ -1,0 +1,50 @@
+<div class="sticky top-0 bg-white z-50 p-1 flex items-center flex-wrap">
+
+  <!-- SPLETKA -->
+  <span class="text-xl playfair-display-400 shrink-0
+      transition-colors duration-200 ease-in-out cursor-pointer"
+      [class.text-(--primary-color)]="!isModal()"
+      [class.text-(--secondary-color)]="isModal()"
+      (click)="onLogo()">
+      SPLETKA
+  </span>
+
+  <!-- Name: inline when short, full-width centered when long -->
+  <span class="text-xl playfair-display-400 text-(--primary-color) px-2"
+      [class.grow]="true"
+      [class.text-center]="true"
+      [class.basis-full]="nameTooLong()"
+      [class.order-last]="nameTooLong()">
+      {{ name() }}
+  </span>
+
+  <!-- Icons -->
+  <span class="flex flex-row items-center shrink-0 ms-auto">
+      <!-- Share -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+       viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+       class="transition-opacity duration-200 ease-in-out text-(--primary-color) cursor-pointer"
+       (click)="onShare()">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/>
+          <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>
+      </svg>
+      <!-- Menu -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          class="ms-2 transition-colors duration-200 ease-in-out text-(--primary-color) cursor-pointer"
+          (click)="onMenu()">
+              <path d="M0 4h24" class="origin-center transition-all duration-300 ease-in-out"
+                  [class.top-line-switch]="isModal()"/>
+              <path d="M0 12h24" class="transition-opacity duration-200 ease-in-out"
+                  [class.opacity-0]="isModal()"/>
+              <path d="M0 20h24" class="origin-center transition-all duration-300 ease-in-out"
+                  [class.bot-line-switch]="isModal()"/>
+      </svg>
+  </span>
+
+</div>

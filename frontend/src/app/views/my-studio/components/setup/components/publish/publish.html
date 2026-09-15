@@ -1,0 +1,27 @@
+<section class="setup-section">
+
+    <div>
+        <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ title() }}</h2>
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ par1() }} </p>
+    </div>
+    
+    <app-error-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!viewInvalid()"
+    [class.grid-rows-[1fr]]="viewInvalid()"
+    [title]="errorTitle()"
+    [body]="errorBody()">
+    </app-error-message>
+
+    <app-request-status-message
+    [status]="requestStatus()">
+    </app-request-status-message>
+    
+    <div class="flex justify-center">
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="publishLabel()"
+        (action)="onPublish()">
+        </app-button>
+    </div>
+</section>

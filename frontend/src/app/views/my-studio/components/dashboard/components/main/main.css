@@ -1,0 +1,25 @@
+
+.res-contact {
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-color);
+}
+
+.contact-btn:hover .icon {
+  color: var(--primary-color);
+}

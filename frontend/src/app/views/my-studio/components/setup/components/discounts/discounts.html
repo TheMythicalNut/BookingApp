@@ -1,0 +1,121 @@
+<section class="setup-section"
+style="background-color: transparent; box-shadow: none;">
+    <div class="bg-white shadow-md rounded-2xl p-4 lora-400 text-(--primary-color)">
+        <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ getTitle() }}</h2>
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ getPar1() }} </p>
+
+        <app-error-message
+        class="grid transition-all duration-300 overflow-hidden"
+        [class.grid-rows-[0fr]]="!viewInvalid()"
+        [class.grid-rows-[1fr]]="viewInvalid()"
+        [title]="errorTitle()"
+        [body]="errorBody()">
+        </app-error-message>
+    </div>
+
+    @for (discount of discounts(); track discount.localID; let discountIndex = $index) {
+    
+        <div class="relative w-full rounded-2xl border border-neutral-200 bg-white px-2 md:px-4 lg:px-6 shadow-sm
+        transition-all duration-200 hover:shadow-md hover:ring-1 hover:ring-neutral-300"
+        [class.border-red-500]="hasErrorIndex()[discountIndex]"
+        [class.py-6]="isExpanded(discount.localID)"
+        [class.py-2]="!isExpanded(discount.localID)">
+
+        @if (!isExpanded(discount.localID)) {
+            <!-- Header -->
+            <div class="flex items-center justify-between cursor-pointer"
+            (click)="expand(discount.localID)">
+                <div class="flex flex-col">
+                    <span class="text-sm font-medium text-neutral-500">
+                    {{ getName()(discount.article) + ' - ' + (discount.percentage? discount.percentage : 'X') + '%' }}
+                    </span>
+                </div>
+
+                <button
+                    type="button"
+                    aria-label="Remove Category"
+                    (click)="removeDiscount(discountIndex)"
+                    class="h-5 w-5 rounded-full border border-red-200 bg-white text-red-500
+                        flex items-center justify-center shadow-sm cursor-pointer
+                        transition-all duration-200 hover:bg-red-50 hover:scale-105
+                        focus:outline-none focus:ring-2 focus:ring-red-500">
+                    ✕
+                </button>
+            </div>
+        }
+        @else {
+            <!-- Header -->
+            <div class="flex items-start justify-between mb-4">
+                <div class="flex flex-col">
+                    <span class="text-sm font-medium text-neutral-500 cursor-pointer"
+                    (click)="collapse(discount.localID)">
+                    {{ getDiscountText() + ' ' + (discountIndex + 1) }}
+                    </span>
+                </div>
+
+                <button
+                    type="button"
+                    aria-label="Remove Category"
+                    (click)="removeDiscount(discountIndex)"
+                    class="h-5 w-5 rounded-full border border-red-200 bg-white text-red-500
+                        flex items-center justify-center shadow-sm cursor-pointer
+                        transition-all duration-200 hover:bg-red-50 hover:scale-105
+                        focus:outline-none focus:ring-2 focus:ring-red-500">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Content -->
+            <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-end">
+
+            <!-- Field -->
+            <div class="flex-1 w-full">
+                <app-select
+                    [init]="getName()(discount.article)"
+                    [options]="articleNames()"
+                    [validator]="discountServiceValidator"
+                    [title]="getDiscountArticleText()"
+                    (onChange)="setDiscountArticle(discountIndex, $event)">
+                </app-select>
+            </div>
+
+            <!-- Field -->
+            <div class="flex-1 w-full">
+                <app-number-field
+                [init]="discount.percentage"
+                [title]="getDiscountPercentageText()"
+                [validator]="discountPercentValidator"
+                (onChange)="setDiscountPercentage(discountIndex, $event)">
+                </app-number-field>
+            </div>
+
+            </div>
+        }
+        </div>     
+    }
+
+    <div class="flex flex-col items-center gap-2 mt-2">
+        
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+        
+        <app-button
+        [idleText]="getAddButtonText()"
+        [type]="'secondary'"
+        (action)="addDiscount()">
+        </app-button>
+
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="getSaveButtonText()"
+        [type]="'outline'"
+        (action)="save()">
+        </app-button>
+
+        <app-button
+        [idleText]="getNextButtonText()"
+        (action)="next.emit()">
+        </app-button>
+    </div>
+</section>

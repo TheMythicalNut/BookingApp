@@ -1,0 +1,80 @@
+/* calendar-modal.component.css */
+:host {
+  display: block;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Custom scrollbar for calendar container */
+#calendar-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+#calendar-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+#calendar-scroll-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+#calendar-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Smooth transitions for all interactive elements */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus {
+  outline: 2px solid #383331;
+  outline-offset: 2px;
+}
+
+/* Ensure modal content doesn't cause overflow */
+#calendar-scroll-container {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes reveal-modal {
+    0% {
+        transform: translateY(100dvh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes hide-modal {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100dvh);
+    }
+}
+
+.reveal-modal {
+    animation-name: reveal-modal;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.hide-modal {
+    animation-name: hide-modal;
+    animation-fill-mode: forwards;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}

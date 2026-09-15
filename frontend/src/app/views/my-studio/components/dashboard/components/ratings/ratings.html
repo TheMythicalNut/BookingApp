@@ -1,0 +1,84 @@
+<section class="setup-section"
+style="background-color: transparent; box-shadow: none; gap: calc(var(--spacing) * 2)">
+    <div class="bg-white shadow-md rounded-2xl p-2">
+        <h2 class="lora-500 text-md tracking-tight text-(--primary-color)">{{ title() }}</h2>
+    </div>
+
+@if(hasRatings()){
+<div class="rounded-2xl min-w-0 w-full flex flex-wrap border border-neutral-200 bg-white shadow-sm p-2 transition-all mb-2 gap-4">
+
+    <!-- Distribution -->
+    <div class="flex flex-col gap-1.5 flex-1 me-1" style="min-width: 200px;">
+        @for (star of [5, 4, 3, 2, 1]; track star) {
+            <div class="flex items-center gap-2 text-sm">
+                <span class="w-4 text-right text-(--secondary-color) lora-400">{{star}}★</span>
+                <div class="flex-1 h-1.5 bg-neutral-100 rounded-full overflow-hidden">
+                    <div
+                        class="h-full bg-amber-400 rounded-full"
+                        [style.width.%]="distribution()[0] > 0 ? (distribution()[star] * 100 / distribution()[0]) : 0">
+                    </div>
+                </div>
+                <span class="w-3 text-right text-(--secondary-color) lora-400 text-xs">{{distribution()[star]}}</span>
+            </div>
+        }
+    </div>
+
+    <!-- Metrics — 2x2 grid -->
+    <div class="grid grid-cols-2 gap-x-6 gap-y-3 flex-1 items-start content-start" style="min-width: 200px;">
+
+        <div>
+            <p class="lora-400 text-xs text-(--secondary-color) mb-0.5">{{averageText()}}</p>
+            <p class="lora-500 text-2xl text-amber-500">{{ average() }} ★</p>
+            <p class="lora-400 text-xs text-(--secondary-color) mt-0.5">{{ distribution()[0] + ' ' + reviewsText() }}</p>
+        </div>
+
+        <div>
+            <p class="lora-400 text-xs text-(--secondary-color) mb-0.5">{{fiveStarText()}}</p>
+            <p class="lora-500 text-2xl text-(--primary-color)">{{ distribution()[5] }}</p>
+            <p class="lora-400 text-xs text-(--secondary-color) mt-0.5">
+                {{ distribution()[0] > 0 ? (distribution()[5] * 100 / distribution()[0] | number:'1.0-0') : 0 }}%
+            </p>
+        </div>
+
+        <div>
+            <p class="lora-400 text-xs text-(--secondary-color) mb-0.5">{{oneTwoStarText()}}</p>
+            <p class="lora-500 text-2xl text-red-500">{{ distribution()[1] + distribution()[2] }}</p>
+            <p class="lora-400 text-xs text-(--secondary-color) mt-0.5">
+                {{ distribution()[0] > 0 ? ((distribution()[1] + distribution()[2]) * 100 / distribution()[0] | number:'1.0-0') : 0 }}%
+            </p>
+        </div>
+
+        <div>
+            <p class="lora-400 text-xs text-(--secondary-color) mb-0.5">{{unratedBookingsText()}}</p>
+            <p class="lora-500 text-2xl text-(--primary-color)">{{ unratedDistribution()[2] }}</p>
+            <p class="lora-400 text-xs text-(--secondary-color) mt-0.5">
+                {{ unratedDistribution()[0] > 0 ? (((unratedDistribution()[2] * 100) / unratedDistribution()[0]) | number:'1.0-0') : 0 }}%
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="rounded-2xl min-w-0 w-full overflow-x-auto border border-neutral-200 bg-white shadow-sm py-2 transition-all">
+    @for (r of sortedRatings(); track $index) {
+        <div class="border-b border-neutral-50 hover:bg-neutral-50 transition-colors px-2">
+            <p class="text-amber-400" style="font-size: 13px;">{{ '★'.repeat(r.rating) }}{{ '☆'.repeat(5 - r.rating) }}</p>
+            @if (r.comment) {
+                <p class="lora-400 text-(--secondary-color)" style="font-size: 12px; white-space: normal; word-break: break-word;">
+                    "{{ r.comment }}"
+                </p>
+            }
+        </div>
+    }
+</div>
+
+}
+@else {
+    <div class="rounded-2xl flex grow border border-neutral-200 bg-white shadow-sm py-2 px-2 md:px-4 lg:px-6 transition-all">
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color)"> {{ noRatingsText() }} </p>
+    </div>
+}
+
+</section>

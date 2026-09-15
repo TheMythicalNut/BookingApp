@@ -1,0 +1,18 @@
+@if(date()){
+<div class="grid place-items-center grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4">
+    @for (slot of slots(); track $index) {
+        <button
+            type="button"
+            aria-label="Previous month"
+            (click)="onTimeClick(slot)"
+            class="h-4 w-8 flex items-center justify-center rounded-full shadow-sm 
+            text-(--secondary-color) transition-all duration-200
+            hover:bg-[color-mix(in_srgb,var(--primary-color)_12%,white)] hover:shadow-md active:scale-95
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-(--primary-color) focus-visible:ring-offset-2 cursor-pointer"
+            [class.text-white]="isSelected()(slot)"
+            [class.bg-(--tertiary-color)]="isSelected()(slot)">
+            {{ slot }}
+        </button>
+    }
+</div>
+}

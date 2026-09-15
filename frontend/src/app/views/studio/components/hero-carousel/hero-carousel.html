@@ -1,0 +1,25 @@
+<div class="hero-wrapper scrollbar-none">
+    <!-- Scroll container -->
+    <div #scrollContainer
+        class="hero-scroll scrollbar-none"
+        (scroll)="onScroll()">
+        @for (img of images(); track $index) {
+            <img class="hero-item object-cover w-full"
+                (click)="$event.stopPropagation()"
+                [src]="img"
+                [style.height.px]="height()"
+            />
+        }
+    </div>
+
+    <!-- Overlay snap controls -->
+    <div class="snap-overlay">
+        @for (img of images(); track $index) {
+        <div class="snap-line-clickable" (click)="$event.stopPropagation(); scrollTo($index)">
+            <div class="snap-line"
+                [class.snap-line-active]="$index === index()">
+            </div>
+        </div>
+        }
+    </div>
+</div>

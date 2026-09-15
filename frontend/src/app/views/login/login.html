@@ -1,0 +1,69 @@
+<div class="h-[calc(100dvh)] flex flex-col gap-2 justify-center text-(--primary-color) p-2">
+    <div class="text-center ps-1 mb-1 lora-500 text-2xl">{{'MY_STUDIO.LOGIN.TITLE' | translate}}</div>
+
+    <div class="absolute top-3 left-1 right-1">
+        <app-request-status-message
+        [status]="loginRequest().status">
+        </app-request-status-message>
+    </div>
+
+    <!-- EMAIL INPUT -->
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="userEmail()"
+    [invalidMessage]="getInvalidEmailMessage()"
+    [title]="getEmailInputTitle()"
+    [validator]="emailValidator"
+    [placeholder]="getEmailPlaceholder()"
+    (onChange)="userEmail.set($event)"
+    (onValid)="validEmail.set($event)">
+    </app-text-field>
+
+    <!-- PASSWORD INPUT -->
+    <app-text-field
+    class="w-full flex justify-center"
+    [invalidMessage]="getInvalidPasswordMessage()"
+    [title]="getPasswordInputTitle()"
+    [validator]="passwordValidator"
+    (onChange)="userPassword.set($event)"
+    (onValid)="validPassword.set($event)">
+    </app-text-field>
+
+    <div class="mt-2 flex flex-row justify-center">
+        <button 
+            class="relative w-24 h-5 bg-gradient-to-r from-gray-900 to-black text-white font-medium rounded-md text-center overflow-hidden
+                transition-all duration-300 ease-out
+                hover:from-gray-800 hover:to-gray-900 hover:shadow-xl hover:scale-105 hover:brightness-110
+                focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
+                active:scale-95 active:shadow-inner active:brightness-90
+                disabled:opacity-50
+                group transform cursor-pointer"
+            (click)="login()"
+            [disabled]="!validEmail() || !validPassword()">
+            
+            
+            <!-- Button content -->
+            <span class="relative z-10 flex items-center justify-center">
+                @switch(status()){
+                    @case ('loading') {
+                        <app-spinner></app-spinner>
+                    }
+                    @case ('error')
+                    @case ('idle') {
+                        <span class="transition-opacity duration-200">{{'BUTTON.LOGIN' | translate}}</span>
+                    }
+                }
+            </span>
+        </button>
+    </div>
+
+    
+    <!-- 
+    <div class="fixed left-0 right-0 bottom-0 mb-4">
+        <div class="text-center">
+            <div class="lora-400">{{'MY_STUDIO.LOGIN.TO_REGISTER.NORMAL' | translate}}</div>
+            <div class="roboto-400 ps-1 underline cursor-pointer" (click)="navigateRegister()">{{'MY_STUDIO.LOGIN.TO_REGISTER.UNDERLINED' | translate}}</div>
+        </div>
+    </div> 
+    -->
+</div>

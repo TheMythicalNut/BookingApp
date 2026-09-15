@@ -1,0 +1,128 @@
+@if (isOpen()) {
+<div class="fixed inset-0 z-50 flex justify-start"
+    animate.enter="sidebar-overlay-enter"
+    animate.leave="sidebar-overlay-leave"
+     (click)="onClose()">
+     <div class="absolute inset-0 bg-black/25"></div>
+
+     
+    <!-- Modal Panel -->
+    <div class="relative w-[90dvw] max-w-4xl bg-white px-1 pt-2 pb-12 h-full shadow-2xl transition-all"
+        (click)="$event.stopPropagation()">
+        
+        <button
+        (click)="logout()"
+        (mouseenter)="logoutHovered.set(true)"
+        (mouseleave)="logoutHovered.set(false)"
+        class="absolute left-2 top-2 flex items-center gap-2 text-(--secondary-color) hover:text-(--primary-color) cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+            width="24" height="24" viewBox="0 0 24 24" 
+            fill="none" stroke="currentColor" stroke-width="2" 
+            stroke-linecap="round" stroke-linejoin="round"
+            class="shrink-0">
+                <path d="m16 17 5-5-5-5"/><path d="M21 12H9"/><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            </svg>
+            <span
+            [class.sidebar-overlay-enter]="logoutHovered()"
+            [class.sidebar-overlay-leave]="!logoutHovered()">
+            {{ 'BUTTON.LOG_OUT' | translate }}
+            </span>
+        </button>
+
+        <div class="flex flex-col gap-4 items-center">
+            
+            <div class="playfair-display-400 text-(--secondary-color) text-lg underline">{{ title() }}</div>
+            
+            <div class="flex flex-col gap-4 items-center h-[calc(100dvh-160px)] overflow-y-auto scrollbar-none pb-12">
+            @switch(mode()){
+                @case ('navigation') {
+
+                        @for (option of options(); track $index) {
+                            <div class="flex flex-row justify-between items-center" (click)="onSelect(option.state)">
+                                <div class="px-2 playfair-400 text-xl hover:playfair-500 cursor-pointer"
+                                    [class.text-(--secondary-color)]="option.details === 'empty'"
+                                    [class.text-yellow-500]="option.details === 'modified'"
+                                    [class.text-red-500]="option.details === 'invalid'"
+                                    [class.text-(--primary-color)]="option.details === 'selected'">
+                                    {{ (type() + '.STEPS.' + option.state) | translate }}
+                                </div>
+
+                                @switch(option.details){
+                                    @case ('selected') {
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" 
+                                            stroke-linecap="round" stroke-linejoin="round" 
+                                            class="text-(--primary-color)"
+                                            animate.enter="sidebar-overlay-enter">
+                                            <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+                                        </svg>
+                                    }
+                                    @case ('modified') {
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" 
+                                            stroke-linecap="round" stroke-linejoin="round" 
+                                            class="text-yellow-500"
+                                            animate.enter="sidebar-overlay-enter">
+                                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+                                        </svg>
+                                    }
+                                    @case ('invalid') {
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" 
+                                            stroke-linecap="round" stroke-linejoin="round" 
+                                            class="text-red-500"
+                                            animate.enter="sidebar-overlay-enter">
+                                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+                                        </svg>
+                                    }
+                                }
+                            </div>
+                        }
+                }
+                
+                @case ('language'){
+                    @for (lang of languages; track $index) {
+                    <div class="px-2 playfair-400 text-xl text-(--secondary-color) hover:text-(--primary-color) cursor-pointer" (click)="selectLanguage(lang)">
+                        {{ lang }}
+                    </div>
+                    }
+                }
+            }
+              <!-- Gradient overlay on top -->
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-85% to-white"></div>
+            </div>
+            
+            <div class="absolute left-0 right-0 bottom-4 text-center playfair-400 text-xl text-(--secondary-color) hover:text-(--primary-color) cursor-pointer">
+                @switch (mode()) {
+                    @case('navigation'){
+                        <div class="underline" (click)="mode.set('language')">{{ 'BUTTON.TO_CHANGE_LANGUAGE' | translate }} : {{currentLanguage()}}</div>
+                    }
+                    @case('language'){
+                        <div class="underline" (click)="mode.set('navigation')">{{ 'BUTTON.BACK_TO_NAVIGATION' | translate }}</div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+}
+@else {
+<div class="fixed left-0 top-0 bottom-0 w-[10dvw] max-w-[64px] z-50 flex justify-start hover:cursor-pointer"
+    animate.enter="sidebar-overlay-enter"
+    animate.leave="sidebar-overlay-leave">
+    <div class="relative w-[10dvw] max-w-[64px] bg-white px-1 pt-2 h-full shadow-2xl transition-all"
+        (click)="$event.stopPropagation()"
+        (click)="isOpen.set(true)">
+        
+        <div class="flex flex-col gap-4 items-center text-center">
+            @for (option of options(); track $index) {
+                @if(option.details === 'selected'){
+                    <div class="text-center break-all playfair-400 text-xl" style="writing-mode: vertical-rl; text-orientation: upright;">
+                        {{ ( type() + '.STEPS.' + option.state) | translate }}
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+}

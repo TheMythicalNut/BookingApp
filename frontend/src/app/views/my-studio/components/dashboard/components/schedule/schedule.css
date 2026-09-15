@@ -1,0 +1,242 @@
+/* ────────────────────────────────────────────────────────────────
+   schedule.component.css
+──────────────────────────────────────────────────────────────── */
+
+/* ── Navigation button ──────────────────────────────────────── */
+.schedule-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  background: transparent;
+  color: var(--secondary-color, #6b7280);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.schedule-nav-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: var(--primary-color, #111827);
+}
+
+/* ── Day view container ─────────────────────────────────────── */
+.day-container {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.timeline-wrapper {
+  position: relative;
+  height: 1920px; /* 80px per hour × 24 */
+}
+
+/* ── Hour grid ──────────────────────────────────────────────── */
+.hour-grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.hour-row {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 4px;
+  min-height: 80px; /* doubled from 40px */
+  position: relative;
+}
+
+.hour-label {
+  width: 56px;
+  padding: 0 10px 0 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #9ca3af;
+  letter-spacing: 0.02em;
+  text-align: right;
+  line-height: 1;
+  flex-shrink: 0;
+  font-family: 'Geist Mono', 'SF Mono', monospace;
+}
+
+.hour-line {
+  flex: 1;
+  height: 1px;
+  background: #f0f0f0;
+}
+
+.hour-row:nth-child(3n) .hour-line {
+  background: #e2e5ea;
+}
+
+/* ── schedule intervals ──────────────────────────────────────────────── */
+.interval-block {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border: 2px dashed var(--secondary-color);
+  border-radius: var(--spacing);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+/* ── Reservations layer ─────────────────────────────────────── */
+.reservations-layer {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  right: 12px;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* ── Reservation block ──────────────────────────────────────── */
+.reservation-block {
+  position: absolute;
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  border-radius: 0 6px 6px 0;
+  padding: 6px 8px;
+  pointer-events: all;
+  transition: background 0.15s ease, box-shadow 0.15s ease transform 0.4s ease;
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.08);
+  min-height: 48px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.reservation-block.is-active {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: visible;
+}
+.reservation-block:hover {
+  background: #dbeafe;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+  z-index: 10;
+}
+
+.reservation-block:focus-visible {
+  outline: 2px solid var(--primary-color, #3b82f6);
+  outline-offset: 1px;
+  z-index: 10;
+}
+
+.res-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.res-article {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1d4ed8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.res-time {
+  font-size: 11px;
+  color: #6b7280;
+  white-space: nowrap;
+  font-family: 'Geist Mono', 'SF Mono', monospace;
+}
+
+.res-contact {
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 9999px;
+
+  /* Optional UX polish */
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.contact-btn:hover {
+  background: #f3f4f6;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-color);
+}
+
+.contact-btn:hover .icon {
+  color: var(--primary-color);
+}
+
+.res-phone,
+.res-email {
+  font-size: 11px;
+  color: #9ca3af;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Status colour variants ─────────────────────────────────── */
+.reservation-block--confirmed {
+  background: #eff6ff;
+  border-left-color: #3b82f6;
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.08);
+}
+.reservation-block--confirmed:hover {
+  background: #dbeafe;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+.reservation-block--confirmed .res-article { color: #1d4ed8; }
+
+.reservation-block--pending_confirmation {
+  background: #fffbeb;
+  border-left-color: #f59e0b;
+  box-shadow: 0 1px 3px rgba(245, 158, 11, 0.08);
+}
+.reservation-block--pending_confirmation:hover {
+  background: #fef3c7;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+}
+.reservation-block--pending_confirmation .res-article { color: #b45309; }
+
+.reservation-block--completed {
+  background: #f0fdf4;
+  border-left-color: #22c55e;
+  box-shadow: 0 1px 3px rgba(34, 197, 94, 0.08);
+}
+.reservation-block--completed:hover {
+  background: #dcfce7;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+}
+.reservation-block--completed .res-article { color: #15803d; }

@@ -1,0 +1,38 @@
+
+<!-- LIST OF PACKAGES -->
+<div class="grid grid-cols-2 gap-3 p-4 my-4">
+    @for(pkg of packages(); track $index; let last = $last){
+        <div class="article-container cursor-pointer"
+            [style.width.px]="packageWidth()"
+        (click)="onPackage(pkg.id!)"
+        [class.col-span-2]="last && getPackageCount() % 2 == 1"
+        [class.justify-self-center]="last && getPackageCount() % 2 == 1">
+            <div class="relative inline-block aspect-square">
+                <div
+                class="thumbnail-grid"
+                [class.count-1]="getPackageImageCount(pkg)===1"
+                [class.count-2]="getPackageImageCount(pkg)===2"
+                [class.count-3]="getPackageImageCount(pkg)===3"
+                [class.count-4]="getPackageImageCount(pkg)===4"
+                >
+                @for (img of getPackageImages()(pkg); track $index) {
+                    <div class="thumb-cell">
+                        <img [src]="img"/>
+                    </div>
+                }
+                </div>
+                @if(pkg.discount !== 0){
+                    <div class="absolute lora-400 text-center top-1 right-1 bg-black text-white py-1 px-2 text-sm aspect-square">{{pkg.discount}}%<br>OFF</div>
+                }
+            </div>
+            <div class="w-full playfair-display-400 text-center text-(--primary-color) mt-3 mb-4">
+                <div class="text-lg">{{pkg.name | uppercase}}</div>
+                <div class="playfair-400 text-(--secondary-color) text-sm mt-1">
+                    {{ getPackageTypeName() }}
+                </div>
+                <div class="text-base mt-1"
+                [class.line-through]="pkg.discount">{{pkg.price}} {{pkg.currency}}</div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,88 @@
+
+@keyframes reveal-filter-info {
+    0%, 25% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75%, 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide-filter-info {
+    0%, 25% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.reveal-filter-info,
+.hide-filter-info {
+    transform-origin: top;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-fill-mode: forwards;
+}
+
+.reveal-filter-info {
+    animation-name: reveal-filter-info;
+}
+
+.hide-filter-info {
+    animation-name: hide-filter-info;
+}
+
+@keyframes visible-flex {
+    0%, 25% {
+        visibility: visible;
+        padding-bottom: 0;
+    }
+
+    50% {
+        padding-bottom: 32px;
+    }
+
+    100% {
+        visibility: visible;
+        padding-bottom: 32px;
+    }
+}
+
+@keyframes hidden-flex {
+    0%, 25% {
+        visibility: visible;
+        padding-bottom: 32px;
+    }
+
+    50% {
+        padding-bottom: 0;
+    }
+
+    75%, 100% {
+        visibility: hidden;
+        padding-bottom: 0;
+    }
+}
+
+.visible-flex,
+.hidden-flex {
+    transform-origin: top;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-fill-mode: forwards;
+}
+
+.visible-flex {
+    animation-name: visible-flex;
+}
+
+.hidden-flex {
+    animation-name: hidden-flex;
+}

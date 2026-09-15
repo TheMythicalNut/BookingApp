@@ -1,0 +1,217 @@
+
+<section class="setup-section" style="background-color: transparent; box-shadow: none; gap: calc(var(--spacing) * 2)"
+(click)="activatedReservationId.set(undefined)">
+  <!-- ── TOOLBAR ── -->
+  <div class="bg-white rounded-2xl shadow-sm border border-neutral-100 px-2 py-2">
+    <div class="flex flex-wrap items-center justify-around gap-2">
+
+      <nav
+        class="flex items-center gap-2"
+        aria-label="Period navigation"
+      >
+        <button
+          (click)="previousPeriod()"
+          class="schedule-nav-btn focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--primary-color)"
+          aria-label="Go to previous period"
+          type="button"
+        >
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+            <path d="M10.5 3.5 5.5 8l5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+
+        <output
+          class="lora-500 text-sm text-(--primary-color) text-center leading-snug min-w-12 break-words"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {{ visiblePeriodLabel() }}
+        </output>
+
+        <button
+          (click)="nextPeriod()"
+          class="schedule-nav-btn focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--primary-color)"
+          aria-label="Go to next period"
+          type="button"
+        >
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+            <path d="M5.5 3.5 10.5 8l-5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+      </nav>
+
+      <button
+        (click)="goToToday()"
+        type="button"
+        class="px-3 py-1.5 text-xs lora-500 rounded-xl
+               border border-neutral-200 text-(--secondary-color)
+               hover:bg-neutral-50 hover:border-neutral-300
+               transition-all duration-150 cursor-pointer
+               focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--primary-color)"
+        aria-label="Jump to today's schedule"
+      >
+        {{ getToday() }}
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ── SCHEDULE CARD ── -->
+  <article
+    class="bg-white rounded-2xl shadow-sm py-2"
+    aria-label="Daily timeline"
+  >
+  
+    @if (currentDayReservations().length === 0) {
+    <div
+        class="flex items-center justify-center h-full text-sm text-neutral-400 lora-500 pointer-events-none select-none"
+        role="listitem"
+        aria-live="polite"
+    >
+        {{ getEmptyScheduleText() }}
+    </div>
+    }
+    @else {
+    <div class="day-container">
+      <div
+        class="timeline-wrapper relative"
+        role="grid"
+        aria-label="Hourly schedule grid"
+      >
+
+        <!-- Hour grid -->
+        <div class="hour-grid" role="rowgroup" aria-hidden="true">
+          @for (hour of hours; track hour) {
+            <div class="hour-row" role="row">
+              <span class="hour-label" role="rowheader">{{ hour | hourLabel }}</span>
+              <div class="hour-line" role="presentation"></div>
+            </div>
+          }
+        </div>
+
+        <!-- Interval overlays -->
+        <div
+          class="intervals-layer absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        >
+          @for (i of currentDayIntervalsPositions(); track $index) {
+            <div
+              class="interval-block"
+              [style.top.%]="i.top"
+              [style.height.%]="i.height"
+            ></div>
+          }
+        </div>
+
+        <!-- Reservations overlay -->
+        <div
+          class="reservations-layer absolute inset-0"
+          role="list"
+          aria-label="Reservations"
+        >
+
+          @for (res of currentDayReservations(); track res.id) {
+            <article
+              class="reservation-block focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-(--primary-color) cursor-pointer"
+              [class]="'reservation-block--' + res.status.toLowerCase()"
+              [style.top.%]="res.topPercent"
+              [style.height.%]="activatedReservationId() === res.id ? null : res.heightPercent"
+              [style.height]="activatedReservationId() === res.id ? 'auto' : null"
+              [style.left.%]="res.columnOffset"
+              [style.width.%]="res.columnWidth"
+              [style.zIndex]="activatedReservationId() === res.id ? 10 : null"
+              role="listitem"
+              tabindex="0"
+              (click)="activateReservation(res.id); $event.stopPropagation();"
+              [class.is-active]="activatedReservationId() === res.id">
+
+              @if (activatedReservationId() === res.id) {
+                <div class="res-contact flex flex-wrap justify-around gap-2 items-center h-full">
+
+                  @if (res.userPhone) {
+                      <a [href]="'tel:' + res.userPhone"
+                      class="contact-btn"
+                      (click)="$event.stopPropagation()"
+                      [attr.aria-label]="'Call ' + res.userPhone">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          class="icon"
+                          stroke="currentColor"
+                          stroke-width="2">
+                          <path d="m16 8 6-6"/>
+                          <path d="M22 8V2h-6"/>
+                          <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                      </svg>
+                      </a>
+                  }
+
+                  @if (res.userEmail) {
+                      <a [href]="'mailto:' + res.userEmail"
+                      class="contact-btn"
+                      (click)="$event.stopPropagation()"
+                      [attr.aria-label]="'Email ' + res.userEmail">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          class="icon"
+                          stroke="currentColor"
+                          stroke-width="2">
+                          <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+                          <rect x="2" y="4" width="20" height="16" rx="2"/>
+                      </svg>
+                      </a>
+                  }
+                  
+                  <a class="contact-btn"
+                  (click)="navReservation(res.id); $event.stopPropagation()"
+                  [attr.aria-label]="'Modify'">
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    class="icon"
+                    stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round">
+                    <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>
+                    <path d="m15 5 4 4"/>
+                  </svg>
+                  </a>
+
+                </div>
+              }
+              @else {
+                <div class="flex flex-row justify-between items-start">
+                  <header class="res-header">
+                    <span class="res-article truncate" title="{{ res.articleName }}">{{ res.articleName }}</span>
+                    <time class="res-time flex-shrink-0">{{ res.startDisplay }}&#8202;–&#8202;{{ res.endDisplay }} {{ res.status === 'PENDING_CONFIRMATION' ? ' ?' : ''}}</time>
+                  </header>
+                </div>
+
+                <div class="res-contact gap-1">
+                  @if (res.userPhone) {
+                    <p class="res-phone truncate hover:underline focus-visible:outline-none focus-visible:underline"
+                      [attr.aria-label]="'Call ' + res.userPhone">
+                      {{ res.userPhone }}
+                    </p>
+                  }
+
+                  @if (res.userEmail) {
+                    <p class="res-email truncate hover:underline focus-visible:outline-none focus-visible:underline"
+                      [attr.aria-label]="'Email ' + res.userEmail">
+                      {{ res.userEmail }}
+                    </p>
+                  }
+                </div>
+              }
+            </article>
+          }
+        </div>
+
+      </div>
+    </div>    
+    }
+  </article>
+
+</section>

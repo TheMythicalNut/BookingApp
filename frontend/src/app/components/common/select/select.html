@@ -1,0 +1,72 @@
+<!-- select.html -->
+<div class="w-full transition-color duration-200"
+    [class.text-red-500]="hasValue() && !isValid() && !isOpen()">
+
+  <div class="lora-500 text-sm"
+      [class.text-(--secondary-color)]="!(hasValue() && !isValid() && !isOpen())"
+      [class.text-red-500]="(hasValue() && !isValid() && !isOpen())">
+    {{title()}} <span class="text-[#DC2626] font-semibold">{{ required() ? '*' : '' }}</span>
+  </div>
+
+  <div class="relative w-full rounded-xl border border-neutral-200 bg-white shadow-sm
+        transition-all duration-200 hover:shadow-md hover:ring-1 hover:ring-neutral-300"
+      [class.border-red-500]="hasValue() && !isValid() && !isOpen()">
+
+    <!-- Input -->
+    <div class="flex flex-wrap gap-1 p-1 pe-3"
+         [class.cursor-pointer]="!isAutocomplete()"
+         (click)="!isAutocomplete() && toggle()">
+
+      @if (isAutocomplete()) {
+        <!-- Editable input — typing only filters, does NOT emit onChange -->
+        <input type="text"
+          class="flex-1 text-base roboto-400 focus:outline-none ps-1 cursor-text"
+          [placeholder]="value().length === 0 ? placeholder() : ''"
+          [ngModel]="filterText()"
+          (ngModelChange)="onFilterInput($event)"
+          (focus)="open()">
+      } @else {
+        <!-- Read-only select behaviour (original) -->
+        <input type="text" readonly
+          class="flex-1 text-base roboto-400 focus:outline-none ps-1 cursor-pointer"
+          [placeholder]="value().length === 0 ? placeholder() : ''"
+          [ngModel]="value()">
+      }
+    </div>
+
+    <!-- Dropdown -->
+    @if (isOpen() && displayedOptions().length > 0) {
+      <div class="absolute z-20 w-full max-h-32 overflow-auto mt-1 bg-white border border-(--secondary-color) rounded-sm shadow-md">
+        @for (option of displayedOptions(); track $index) {
+          <div class="p-2 cursor-pointer hover:bg-(--secondary-color) hover:text-white"
+              (click)="selectOption(option); $event.stopPropagation()">
+            {{option}}
+          </div>
+        }
+      </div>
+    }
+
+    <!-- Invalid message -->
+    @if (hasValue() && !isValid() && !isOpen()) {
+      <div class="text-xs text-red-500 absolute mt-1">
+        {{invalidMessage()}}
+      </div>
+    }
+
+    @if (hasClear()) {
+      <!-- Clear -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          class="me-1 absolute top-0 right-0 transition-opacity duration-200 ease-in-out"
+          [class.opacity-100]="hasValue()"
+          [class.pointer-events-auto]="hasValue()"
+          [class.opacity-0]="!hasValue()"
+          [class.pointer-events-none]="!hasValue()"
+          (click)="clear($event)">
+        <path d="M18 6 6 18"/>
+        <path d="m6 6 12 12"/>
+      </svg>
+    }
+  </div>
+</div>

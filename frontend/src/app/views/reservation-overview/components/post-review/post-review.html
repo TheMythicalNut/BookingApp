@@ -1,0 +1,57 @@
+@if(isOpen()){
+    <div class="fixed inset-0 z-50 flex items-center justify-center"
+        (click)="onBackdropClick()">
+    
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/25"></div>
+
+        
+        <!-- Modal Content -->
+        <div class="relative w-[calc(100vw-32px)] h-[calc(100vw-32px)] max-w-4xl max-h-4xl bg-white rounded-3xl shadow-2xl flex flex-col items-center"
+            (click)="$event.stopPropagation()">
+
+            <div class="sticky top-0 text-center py-3 rounded-3xl text-(--primary-color) text-lg lora-500">{{'RESERVATION_OVERVIEW.POST_COMMENT.TITLE' | translate}}</div>
+            @switch (rating()) {
+                @case (1) {
+                    <div class="lora-400 text-md text-(--primary-color) p-2">{{'RESERVATION_OVERVIEW.POST_COMMENT.POSITIVITY.LOW.PAR1' | translate}}</div>
+                    <div class="lora-400 text-md text-(--primary-color) p-2">{{'RESERVATION_OVERVIEW.POST_COMMENT.POSITIVITY.LOW.PAR2' | translate}}</div>
+                    <button 
+                        class="absolute bottom-3 w-24 h-5 bg-gradient-to-r from-gray-900 to-black text-white font-medium rounded-md text-center overflow-hidden
+                            transition-all duration-300 ease-out
+                            focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
+                            active:scale-95 active:shadow-inner active:brightness-90
+                            group transform"
+                        (click)="onBackdropClick()">
+                        <span class="relative z-10 flex items-center justify-center">{{'BUTTON.OK' | translate}}</span>
+                    </button>
+                }
+                @case(5){
+                    <div class="lora-400 text-md text-(--primary-color) p-2">{{'RESERVATION_OVERVIEW.POST_COMMENT.POSITIVITY.HIGH.PAR1' | translate}}</div>
+                    <div class="lora-400 text-md text-(--primary-color) p-2">{{'RESERVATION_OVERVIEW.POST_COMMENT.POSITIVITY.HIGH.PAR2' | translate}}</div>
+                    <button 
+                        class="absolute bottom-3 m-auto w-24 h-5 bg-gradient-to-r from-gray-900 to-black text-white font-medium rounded-md text-center overflow-hidden
+                            transition-all duration-300 ease-out
+                            focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
+                            active:scale-95 active:shadow-inner active:brightness-90
+                            group transform"
+                        (click)="toMaps()">
+                        <span class="relative z-10 flex items-center justify-center">{{'BUTTON.REVIEW' | translate}}</span>
+                    </button>
+                }
+                @default {
+                    <div class="lora-400 text-md text-(--primary-color) p-2">{{'RESERVATION_OVERVIEW.POST_COMMENT.POSITIVITY.MEDIUM.PAR1' | translate}}</div>
+                    <div class="lora-400 text-md text-(--primary-color) p-2">{{'RESERVATION_OVERVIEW.POST_COMMENT.POSITIVITY.MEDIUM.PAR2' | translate}}</div>
+                    <button 
+                        class="absolute bottom-3 w-24 h-5 bg-gradient-to-r from-gray-900 to-black text-white font-medium rounded-md text-center overflow-hidden
+                            transition-all duration-300 ease-out
+                            focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
+                            active:scale-95 active:shadow-inner active:brightness-90
+                            group transform"
+                        (click)="onBackdropClick()">
+                        <span class="relative z-10 flex items-center justify-center">{{'BUTTON.OK' | translate}}</span>
+                    </button>
+                }
+            }
+            </div>
+    </div>
+}

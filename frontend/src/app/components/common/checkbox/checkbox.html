@@ -1,0 +1,56 @@
+<div 
+  class="checkbox-wrapper cursor-pointer"
+  [class.checked]="checked()"
+  [class.indeterminate]="indeterminate()"
+  [class.disabled]="disabled()"
+  [class.size-sm]="size() === 'sm'"
+  [class.size-md]="size() === 'md'"
+  [class.size-lg]="size() === 'lg'"
+  (click)="toggle()"
+  tabindex="0"
+  role="checkbox"
+  [attr.aria-checked]="indeterminate() ? 'mixed' : checked">
+  
+  <!-- Hidden native input for form integration -->
+  <input 
+    type="checkbox" 
+    class="native-input"
+    [checked]="checked()"
+    [disabled]="disabled()"
+    tabindex="-1">
+  
+  <!-- Visual checkbox -->
+  <div class="checkbox-box">
+    <!-- Checkmark -->
+     @if(checked() && !indeterminate()){
+        <svg
+        class="check-icon" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="3">
+        <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+    }
+    
+    <!-- Indeterminate line -->
+     @if(indeterminate()){
+        <svg
+        class="indeterminate-icon" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="3">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+    }
+  </div>
+  
+  <!-- Label -->
+  <div class="checkbox-label">
+    <ng-content></ng-content>
+    @if(required()){
+        <span class="text-[#DC2626] font-semibold">*</span>
+    }
+  </div>
+</div>

@@ -1,0 +1,10 @@
+/* Smooth transitions for all interactive elements */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus {
+  outline: 2px solid #383331;
+  outline-offset: 2px;
+}

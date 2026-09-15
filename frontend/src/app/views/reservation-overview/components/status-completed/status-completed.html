@@ -1,0 +1,50 @@
+
+@if(hasRating()){
+    <div class="lora-400 text-center text-md px-2 ">{{getMessageGratitude()}}</div>
+}
+@else{
+    <div class="fixed w-full z-50
+        right-0 left-0 bottom-0    
+        flex flex-col gap-2
+        items-center
+        bg-white border-t border-gray-200
+        px-2 py-3">
+        <div class="flex flex-row gap-4 justify-center mb-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-(--secondary-color) cursor-pointer" 
+                [class.text-red-500]="ratingNum() === 1" (click)="ratingNum.set(1)"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><path d="M7.5 8 10 9"/><path d="m14 9 2.5-1"/><path d="M9 10h.01"/><path d="M15 10h.01"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-(--secondary-color) cursor-pointer" 
+                [class.text-orange-500]="ratingNum() === 2" (click)="ratingNum.set(2)"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-(--secondary-color) cursor-pointer" 
+                [class.text-yellow-500]="ratingNum() === 3" (click)="ratingNum.set(3)"><circle cx="12" cy="12" r="10"/><line x1="8" x2="16" y1="15" y2="15"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-(--secondary-color) cursor-pointer" 
+                [class.text-blue-500]="ratingNum() === 4" (click)="ratingNum.set(4)"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-(--secondary-color) cursor-pointer" 
+                [class.text-green-500]="ratingNum() === 5" (click)="ratingNum.set(5)"><circle cx="12" cy="12" r="10"/><path d="M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5h12Z"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+        </div>
+
+        <app-text-area class="w-full flex justify-center"
+        [title]="getCommentTitle()"
+        [required]="false"
+        (onChange)="messageValue.set($event)">
+        </app-text-area>
+
+        <button (click)="OnReview()"
+                [disabled]="ratingNum() === 0"
+                [class.bg-(--secondary-color)]="ratingNum() === 0"
+                [class.bg-(--primary-color)]="ratingNum() !== 0"
+                class="w-full h-5 px-4 max-w-4xl text-white font-medium rounded-lg transition-colors duration-200 cursor-pointer">
+                {{ getButtonSendText() }}
+        </button>
+    </div>
+}
+
+<reservation-post-review
+[isOpen]="showPostReview()"
+(close)="showPostReview.set(false)"
+(requestMaps)="navigateMaps()">
+</reservation-post-review>

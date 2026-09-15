@@ -1,0 +1,118 @@
+@switch(pageState()){
+    @case ('pick') {
+        <app-filter-timeslot
+        (openDatePicker)="showDatePicker.set(true);">
+        </app-filter-timeslot>
+
+        <div class="w-full flex justify-center">
+        <div class="w-full flex flex-col gap-4 max-w-4xl h-[calc(100dvh-224px)] overflow-y-auto scrollbar-none">
+            
+            <reserve-recommendations>
+            </reserve-recommendations>
+
+            <reserve-date-select
+            (selected)="selectDate($event)">
+            </reserve-date-select>
+
+            <reserve-timeslot-select
+            class="p-2"
+            [date]="date()"
+            (selected)="selectTime($event)">
+            </reserve-timeslot-select>
+        </div>
+        </div>
+
+        <div class="fixed w-full flex place-content-center right-0 left-0 bottom-0 bg-white border-t border-gray-200 px-2 py-3">
+            <button (click)="onReserve()"
+                    [disabled]="isReserveDisabled()"
+                    [class.bg-(--secondary-color)]="isReserveDisabled()"
+                    [class.bg-(--primary-color)]="!isReserveDisabled()"
+                    class="w-full h-5 px-4 max-w-4xl text-white font-medium rounded-lg transition-colors duration-200 cursor-pointer">
+            {{ getButtonText() }}
+            </button>
+        </div>
+
+        <app-date-picker 
+        [isOpen]="showDatePicker()"
+        (close)="showDatePicker.set(false);">
+        </app-date-picker>
+    }
+    
+    @case ('confirm') {
+        <div class="w-full flex justify-center">
+        <div class="w-full flex flex-col gap-4 max-w-4xl min-h-[calc(100dvh)]">
+
+            <reserve-info
+            [reservation]="reservation()">
+            </reserve-info>
+
+            <!-- EMAIL INPUT -->    
+            <app-text-field
+            class="px-1"
+            [init]="userEmail()"
+            [invalidMessage]="getInvalidEmailMessage()"
+            [title]="getEmailInputTitle()"
+            [validator]="emailValidator"
+            [placeholder]="getEmailPlaceholder()"
+            (onChange)="userEmail.set($event)"
+            (onValid)="validEmail.set($event)">
+            </app-text-field>
+            
+            <!-- PHONE INPUT -->
+            <app-text-field
+            class="px-1"
+            [init]="userPhone()"
+            [invalidMessage]="getInvalidPhoneMessage()"
+            [title]="getPhoneInputTitle()"
+            [validator]="phoneValidator"
+            [placeholder]="getPhonePlaceholder()"
+            (onChange)="userPhone.set($event)"
+            (onValid)="validPhone.set($event)">
+            </app-text-field>
+
+            <app-text-area class="pb-16 px-1"
+            [title]="getMessageInputTitle()"
+            [placeholder]="getMessagePlaceholder()"
+            [required]="false"
+            (onChange)="message.set($event)">
+            </app-text-area>
+        </div>
+        </div>
+                    
+        <div class="fixed w-full flex place-content-center right-0 left-0 bottom-0 bg-white border-t border-gray-200 px-2 py-3">
+            <button (click)="onReserve()"
+                    [disabled]="isReserveDisabled()"
+                    [class.bg-(--secondary-color)]="isReserveDisabled()"
+                    [class.bg-(--primary-color)]="!isReserveDisabled()"
+                    class="w-full h-5 px-4 max-w-4xl text-white font-medium rounded-lg transition-colors duration-200 cursor-pointer">
+            {{ getButtonConfirmText() }}
+            </button>
+        </div>
+    }
+    @case ('post-confirm'){
+        <div class="w-full flex justify-center">
+        <div class="w-full flex flex-col gap-4 max-w-4xl min-h-[calc(100dvh)]">
+
+            <reserve-info
+            [reservation]="reservation()">
+            </reserve-info>
+
+            <app-request-status-message
+            [status]="status()">
+            </app-request-status-message>
+            
+            <app-request-status-message
+            [status]="resendStatus()">
+            </app-request-status-message>
+
+            @if(status() === 'success'){
+            <div class="text-center">
+                <div class="lora-400">{{'ON_RESERVE.LINK_NOT_FOUND.NORMAL' | translate}}</div>
+                <div class="roboto-400 ps-1 underline cursor-pointer" (click)="resendLink()">{{'ON_RESERVE.LINK_NOT_FOUND.UNDERLINED' | translate}}</div>
+            </div>
+            }
+
+        </div>
+        </div>
+    }
+}

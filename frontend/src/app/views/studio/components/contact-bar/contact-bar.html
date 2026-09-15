@@ -1,0 +1,58 @@
+
+<div class="px-6 py-4 flex flex-row justify-between">
+    @if(hasIgLink()){
+        <div (click)="goToIG()" class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" 
+                fill="none" stroke="currentColor" stroke-width="1" 
+                stroke-linecap="round" stroke-linejoin="round" 
+                class="text-(--secondary-color)">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+        </div>
+    }
+    @if(hasFbLink()){
+        <div (click)="goToFB()" class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1"
+                stroke-linecap="round" stroke-linejoin="round"
+                class="text-(--secondary-color)">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+        </div>
+    }
+    @if(hasWaPhone()){
+        <div (click)="goToWA()" class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                class="text-(--secondary-color)">
+                <path d="M19.374 21.426C19.5289 21.4971 19.7034 21.5134 19.8688 21.4721C20.0341 21.4308 20.1805 21.3344 20.2838 21.1987L20.55 20.85C20.6897 20.6637 20.8709 20.5125 21.0792 20.4084C21.2875 20.3042 21.5171 20.25 21.75 20.25H24C24.3978 20.25 24.7794 20.408 25.0607 20.6893C25.342 20.9706 25.5 21.3522 25.5 21.75V24C25.5 24.3978 25.342 24.7794 25.0607 25.0607C24.7794 25.342 24.3978 25.5 24 25.5C20.4196 25.5 16.9858 24.0777 14.4541 21.5459C11.9223 19.0142 10.5 15.5804 10.5 12C10.5 11.6022 10.658 11.2206 10.9393 10.9393C11.2206 10.658 11.6022 10.5 12 10.5H14.25C14.6478 10.5 15.0294 10.658 15.3107 10.9393C15.592 11.2206 15.75 11.6022 15.75 12V14.25C15.75 14.4829 15.6958 14.7125 15.5916 14.9208C15.4875 15.1291 15.3363 15.3103 15.15 15.45L14.799 15.7133C14.6613 15.8184 14.5643 15.9679 14.5243 16.1365C14.4844 16.3051 14.5041 16.4823 14.58 16.638C15.605 18.7199 17.2908 20.4036 19.374 21.426Z"/>
+                <path d="M4.48754 24.513C4.7081 25.0694 4.7572 25.679 4.62854 26.2635L3.03104 31.1985C2.97956 31.4488 2.99287 31.7081 3.0697 31.9517C3.14653 32.1954 3.28433 32.4155 3.47004 32.5909C3.65574 32.7664 3.8832 32.8916 4.13084 32.9545C4.37847 33.0174 4.63808 33.0161 4.88504 32.9505L10.0045 31.4535C10.5561 31.3441 11.1273 31.3919 11.653 31.5915C14.8561 33.0874 18.4846 33.4038 21.8983 32.4851C25.3119 31.5664 28.2914 29.4715 30.3111 26.5701C32.3307 23.6687 33.2607 20.1471 32.937 16.6269C32.6132 13.1066 31.0566 9.81373 28.5416 7.32932C26.0267 4.84491 22.7151 3.32859 19.1911 3.04787C15.6671 2.76716 12.1572 3.7401 9.2807 5.79504C6.40416 7.84997 4.34583 10.8548 3.46888 14.2795C2.59192 17.7041 2.95269 21.3285 4.48754 24.513Z"/>
+            </svg>
+        </div>
+    }
+    @if(hasContactMail()){
+        <div (click)="goToMail()" class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1"
+                stroke-linecap="round" stroke-linejoin="round"
+                class="text-(--secondary-color)">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+            </svg>
+        </div>
+    }
+    @if(hasContactPhone()){
+        <div (click)="goToCall()" class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1"
+                stroke-linecap="round" stroke-linejoin="round"
+                class="text-(--secondary-color)">
+                <path d="M13 2a9 9 0 0 1 9 9"/>
+                <path d="M13 6a5 5 0 0 1 5 5"/>
+                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+            </svg>
+        </div>
+    }
+</div>

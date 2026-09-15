@@ -1,0 +1,135 @@
+<section class="setup-section"
+style="background-color: transparent; box-shadow: none;">
+    <div class="bg-white shadow-md rounded-2xl p-4 lora-400 text-(--primary-color)">
+        <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ t().title }}</h2>
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ t().par1 }} </p>
+
+
+        <app-error-message
+        class="grid transition-all duration-300 overflow-hidden"
+        [class.grid-rows-[0fr]]="!viewInvalid()"
+        [class.grid-rows-[1fr]]="viewInvalid()"
+        [title]="errorTitle()"
+        [body]="errorBody()">
+        </app-error-message>
+    </div>
+
+    @for (p of packages(); track p.localID; let i = $index){
+      <div class="rounded-2xl border border-neutral-200 bg-white shadow-sm px-2 md:px-4 lg:px-6 transition-all"
+        [class.border-red-500]="hasErrorIndex()[i]"
+        [class.py-6]="isExpanded(p.localID)"
+        [class.py-2]="!isExpanded(p.localID)">
+      
+        @if (!isExpanded(p.localID)) {
+            <!-- HEADER -->
+            <div class="flex justify-between items-center cursor-pointer"
+            (click)="expand(p.localID)">
+                <span class="text-sm font-medium text-neutral-500"> {{ p.name }} </span>
+
+                <button type="button" (click)="removePackage(i)"
+                class="h-6 w-6 rounded-full border border-red-200 text-red-500 flex items-center justify-center hover:bg-red-50 cursor-pointer">
+                    ✕
+                </button>
+            </div>
+        }
+        @else {
+            <!-- HEADER -->
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-sm font-medium text-neutral-500 cursor-pointer"
+                (click)="collapse(p.localID)">
+                {{ p.name }}
+                </span>
+
+                <button
+                type="button"
+                (click)="removePackage(i)"
+                class="h-6 w-6 rounded-full border border-red-200 text-red-500
+                        flex items-center justify-center hover:bg-red-50 cursor-pointer">
+                ✕
+                </button>
+            </div>
+
+            <!-- CONTENT -->         
+            <div class="flex flex-col gap-4">
+
+                <app-text-field
+                [init]="p.name"
+                [title]="t().name"
+                (onChange)="setPackageName(i, $event)">
+                </app-text-field>
+
+                <app-text-field
+                class="w-full flex justify-center"
+                [init]="p.link"
+                [title]="t().link"
+                [prefix]="'https://spletka.com/' + studioLink()"
+                [placeholder]="t().linkPlaceholder"
+                (onChange)="setPacakgeLink(i, $event)">
+                </app-text-field>
+            
+                <app-multiselect
+                [init]="packageServiceNames().get(p.localID)"
+                [title]="t().services"
+                [options]="serviceNames()"
+                (onChange)="setPackageServices(i, $event)">
+                </app-multiselect>
+
+                <app-text-field
+                [init]="p.price"
+                [title]="t().price"
+                [placeholder]="'format. 1.234,56'"
+                (onChange)="setPackagePrice(i, $event)">
+                </app-text-field>
+
+                <app-select
+                [init]="p.currency"
+                [options]="currencies"
+                [title]="t().currency"
+                (onChange)="setPackageCurrency(i, $event)">
+                </app-select>
+
+                
+                <app-number-field
+                [init]="p.duration"
+                [title]="t().duration"
+                (onChange)="setPackageDuration(i, $event)">
+                </app-number-field>
+
+                <app-text-area
+                [init]="p.description"
+                [title]="t().description"
+                [maxLength]="512"
+                (onChange)="setPackageDescription(i, $event)"
+                [required]="false">
+                </app-text-area>
+            </div>
+        }
+    
+    </div>
+    }
+
+    <div class="flex flex-col items-center gap-2 mt-2">
+        
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+        
+        <app-button
+        [idleText]="t().add"
+        [type]="'secondary'"
+        (action)="addPackage()">
+        </app-button>
+
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="t().save"
+        [type]="'outline'"
+        (action)="save()">
+        </app-button>
+
+        <app-button
+        [idleText]="t().next"
+        (action)="next.emit()">
+        </app-button>
+    </div>
+</section>

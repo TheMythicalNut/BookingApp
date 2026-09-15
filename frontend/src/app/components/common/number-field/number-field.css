@@ -1,0 +1,11 @@
+/* Remove Chrome arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove Firefox arrows */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

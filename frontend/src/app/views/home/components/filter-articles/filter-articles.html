@@ -1,0 +1,62 @@
+@if(active()){
+<div class="sticky top-6 bg-white p-1 transition-all z-10 duration-500 ease-in-out">
+    <div class="filter-layout"
+        [class.open]="expanded()">
+        <div class="sticky top-0 flex flex-col gap-2 w-full"
+            [class.visible-flex]="expanded()"
+            [class.filter-content]="expandAnim() || !expanded()"
+            [class.hidden-flex]="!expanded()">
+
+            <app-text-input
+            [value]="locationText()"
+            [placeholder]="locationPlaceholder()"
+            [leadingIcon]="'location'"  
+            [options]="availableLocationsStr()"
+            (changed)="locationChange($event)"
+            (selected)="locationSelect($event)">
+            </app-text-input>
+
+            <app-text-input
+            [value]="typeText()"
+            [placeholder]="typePlaceholder()"
+            [leadingIcon]="'type'"
+            [options]="dropdownTypes()"
+            (changed)="typeChange($event)"
+            (selected)="typeSelect($event)">
+            </app-text-input>
+            
+            <app-text-input
+            [value]="timeslotText()"
+            [placeholder]="timeslotPlaceholder()"
+            [leadingIcon]="'timeslot'"
+            (changed)="timeslotChanged($event)"
+            (onFocus)="datePicker()">
+            </app-text-input>
+        </div>
+    </div>
+
+    <div class="filter-layout"
+        [class.open]="!expanded()">
+        <div class="sticky top-0 flex flex-col gap-0.5 lora-400 text-(--primary-color) filter-content cursor-default" 
+            [class.reveal-filter-info]="!expanded()"
+            [class.hide-filter-info]="expanded()">
+            @if(location() !== '') { 
+                <div>
+                    {{location()}}
+                </div>
+            }
+            @if(type() !== '') 
+            { 
+                <div>
+                    {{ type() }}
+                </div>
+            }
+            @if(timeslotText() !== ''){
+                <div>
+                    {{ timeslotText() }}
+                </div>
+            }
+        </div>
+    </div>
+</div>
+}

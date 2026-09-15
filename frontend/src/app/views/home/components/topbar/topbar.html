@@ -1,0 +1,32 @@
+<div class="sticky top-0 bg-white h-6 flex justify-between content-center p-1 z-50">
+    <span class="text-xl playfair-display-400
+        transition-colors duration-200 ease-in-out
+        cursor-pointer"
+        [class.text-(--primary-color)]="!isModal()"
+        [class.text-(--secondary-color)]="isModal()"
+        (click)="onLogo()">
+        SPLETKA
+    </span>
+    <span (click)="onMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            class="transition-colors duration-200 ease-in-out cursor-pointer hover:text-(--primary-color)"
+            [class.text-(--primary-color)]="isMenu()"
+            [class.text-(--secondary-color)]="!isMenu()">
+                <!-- Top line -->
+                <path d="M0 4h24" class="origin-center transition-all duration-300 ease-in-out"
+                    [class.top-line-switch]="isModal()"
+                    /> 
+
+                <!-- Middle line -->
+                <path d="M0 12h24" class="transition-opacity duration-200 ease-in-out"
+                    [class.opacity-0]="isModal()"/>
+
+                <!-- Bottom line -->
+                <path d="M0 20h24" class="origin-center transition-all duration-300 ease-in-out"
+                    [class.bot-line-switch]="isModal()"
+                    />
+        </svg>
+    </span>
+</div>

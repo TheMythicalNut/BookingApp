@@ -1,0 +1,13 @@
+<div class="flex flex-row justify-center roboto-500 text-sm">
+    <div 
+    [class.text-red-500]="!isOpen()"
+    [class.text-green-500]="isOpen()">
+        {{ isOpenText() }}
+    </div>
+    
+    @if(hasChangeTime()){
+        <div>&nbsp;•&nbsp;</div>
+        <div class="text-(--primary-color)">{{ getChangeText() }}</div>
+        <div class="text-(--primary-color)">&nbsp;{{ getChangeTime() }}</div>
+    }
+</div>

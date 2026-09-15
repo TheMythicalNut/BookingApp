@@ -1,0 +1,113 @@
+/* Wrapper */
+.checkbox-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.checkbox-wrapper:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* States */
+.checkbox-wrapper.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hidden native input */
+.native-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Visual checkbox box - HARD CODED COLORS for visibility */
+.checkbox-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #9ca3af;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+/* Hover */
+.checkbox-wrapper:not(.disabled):hover .checkbox-box {
+  border-color: #6b7280;
+}
+
+/* Checked state - BLUE */
+.checkbox-wrapper.checked .checkbox-box {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Indeterminate state - BLUE */
+.checkbox-wrapper.indeterminate .checkbox-box {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Size variants */
+.checkbox-wrapper.size-sm .checkbox-box {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-wrapper.size-md .checkbox-box {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-wrapper.size-lg .checkbox-box {
+  width: 24px;
+  height: 24px;
+}
+
+/* Icons */
+.check-icon,
+.indeterminate-icon {
+  width: 14px;
+  height: 14px;
+  color: white;
+  display: block;
+}
+
+.checkbox-wrapper.size-sm .check-icon,
+.checkbox-wrapper.size-sm .indeterminate-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.checkbox-wrapper.size-lg .check-icon,
+.checkbox-wrapper.size-lg .indeterminate-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Label */
+.checkbox-label {
+  color: #111827;
+  line-height: 1.5;
+}
+
+.checkbox-wrapper.disabled .checkbox-label {
+  color: #6b7280;
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 2px;
+}

@@ -1,0 +1,6 @@
+@if(hasPrimary()){
+<div class="m-3 p-2 border border-(--primary-color) rounded-sm playfair-display-400 text-lg text-center text-(--primary-color) cursor-pointer"
+    (click)="onPrimary()">
+    {{ getPrimaryText() | uppercase }}
+</div>
+}

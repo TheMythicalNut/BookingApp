@@ -1,0 +1,7 @@
+.top-line-switch {
+  transform: translateX(-5.66px) translateY(5.66px) rotate(45deg);
+}
+
+.bot-line-switch {
+  transform: translateX(-5.66px) translateY(-5.66px) rotate(-45deg);
+}

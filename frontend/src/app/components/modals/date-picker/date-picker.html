@@ -1,0 +1,112 @@
+@if(isOpen()){
+<div class="fixed inset-0 z-50 flex items-end justify-center"
+     (click)="onBackdropClick()">
+  
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/25"></div>
+  
+  <!-- Modal Content -->
+  <div class="relative w-full max-w-4xl bg-white rounded-t-3xl shadow-2xl max-h-[90vh] overflow-hidden"
+       (click)="$event.stopPropagation()"
+       [ngClass]="{'reveal-modal': isOpen, 'hide-modal': !isOpen}">
+    
+    <!-- Header -->
+    <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-md font-semibold text-(--primary-color) roboto-400">
+          {{ (view === 'date' ? 'DATEPICKER.TITLE' : 'TIMEPICKER.TITLE' ) | translate}}
+        </h2>
+        <button (click)="onBackdropClick()" class="text-(--primary-color) cursor-pointer">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Container -->
+    <div class="overflow-y-auto max-h-[calc(90vh-128px)] pb-10 scrollbar-none" id="calendar-scroll-container">
+      <div class="p-3 space-y-8">
+        
+        @if(view === 'date'){
+          <!-- Month Calendar -->
+           @for (calendar of calendars; track calendar) {
+            <div class="space-y-4">
+              
+              <!-- Month Header -->
+              <div class="text-center">
+                <h3 class="text-lg font-medium text-(--primary-color)">
+                  {{calendar.monthName}} {{calendar.year}}
+                </h3>
+              </div>
+
+              <!-- Calendar Grid -->
+              <div class="grid grid-cols-7 gap-1">
+                
+                <!-- Week Day Headers -->
+                @for (day of weekDays(); track $index) {
+                    <div class="text-center text-sm font-medium text-(--secondary-color) py-2">
+                        {{day}}
+                    </div>
+                }
+
+                <!-- Calendar Days -->
+                @for (day of calendar.days; track $index) {
+                    <button
+                            (click)="onDayClick(day)"
+                            [class.opacity-30]="!day.isCurrentMonth || day.isDisabled"
+                            [class.bg-(--tertiary-color)]="day.isRangeStart || day.isRangeEnd"
+                            [class.text-white]="day.isRangeStart || day.isRangeEnd || day.isInRange"
+                            [class.bg-(--secondary-color)]="day.isInRange && !day.isRangeStart && !day.isRangeEnd"
+                            [class.bg-gray-100]="day.isSelected && !day.isInRange"
+                            [class.text-gray-900]="!day.isCurrentMonth || day.isDisabled"
+                            [class.text-(--secondary-color)]="day.isSelected && !day.isInRange"
+                            [class.rounded-l-full]="day.isRangeStart"
+                            [class.rounded-r-full]="day.isRangeEnd"
+                            [class.text-red]="day.isToday"
+                            class="text-center text-sm py-2 transition-colors duration-200 cursor-pointer">
+                      {{day.date.getDate()}}
+                    </button>
+                }
+              </div>
+            </div>
+          }
+        }
+
+        @if(view === 'time'){
+          <div class="space-y-4 overflow-y-auto scrollbar-none">
+            <!-- START-TIME DRUM -->
+            <div>
+              <label class="block text-center text-lg font-medium text-(--primary-color) mb-2">
+                {{'TIMEPICKER.START' | translate}}
+              </label>
+              <time-drum [(ngModel)]="startModel" (ngModelChange)="syncStart()"></time-drum>
+            </div>
+
+            <!-- END-TIME DRUM -->
+            <div>
+              <label class="block text-center text-lg font-medium text-(--primary-color) mb-2">
+                {{'TIMEPICKER.END' | translate}}
+              </label>
+              <time-drum [(ngModel)]="endModel" (ngModelChange)="syncEnd()"></time-drum>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="sticky bottom-0 bg-white border-t border-gray-200 px-2 py-3">
+      <button (click)="onContinue()"
+              [disabled]="isContinueDisabled()"
+              [class.bg-(--secondary-color)]="isContinueDisabled()"
+              [class.bg-(--primary-color)]="!isContinueDisabled()"
+              [class.cursor-not-allowed]="isContinueDisabled()"
+              class="w-full h-5 px-4 text-white font-medium rounded-lg transition-colors duration-200 cursor-pointer">
+        {{ (view === 'date' ? 'BUTTON.CONTINUE' : 'BUTTON.CONFIRM') | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+}

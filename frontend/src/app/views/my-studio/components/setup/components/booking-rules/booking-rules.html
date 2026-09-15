@@ -1,0 +1,98 @@
+<section class="setup-section">
+    <div>
+        <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ getTitle() }}</h2>
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ getPar1() }} </p>
+    </div>
+
+
+    <app-error-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!viewInvalid()"
+    [class.grid-rows-[1fr]]="viewInvalid()"
+    [title]="errorTitle()"
+    [body]="errorBody()">
+    </app-error-message>
+
+    <!-- 
+    <label>
+    <app-checkbox
+    [checked]="rules().emailReminders"
+    (checkedChange)="setBookingRulesEmailReminders($event)">
+    </app-checkbox>
+    {{ getEmailRemindersTitle() }}
+    </label>
+    
+    <label>
+    <app-checkbox
+    [checked]="rules().smsReminders"
+    (checkedChange)="setBookingRulesSMSReminders($event)">
+    </app-checkbox>
+    {{ getSMSRemindersTitle() }}
+    </label>
+    -->
+    
+    <label>
+    <app-checkbox
+    [checked]="rules().visible"
+    (checkedChange)="setBookingRulesVisible($event)">
+    </app-checkbox>
+    {{ getBookingRulesVisibleTitle() }}
+    </label>
+
+    <!-- Field -->
+    <div class="w-full flex flex-row items-end gap-2">
+        <app-number-field
+        class="flex-1 md:flex-[2]"
+        [init]="selectedMinAheadValue()"
+        [title]="getMinAheadTitle()"
+        [validator]="minAheadValidator"
+        (onChange)="setMinAheadValue($event)">
+        </app-number-field>
+
+        <app-select
+        class="flex-1 min-w-0"
+        [init]="selectedTimeModifierMinName()"
+        [options]="timeModifierNames()"
+        (onChange)="setMinAheadModifier($event)"
+        [required]="false">
+        </app-select>
+    </div>
+    
+    <!-- Field -->
+    <div class="w-full flex flex-row items-end gap-2">
+        <app-number-field
+        class="flex-1 md:flex-[2]"
+        [init]="selectedMaxAheadValue()"
+        [title]="getMaxAheadTitle()"
+        [validator]="maxAheadValidator"
+        (onChange)="setMaxAheadValue($event)">
+        </app-number-field>
+
+        <app-select
+        class="flex-1 min-w-0"
+        [init]="selectedTimeModifierMaxName()"
+        [options]="timeModifierNames()"
+        (onChange)="setMaxAheadModifier($event)"
+        [required]="false">
+        </app-select>
+    </div>
+
+    <div class="flex flex-col items-center gap-2 mt-2">
+
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="getSaveButtonText()"
+        [type]="'outline'"
+        (action)="save()">
+        </app-button>
+
+        <app-button
+        [idleText]="getNextButtonText()"
+        (action)="next.emit()">
+        </app-button>
+    </div>
+</section>

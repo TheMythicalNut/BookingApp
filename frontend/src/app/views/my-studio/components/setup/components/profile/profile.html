@@ -1,0 +1,116 @@
+<section class="setup-section">
+    <div>
+        <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ title() }}</h2>
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ par1() }} </p>
+    </div>
+    
+    <app-error-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!viewInvalid()"
+    [class.grid-rows-[1fr]]="viewInvalid()"
+    [title]="errorTitle()"
+    [body]="errorBody()">
+    </app-error-message>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().studioName"
+    [title]="nameLabel()"
+    [placeholder]="namePlaceholder()"
+    [validator]="studioNameValidator"
+    (onChange)="setStudioName($event)">
+    </app-text-field>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().studioLink"
+    [title]="linkLabel()"
+    [prefix]="'https://spletka.com/'"
+    [placeholder]="linkPlaceholder()"
+    [validator]="studioLinkValidator"
+    (onChange)="setStudioLink($event)">
+    </app-text-field>
+
+    <app-multiselect
+    [init]="studioTypeName()"
+    [title]="typeLabel()"
+    [options]="studioTypeOptionsLabels()"
+    [validator]="studioTypeValidator"
+    (onChange)="setStudioType($event)">
+    </app-multiselect>
+
+    
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().contactEmail"
+    [title]="emailLabel()"
+    [placeholder]="emailPlaceholder()"
+    [validator]="studioContactEmailValidator"
+    (onChange)="setContactEmail($event)">
+    </app-text-field>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().contactPhone"
+    [title]="phoneLabel()"
+    [placeholder]="phonePlaceholder()"
+    [validator]="studioContactPhoneValidator"
+    (onChange)="setContactPhone($event)">
+    </app-text-field>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().instagram"
+    [title]="instagramLabel()"
+    [placeholder]="instagramPlaceholder()"
+    [validator]="studioInstagramLinkValidator"
+    (onChange)="setInstagram($event)"
+    [required]="false">
+    </app-text-field>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().facebook"
+    [title]="facebookLabel()"
+    [placeholder]="facebookPlaceholder()"
+    [validator]="studioFacebookLinkValidator"
+    (onChange)="setFacebook($event)"
+    [required]="false">
+    </app-text-field>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().whatsappPhone"
+    [title]="whatsappLabel()"
+    [placeholder]="phonePlaceholder()"
+    [validator]="studioContactWAPhoneValidator"
+    (onChange)="setWhatsapp($event)"
+    [required]="false">
+    </app-text-field>
+
+    <app-multideclare
+    [init]="view().searchTags"
+    [title]="searchTagsLabel()"
+    [validator]=""
+    (onChange)="setSearchTags($event)"
+    [required]="false">
+    </app-multideclare>
+
+    <div class="flex flex-col items-center gap-2">
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="saveLabel()"
+        [type]="'outline'"
+        (action)="save()">
+        </app-button>
+
+        <app-button
+        [idleText]="nextLabel()"
+        (action)="next.emit()">
+        </app-button>
+    </div>
+</section>

@@ -1,0 +1,140 @@
+<div class="flex flex-col gap-2">
+
+  @if(title()){
+    <div class="lora-500 text-sm text-(--secondary-color)">
+      {{title()}}
+      @if(maxFileCount()){
+      <span
+          class="lora-400 text-(--secondary-color) text-md">
+        {{ ' (max. ' + maxFileCount() + ')' }}
+      </span>
+      }
+      <span class="text-[#DC2626] font-semibold">
+        {{ required() ? '*' : '' }}
+      </span>
+
+      @if(helper()){
+        <span
+          id="helper-text"
+          class="lora-400 text-(--secondary-color) text-md">
+          {{ helper() }}
+        </span>
+      }
+    </div>
+  }
+
+  <div
+    role="button"
+    tabindex="0"
+    [attr.aria-invalid]="!!errorMessage()"
+    [attr.aria-describedby]="errorMessage() ? 'error-text' : 'helper-text'"
+
+    (click)="triggerFileSelect()"
+    (dragover)="onContainerDragOver($event)"
+    (dragleave)="onContainerDragLeave($event)"
+    (drop)="onContainerDrop($event)"
+    (focus)="isFocused.set(true)"
+    (blur)="isFocused.set(false)"
+
+    class="relative w-full rounded-xl border-2 border-dashed transition-all duration-200 cursor-pointer select-none"
+
+    [class.border-red-500]="errorMessage()"
+    [class.bg-red-50]="errorMessage()"
+    [class.border-[var(--secondary-color)]]="!errorMessage()"
+    [class.bg-indigo-50]="isDraggingFiles()"
+    [class.ring-2]="isFocused()"
+    [class.ring-offset-2]="isFocused()"
+  >
+
+    @if(!hasImages()){
+      <div class="px-6 py-8 flex flex-col items-center gap-2 text-center pointer-events-none">
+        <h3 class="text-lg font-medium">{{ label() }}</h3>
+        <p class="text-sm text-gray-500">{{ placeholder() }}</p>
+        <span class="text-xs text-gray-400">
+          {{ selectText() }}
+        </span>
+      </div>
+    }
+
+    <input
+      #fileInput
+      type="file"
+      accept="image/png,image/jpeg,image/jpg"
+      class="hidden"
+      multiple
+      (change)="onFileChange($event)"
+    />
+
+    <div
+      cdkDropList
+      [cdkDropListData]="imageUrls()"
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="onImageReorder($event)"
+      class="w-full flex gap-3 overflow-x-auto overflow-y-hidden px-2 py-2 scroll-smooth touch-pan-x"
+    >
+
+      @for (img of imageUrls(); track $index; let imageIndex = $index) {
+
+        <div
+          cdkDrag
+          cdkDragPreviewContainer="global"
+          [cdkDragStartDelay]="{ touch: 50, mouse: 0 }"
+          class="relative flex-shrink-0 w-[clamp(180px,30dvw,260px)] max-w-[260px]
+                 rounded-lg overflow-hidden border bg-white
+                 transition-shadow duration-200 shadow-sm hover:shadow-md {{ aspect() }}">
+
+          <div
+            cdkDragHandle
+            class="absolute z-10 bottom-2 right-2 bg-black/40 text-white/80 p-1 rounded cursor-grab active:cursor-grabbing">
+            ☰
+          </div>
+
+          <ng-template cdkDragPreview>
+            <div class="w-[clamp(180px,30dvw,260px)] max-w-[260px]
+                        rounded-lg overflow-hidden border-2 border-indigo-500
+                        shadow-2xl opacity-90 rotate-2 scale-105 bg-white {{ aspect() }}">
+              <img [src]="img" class="w-full h-full object-cover" />
+            </div>
+          </ng-template>
+
+          <ng-template cdkDragPlaceholder>
+            <div class="w-[clamp(180px,30dvw,260px)] max-w-[260px]
+                        rounded-lg border-2 border-dashed border-indigo-300
+                        bg-indigo-50/50 opacity-60 {{ aspect() }}">
+            </div>
+          </ng-template>
+
+          <div class="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded-full">
+            {{ imageIndex + 1 }}
+          </div>
+
+          <img
+            [src]="img"
+            [alt]="'Preview ' + (imageIndex + 1)"
+            class="w-full h-full object-cover pointer-events-none"
+          />
+
+          <button
+            type="button"
+            [attr.aria-label]="removeText()"
+            (click)="onRemove(imageIndex, $event)"
+            class="absolute top-2 right-2 w-5 h-5 rounded-full
+                   bg-white text-red-500 shadow flex items-center
+                   justify-center hover:scale-110 transition-transform
+                   focus:outline-none focus:ring-2 focus:ring-red-500">
+            ✕
+          </button>
+
+        </div>
+      }
+
+    </div>
+  </div>
+
+  @if(errorMessage()){
+    <p id="error-text" class="text-sm text-red-500 font-medium">
+      {{ errorMessage() }}
+    </p>
+  }
+
+</div>

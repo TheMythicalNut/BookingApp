@@ -1,0 +1,11 @@
+@switch (pageState()) {
+    @case ('loading') {
+        <app-spinner class="h-[calc(100dvh)] flex justify-center"></app-spinner>
+    }
+    @case ('dashboard') {
+        <my-studio-dashboard (navSetup)="pageState.set('setup')"></my-studio-dashboard>
+    }
+    @case('setup'){
+        <my-studio-setup (navDashboard)="pageState.set('dashboard')"></my-studio-setup>
+    }
+}

@@ -1,0 +1,75 @@
+<div class="max-w-4xl w-full transition-color duration-200"
+     [class.text-red-500]="hasValue() && !isValid() && !focused()">
+
+  <div class="lora-500 text-sm"
+       [class.text-(--secondary-color)]="!(hasValue() && !isValid() && !focused())"
+       [class.text-red-500]="hasValue() && !isValid() && !focused()">
+    {{ title() }}
+    <span class="text-[#DC2626] font-semibold">
+      {{ required() ? '*' : '' }}
+    </span>
+  </div>
+
+  <div class="relative w-full rounded-xl border border-neutral-200 bg-white shadow-sm
+              transition-all duration-200 hover:ring-1 hover:ring-neutral-300"
+       [class.border-red-500]="hasValue() && !isValid() && !focused()">
+
+    <!-- Selected chips + input -->
+    <div class="flex flex-wrap gap-1 p-1 pe-3 cursor-pointer"
+         (click)="focusedInput.set(true)">
+
+      @for (item of value(); track $index) {
+        <span
+          class="border border-neutral-300 bg-white text-(--secondary-color) shadow-sm
+                 hover:text-(--primary-color) hover:shadow-md hover:ring-1 hover:ring-neutral-300
+                 transition-all duration-200 px-2 py-0.5 rounded-full flex items-center"
+          (click)="removeOption(item, $event)">
+          {{ item }}
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="ml-1 cursor-pointer">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </span>
+      }
+
+      <input type="text"
+             class="flex-1 text-base roboto-400 focus:outline-none ps-1"
+             [placeholder]="value().length === 0 ? placeholder() : ''"
+             [(ngModel)]="inputTextValue"
+             (focus)="focusedInput.set(true)"
+             (blur)="focusedInput.set(false)"
+             (keydown.enter)="addOption(); $event.preventDefault()">
+    </div>
+
+    <!-- Invalid message -->
+    @if (hasValue() && !isValid() && !focused()) {
+      <div class="text-xs text-red-500 absolute mt-1">
+        {{ invalidMessage() }}
+      </div>
+    }
+
+    <!-- Clear all -->
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24" height="40"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="1.5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         class="me-1 absolute top-0 right-0 transition-opacity duration-200 ease-in-out"
+         [class.opacity-100]="hasValue()"
+         [class.pointer-events-auto]="hasValue()"
+         [class.opacity-0]="!hasValue()"
+         [class.pointer-events-none]="!hasValue()"
+         (click)="value.set([])">
+      <path d="M18 6 6 18"/>
+      <path d="m6 6 12 12"/>
+    </svg>
+
+  </div>
+</div>

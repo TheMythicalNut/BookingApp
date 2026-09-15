@@ -1,0 +1,176 @@
+
+<div class="bg-[#F7F8FA] min-h-[100dvh] w-full h-full">
+<main class="padding-start p-2 w-full h-full">
+<section class="flex flex-col items-center" style="background-color: transparent; box-shadow: none; gap: calc(var(--spacing) * 2)">
+
+    <div> {{hasAccess() ? 'turtle' : 'fox'}} </div>
+
+    <app-request-status-message
+    [status]="requestStatus()">
+    </app-request-status-message>
+    
+    <app-text-area
+    class="w-full flex justify-center"
+    [required]="false"
+    [maxLength]="4096"
+    (onChange)="hasAccess() ? request.set($event) : password.set($event)">
+    </app-text-area>
+
+    <app-button
+    [idleText]="'$=>'"
+    [type]="'primary'"
+    (action)="hasAccess() ? makeRequest() : login()">
+    </app-button>
+
+      <!-- Results Panel -->
+  @if (queryResult()) {
+    <div class="results-panel">
+
+      <!-- Header bar -->
+      <div class="results-header">
+        <span class="result-type-badge" [attr.data-type]="queryResult()!.type">
+          {{ queryResult()!.type.toUpperCase() }}
+        </span>
+        <span class="result-meta">
+          {{ getRowCount() }} row{{ getRowCount() === 1 ? '' : 's' }} 
+          @if (executionTimeMs()) {
+            <span class="exec-time">· {{ executionTimeMs() }}ms</span>
+          }
+        </span>
+        <button class="clear-btn" (click)="clearResult()">✕ clear</button>
+      </div>
+
+      <!-- SELECT -->
+      @if (queryResult()!.type === 'select') {
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead>
+              <tr>
+                @for (col of asSelect(queryResult()!).columns; track col) {
+                  <th>{{ col }}</th>
+                }
+              </tr>
+            </thead>
+            <tbody>
+              @for (row of asSelect(queryResult()!).rows; track $index) {
+                <tr>
+                  @for (col of asSelect(queryResult()!).columns; track col) {
+                    <td>
+                      <span class="cell-value" [attr.data-null]="row[col] === null">
+                        {{ row[col] === null ? 'NULL' : row[col] }}
+                      </span>
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+
+      <!-- INSERT -->
+      @if (queryResult()!.type === 'insert') {
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead>
+              <tr>
+                @for (col of getInsertColumns(); track col) {
+                  <th>{{ col }}</th>
+                }
+              </tr>
+            </thead>
+            <tbody>
+              @for (row of asInsert(queryResult()!).rows; track $index) {
+                <tr class="row-inserted">
+                  @for (col of getInsertColumns(); track col) {
+                    <td>
+                      <span class="cell-value" [attr.data-null]="row[col] === null">
+                        {{ row[col] === null ? 'NULL' : row[col] }}
+                      </span>
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+
+      <!-- DELETE -->
+      @if (queryResult()!.type === 'delete') {
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead>
+              <tr>
+                @for (col of getDeleteColumns(); track col) {
+                  <th>{{ col }}</th>
+                }
+              </tr>
+            </thead>
+            <tbody>
+              @for (row of asDelete(queryResult()!).rows; track $index) {
+                <tr class="row-deleted">
+                  @for (col of getDeleteColumns(); track col) {
+                    <td>
+                      <span class="cell-value" [attr.data-null]="row[col] === null">
+                        {{ row[col] === null ? 'NULL' : row[col] }}
+                      </span>
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+
+      <!-- UPDATE -->
+      @if (queryResult()!.type === 'update') {
+        <div class="update-rows">
+          @for (row of asUpdate(queryResult()!).rows; track $index) {
+            <div class="update-row-card">
+
+              <div class="update-row-header">
+                <span class="update-row-id">id: {{ row.id ?? '—' }}</span>
+                @if (row.diffWarning) {
+                  <span class="diff-warning">⚠ {{ row.diffWarning }}</span>
+                }
+                <span class="change-count">
+                  {{ objectKeys(row.changes).length }} field{{ objectKeys(row.changes).length === 1 ? '' : 's' }} changed
+                </span>
+              </div>
+
+              @if (objectKeys(row.changes).length > 0) {
+                <table class="diff-table">
+                  <thead>
+                    <tr>
+                      <th>field</th>
+                      <th>before</th>
+                      <th>after</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (key of objectKeys(row.changes); track key) {
+                      <tr>
+                        <td class="diff-field">{{ key }}</td>
+                        <td class="diff-before">{{ row.changes[key].before === null ? 'NULL' : row.changes[key].before }}</td>
+                        <td class="diff-after">{{ row.changes[key].after === null ? 'NULL' : row.changes[key].after }}</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              } @else if (!row.diffWarning) {
+                <p class="no-changes">No field changes detected</p>
+              }
+
+            </div>
+          }
+        </div>
+      }
+
+    </div>
+  }
+
+</section>
+</main>
+</div>

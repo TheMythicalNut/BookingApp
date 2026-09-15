@@ -1,0 +1,25 @@
+<div class="fixed bottom-0 left-0 right-0 bg-white z-10 flex flex-row p-1">
+
+    <div class="grow 
+    text-center text-xl playfair-display-400
+    transition-colors duration-200 ease-in-out
+    cursor-pointer hover:text-(--primary-color)"
+    [class.text-(--primary-color)]="isActive0()"
+    [class.text-(--secondary-color)]="!isActive0()"
+    (click)="setValue(0)"
+    >
+        {{getStudiosText() | uppercase}}
+    </div>
+    
+    <div class="grow
+    text-center text-xl playfair-display-400
+    transition-colors duration-200 ease-in-out
+    cursor-pointer hover:text-(--primary-color)"  
+    [class.text-(--primary-color)]="isActive1()"
+    [class.text-(--secondary-color)]="!isActive1()"
+    (click)="setValue(1)"
+    >
+        {{getServicesText() | uppercase}}
+    </div>
+
+</div>

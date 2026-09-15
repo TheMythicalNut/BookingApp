@@ -1,0 +1,93 @@
+@switch (pageState()) {
+    @case('reschedule'){
+        <app-filter-timeslot scrollIntoView
+        (openDatePicker)="showDatePicker.set(true);">
+        </app-filter-timeslot>
+
+        <div class="w-full flex justify-center">
+        <div class="w-full flex flex-col gap-4 max-w-4xl min-h-[calc(100dvh)]">
+            
+            <reserve-recommendations>
+            </reserve-recommendations>
+
+            <reserve-date-select
+            [articleOverride]="article()"
+            (selected)="selectDate($event)">
+            </reserve-date-select>
+
+            <reserve-timeslot-select
+            id="optionsAnchor"
+            class="p-2"
+            [date]="date()"
+            [articleOverride]="article()"
+            (selected)="selectTime($event)">
+            </reserve-timeslot-select>
+
+            <div class="fixed w-full z-50
+                right-0 left-0 bottom-0    
+                flex flex-col gap-2
+                items-center
+                bg-white border-t border-gray-200
+                px-2 py-3">
+                <button (click)="onChange()"
+                        [disabled]="isChangeDisabled()"
+                        [class.bg-(--secondary-color)]="isChangeDisabled()"
+                        [class.bg-(--primary-color)]="!isChangeDisabled()"
+                        class="w-full h-5 px-4 max-w-4xl text-white font-medium rounded-lg transition-colors duration-200 cursor-pointer">
+                {{ getButtonConfirmText() }}
+                </button>
+                
+                <button (click)="onSecondary()"
+                    class="w-full h-5 px-4 max-w-4xl text-black bg-white border-1 border-(--primary-color) font-medium rounded-lg cursor-pointer">
+                {{ getButtonBackText() }}
+                </button>
+            </div>
+
+        </div>
+        </div>
+
+        <app-date-picker
+        [isOpen]="showDatePicker()"
+        (close)="showDatePicker.set(false);">
+        </app-date-picker>
+    }
+    @case('overview'){
+
+        <div class="fixed w-full
+            right-0 left-0 bottom-0    
+            flex flex-col gap-2
+            items-center
+            bg-white border-t border-gray-200
+            px-2 py-3">
+            @if(!requireConfirmCancel()  && tooClose()){
+                <div class="text-(--primary-color) text-sm pb-1">{{getMessageTooClose()}}</div>
+            }
+            @if(requireConfirmCancel() && tooClose()){
+                <div class="text-red-500 text-sm pb-1">{{getMessageCancelPenalty()}}</div>
+            }
+            <button (click)="onPrimary()"
+                    [disabled]="isPrimaryDisabled()"
+                    [class.bg-red-500]="requireConfirmCancel()"
+                    [class.bg-(--secondary-color)]="isPrimaryDisabled()"
+                    [class.bg-(--primary-color)]="!isPrimaryDisabled()"
+                    class="w-full h-5 px-4 max-w-4xl text-white font-medium rounded-lg transition-colors duration-200 cursor-pointer">
+                    {{ 
+                    requireConfirmCancel()
+                        ? getButtonConfirmText()
+                        : hasPriv() 
+                            ? getButtonRescheduleText()
+                            : getButtonRescheduleText() + ' ' + getTermChanges() + '/' + maxChanges
+                    }}
+            </button>
+
+            <button (click)="onSecondary()"
+                class="w-full h-5 px-4 max-w-4xl text-black bg-white border-1 border-(--primary-color) font-medium rounded-lg cursor-pointer">
+                {{ 
+                requireConfirmCancel()
+                    ? getButtonBackText()
+                    : getButtonCancelText()
+                }}
+            </button>
+        </div>
+    }
+}

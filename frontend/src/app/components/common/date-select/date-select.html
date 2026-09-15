@@ -1,0 +1,114 @@
+<div
+  class="max-w-4xl w-full transition-color duration-200"
+  [class.text-red-500]="hasValue() && !isValid() && !focused()"
+>
+  <!-- Title -->
+  <div class="lora-500 text-sm"
+  [class.text-(--secondary-color)]="!(hasValue() && !isValid() && !focused())"
+  [class.text-red-500]="(hasValue() && !isValid() && !focused())">
+    {{ title() }} <span class="text-[#DC2626] font-semibold">{{ required() ? '*' : '' }}</span>
+  </div>
+
+  <div
+    class="relative w-full rounded-xl border border-neutral-200 shadow-sm bg-white
+          transition-all duration-200 hover:shadow-md hover:ring-1 hover:ring-neutral-300"
+    [class.border-red-500]="hasValue() && !isValid() && !focused()"
+    (click)="$event.stopPropagation()"
+  >
+    <!-- Input -->
+    <div
+      class="flex flex-wrap gap-1 p-1 pe-3 cursor-pointer"
+      (click)="isOpen.set(true); $event.stopPropagation()"
+    >
+      <input
+        type="text"
+        readonly
+        (focus)="focused.set(true)"
+        (blur)="focused.set(false)"
+        class="flex-1 text-base roboto-400 focus:outline-none ps-1 cursor-pointer"
+        [placeholder]="!hasValue() ? placeholder() : ''"
+        [ngModel]="hasValue() ? formatDisplay(value()) : ''"
+      />
+    </div>
+
+    <!-- Dropdown Calendar -->
+    @if (isOpen()) {
+    <div
+      class="absolute z-20 w-full mt-1 bg-white border border-(--secondary-color) rounded-sm shadow-md p-3"
+      tabindex="0"
+      (focus)="focused.set(true)"
+      (blur)="focused.set(false)"
+    >
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-2">
+        <button
+          type="button"
+          class="px-2 hover:text-(--secondary-color) shadow-md rounded-full text-xl cursor-pointer"
+          (click)="prevMonth(); $event.stopPropagation()"
+        >
+          ‹
+        </button>
+        <div class="font-medium">{{ monthLabel() }}</div>
+        <button
+          type="button"
+          class="px-2 hover:text-(--secondary-color) shadow-md rounded-full text-xl cursor-pointer"
+          (click)="nextMonth(); $event.stopPropagation()"
+        >
+          ›
+        </button>
+      </div>
+
+      <!-- Weekdays -->
+      <div class="grid grid-cols-7 text-xs text-center mb-1">
+        @for (day of weekDays(); track $index) {
+        <div class="py-1 font-medium">{{ day }}</div>
+        }
+      </div>
+
+      <!-- Days -->
+      <div class="grid grid-cols-7 text-sm text-center gap-1 max-h-64 overflow-auto">
+        @for (item of days(); track $index) {
+        <div
+          class="p-1 rounded-sm cursor-pointer"
+          [class.opacity-40]="!item.currentMonth"
+          [class.cursor-not-allowed]="isDisabled(item.date)"
+          [class.bg-(--secondary-color)]="isSelected(item.date)"
+          [class.text-white]="isSelected(item.date)"
+          [class.border]="isToday(item.date)"
+          [class.border-(--secondary-color)]="isToday(item.date)"
+          [class.hover:bg-(--secondary-color)]="!isDisabled(item.date)"
+          [class.hover:text-white]="!isDisabled(item.date)"
+          (mousedown)="selectDate(item.date)"
+        >
+          {{ item.date.getDate() }}
+        </div>
+        }
+      </div>
+    </div>
+    }
+
+    <!-- Invalid message -->
+    @if (hasValue() && !isValid() && !focused()) {
+    <div class="text-xs text-red-500 absolute mt-1">
+      {{ invalidMessage() }}
+    </div>
+    }
+
+    @if(hasClear()){
+      <!-- Clear all -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          class="me-1 absolute top-0 right-0 transition-opacity duration-200 ease-in-out"
+          [class.opacity-100]="hasValue()"
+          [class.pointer-events-auto]="hasValue()"
+          [class.opacity-0]="!hasValue()"
+          [class.pointer-events-none]="!hasValue()"
+          (click)="clear(); $event.stopPropagation()">
+                  <path d="M18 6 6 18"/>
+                  <path d="m6 6 12 12"/>
+      </svg>
+     }
+
+  </div>
+</div>

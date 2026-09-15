@@ -1,0 +1,18 @@
+@keyframes circle-enter-animation {
+    0% {
+        clip-path: circle(0% at 50% 50%);
+        opacity: 0;
+    }
+    100% {
+        clip-path: circle(150% at 50% 50%);
+        opacity: 1;
+    }
+}
+.circle-enter {
+    opacity: 0;
+    clip-path: circle(0% at 50% 50%);
+    animation-name: circle-enter-animation;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+}

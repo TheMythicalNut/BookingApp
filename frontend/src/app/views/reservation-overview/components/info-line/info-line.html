@@ -1,0 +1,10 @@
+<div class="flex justify-between"
+    [class.cursor-pointer]="isLink()">
+    <!-- left part -->
+    <span class="left">{{ left() }}</span>
+
+    <!-- right part -->
+    <span class="right-box">
+        <span class="right" [class.underline]="isLink()">{{ right() }}</span>
+    </span>
+</div>

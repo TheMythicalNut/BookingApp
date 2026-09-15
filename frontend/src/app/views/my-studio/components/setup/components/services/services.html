@@ -1,0 +1,174 @@
+<section class="setup-section"
+style="background-color: transparent; box-shadow: none;">
+
+  <div class="bg-white shadow-md rounded-2xl p-4 lora-400 text-(--primary-color)">
+    <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ t().title }}</h2>
+    <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ t().par1 }} </p>
+
+    <app-error-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!viewInvalid()"
+    [class.grid-rows-[1fr]]="viewInvalid()"
+    [title]="errorTitle()"
+    [body]="errorBody()">
+    </app-error-message>
+  </div>
+
+  @for (s of services(); track s.localID; let i = $index){
+    
+    <div class="rounded-2xl border border-neutral-200 bg-white shadow-sm px-2 md:px-4 lg:px-6 transition-all"
+      [class.border-red-500]="hasErrorIndex()[i]"
+      [class.py-6]="isExpanded(s.localID)"
+      [class.py-2]="!isExpanded(s.localID)">
+
+    @if (!isExpanded(s.localID)) {
+      <!-- HEADER -->
+      <div class="flex justify-between items-center cursor-pointer"
+      (click)="expandService(s.localID)">
+        <span class="text-sm font-medium text-neutral-500">
+          {{ s.name }}
+        </span>
+
+        <button
+          type="button"
+          (click)="removeService(i)"
+          class="h-6 w-6 rounded-full border border-red-200 text-red-500
+                 flex items-center justify-center hover:bg-red-50 cursor-pointer">
+          ✕
+        </button>
+      </div>
+    }
+    @else{
+      <!-- HEADER -->
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-sm font-medium text-neutral-500 cursor-pointer"
+        (click)="collapseService(s.localID)">
+          {{ s.name }}
+        </span>
+
+        <button
+          type="button"
+          (click)="removeService(i)"
+          class="h-6 w-6 rounded-full border border-red-200 text-red-500
+                 flex items-center justify-center hover:bg-red-50 cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="flex flex-col gap-4">
+
+        <app-text-field
+          [init]="s.name"
+          [title]="t().name"
+          (onChange)="setServiceName(i, $event)">
+        </app-text-field>
+    
+        <app-text-field
+        class="w-full flex justify-center"
+        [init]="s.link"
+        [title]="t().link"
+        [prefix]="'https://spletka.com/' + studioLink()"
+        [placeholder]="t().linkPlaceholder"
+        (onChange)="setServiceLink(i, $event)">
+        </app-text-field>
+      
+        <app-select
+          [init]="serviceCategoryMap().get(s.category) ?? ''"
+          [options]="categoryNames()"
+          [title]="t().category"
+          (onChange)="setServiceCategory(i, $event)">
+        </app-select>
+
+        <app-multiselect
+          [init]="translatedServiceTypesById().get(s.localID) ?? []"
+          [options]="serviceTypeNames()"
+          [title]="t().type"
+          (onChange)="setServiceTypes(i, $event)">
+        </app-multiselect>
+
+        <app-text-field
+          [init]="s.price"
+          [title]="t().price"
+          [placeholder]="'format. 1.234,56'"
+          (onChange)="setServicePrice(i, $event)">
+        </app-text-field>
+
+        <app-select
+          [init]="s.currency"
+          [options]="currencies"
+          [title]="t().currency"
+          (onChange)="setServiceCurrency(i, $event)">
+        </app-select>
+
+        <app-number-field
+          [init]="s.duration"
+          [title]="t().duration"
+          (onChange)="setServiceDuration(i, $event)">
+        </app-number-field>
+
+        <app-select
+          [init]="s.prerequiredService ? serviceNameMap().get(s.prerequiredService) : ''"
+          [options]="serviceNames()"
+          [title]="t().prereq"
+          (onChange)="setServicePrerequirement(i, $event)"
+          [required]="false"
+          [hasClear]="true"
+          (onClear)="clearServicePrerequirement(i)">
+        </app-select>
+
+        <app-text-area
+          [init]="s.description"
+          [title]="t().description"
+          [maxLength]="512"
+          (onChange)="setServiceDescription(i, $event)"
+          [required]="false">
+        </app-text-area>
+
+        <app-single-image-upload
+          [label]="t().thumbnail"
+          [placeholder]="t().thumbnailPlaceholder"
+          [imageUrl]="getThumbnailUrl(s.localID)"
+          (fileSelected)="setServiceThumbnail(i, $event)">
+        </app-single-image-upload>
+
+        <app-multi-image-upload
+          [imageUrls]="galleryUrlMap().get(s.localID) ?? []"
+          [label]="t().gallery"
+          [placeholder]="t().galleryPlaceholder"
+          [maxFileCount]="100"
+          (action)="handleAction(i, $event)">
+        </app-multi-image-upload>
+
+      </div>
+    }
+    </div>
+  }
+
+  <div class="flex flex-col items-center gap-3 pt-4">
+
+    
+    <app-request-status-message
+    [status]="requestStatus()">
+    </app-request-status-message>
+
+    <app-button
+      [idleText]="t().add"
+      type="secondary"
+      (action)="addService()">
+    </app-button>
+
+    <app-button
+      [disabled]="viewInvalid()"
+      [idleText]="t().save"
+      type="outline"
+      (action)="save()">
+    </app-button>
+
+    <app-button
+      [idleText]="t().next"
+      (action)="next.emit()">
+    </app-button>
+  </div>
+
+</section>

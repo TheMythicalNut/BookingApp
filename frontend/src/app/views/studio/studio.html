@@ -1,0 +1,65 @@
+@if(loading()){
+    <app-spinner class="flex justify-center h-[calc(100dvh)]"></app-spinner>
+}
+@else {
+<!-- TOPBAR -->
+<studio-topbar 
+(logoPressed)="toggleModalNavigation()"
+(menuPressed)="onMenuPressed()"
+(sharePressed)="onShare()"
+[state]="topbarState()">
+</studio-topbar>
+
+<!-- HERO CAROUSEL -->
+<studio-hero-carousel
+[images]="getImages()"
+[height]="getHeroHeight()"
+></studio-hero-carousel>
+
+<!-- BOOK PRIMARY -->
+<studio-button-book-primary>
+</studio-button-book-primary>
+
+<!-- OPEN STATUS -->
+<studio-open-status>
+</studio-open-status>
+
+<!-- NAVIGATE TO MAPS -->
+<studio-navigate-maps>
+</studio-navigate-maps>
+
+<studio-list-packages
+[packageWidth]="getServiceSize()">
+</studio-list-packages>
+
+<studio-list-services
+[serviceWidth]="getServiceSize()">
+</studio-list-services>
+
+<studio-working-days>
+</studio-working-days>
+
+<studio-map>
+</studio-map>
+
+<studio-contact-bar>
+</studio-contact-bar>
+
+<studio-menu
+[isOpen]="menuMode()" 
+(onService)="onService($event)" 
+(onPackage)="onPackage($event)"
+(close)="menuMode.set(false)">
+</studio-menu>
+
+<app-modal-navigation
+(close)="toggleModalNavigation()"
+[isOpen]="navigationMode()">
+</app-modal-navigation>
+
+<app-modal-container
+[ignoreStudio]="true"
+(opened)="stopScroll()"
+(closed)="allowScroll()">
+</app-modal-container>
+}

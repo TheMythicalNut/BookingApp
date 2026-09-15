@@ -1,0 +1,57 @@
+<div class="max-w-4xl w-full transition-color duration-200"
+    [class.text-red-500]="hasValue() && !isValid() && !focused()">
+
+    <div class="lora-500 text-sm"
+    [class.text-(--secondary-color)]="!(hasValue() && !isValid() && !focused())"
+    [class.text-red-500]="(hasValue() && !isValid() && !focused())">
+        {{title()}} <span class="text-[#DC2626] font-semibold">{{ required() ? '*' : '' }}</span>
+    </div>
+
+    <div class="relative w-full h-5 rounded-xl border border-neutral-200 bg-white shadow-sm
+          transition-all duration-200 hover:shadow-md hover:ring-1 hover:ring-neutral-300"
+        [class.border-red-500]="hasValue() && !isValid() && !focused()">
+
+        <input
+            type="number"
+            (blur)="focused.set(false)"
+            (focus)="focused.set(true)"
+            class="w-full h-5 text-(--primary-color) roboto-400 transition-padding duration-400 focus:outline-none appearance-none"
+            [class.ps-2]="!focused()"
+            [class.ps-1]="focused()"
+            [class.placeholder-(--secondary-color)]="!hasValue() || isValid() || focused()"
+            [placeholder]="placeholder()"
+            [ngModel]=" value()"
+            (ngModelChange)="setValue($event)"
+            [attr.min]="min()"
+            [attr.max]="max()"
+            [attr.step]="step()"
+        />
+
+        @if(hasValue() && !isValid() && !focused()){
+            <div class="text-xs text-red-500 absolute">
+                {{invalidMessage()}}
+            </div>
+        }
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="me-1 absolute top-0 right-0 transition-opacity duration-200 ease-in-out text-(--primary-color) cursor-pointer"
+            [class.opacity-100]="hasValue()"
+            [class.pointer-events-auto]="hasValue()"
+            [class.opacity-0]="!hasValue()"
+            [class.pointer-events-none]="!hasValue()"
+            (click)="clear()">
+
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+        </svg>
+
+    </div>
+</div>

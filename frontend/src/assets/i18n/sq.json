@@ -1,0 +1,790 @@
+{
+  "ALERTS": {
+    "WARNING": "Paralajmërim"
+  },
+  "DATEPICKER": {
+    "TITLE": "Zgjidhni Datën ose Intervalin"
+  },
+  "TIMEPICKER": {
+    "TITLE": "Ora e Fillimit të Dritares",
+    "START": "Fillimi i Dritares",
+    "END": "Fundi i Dritares"
+  },
+  "BUTTON": {
+    "CONTINUE": "vazhdo",
+    "SEND": "dërgo",
+    "CONFIRM": "konfirmo",
+    "RESERVE": "rezervo",
+    "BOOK": "bëj rezervim",
+    "LOGIN": "hyr",
+    "REGISTER": "regjistrohu",
+    "RESCHEDULE": "riprogramo",
+    "CANCEL": "anulo",
+    "BACK": "kthehu",
+    "OK": "ok",
+    "REVIEW": "vlerëso",
+    "TO_CHANGE_LANGUAGE": "ndrysho gjuhën",
+    "BACK_TO_NAVIGATION": "kthehu te navigimi",
+    "SAVE": "ruaj",
+    "NEXT": "tjetër",
+    "LOG_OUT": "dil",
+    "PUBLISH": "publiko",
+    "CLEAR": "pastro",
+    "MODIFY": "modifiko",
+    "MARK_COMPLETED": "shëno si të përfunduar",
+    "MARK_MISSED": "shëno si të humbur",
+    "MARK_CANCELLED": "shëno si të anuluar"
+  },
+  "DATE": {
+      "MONTH": "Muaj",
+      "MONTHS": "Muaj",
+      "WEEK": "Javë",
+      "WEEKS": "Javë",
+      "DAY": "Ditë",
+      "DAYS": "Ditë",
+      "HOURS": "Orë",
+      "MINUTES": "Minuta",
+      "DATE": "Datë",
+      "START_DATE": "Data e Fillimit",
+      "END_DATE": "Data e Mbarimit",
+      "TODAY": "Sot",
+      "TOMORROW": "Nesër",
+      "SUN": "Die",
+      "MON": "Hën",
+      "TUE": "Mar",
+      "WED": "Mër",
+      "THU": "Enj",
+      "FRI": "Pre",
+      "SAT": "Sht",
+      "SUNDAY": "E Diel",
+      "MONDAY": "E Hënë",
+      "TUESDAY": "E Martë",
+      "WEDNESDAY": "E Mërkurë",
+      "THURSDAY": "E Enjte",
+      "FRIDAY": "E Premte",
+      "SATURDAY": "E Shtunë",
+      "JANUARY": "Janar",
+      "FEBRUARY": "Shkurt",
+      "MARCH": "Mars",
+      "APRIL": "Prill",
+      "MAY": "Maj",
+      "JUNE": "Qershor",
+      "JULY": "Korrik",
+      "AUGUST": "Gusht",
+      "SEPTEMBER": "Shtator",
+      "OCTOBER": "Tetor",
+      "NOVEMBER": "Nëntor",
+      "DECEMBER": "Dhjetor",
+      "JAN": "Jan",
+      "FEB": "Shk",
+      "MAR": "Mar",
+      "APR": "Pri",
+      "JUN": "Qer",
+      "JUL": "Kor",
+      "AUG": "Gus",
+      "SEP": "Sht",
+      "OCT": "Tet",
+      "NOV": "Nën",
+      "DEC": "Dhj"
+  },
+  "PLACEHOLDER": {
+    "LOCATION": "vendndodhja",
+    "TIMESLOT": "orari",
+    "SERVICE_TYPE": "lloji i shërbimit",
+    "SEARCH": "kërko...",
+    "EMAIL": "person@email.com",
+    "PHONE": "+404 12 345 67 89",
+    "MESSAGE": "Kam një pyetje rreth...",
+    "ADDITIONAL": "Gjithashtu kam nevojë për...",
+    "PREREQUIRE": "Kërkon:",
+    "PASSWORD": "********",
+    "INSTAGRAM": "https://www.instagram.com/yourstudio",
+    "FACEBOOK": "https://www.facebook.com/yourstudio",
+    "STUDIO_NAME": "p.sh. Mala Velora",
+    "STUDIO_LINK": "https://spletka.com/malavelora",
+    "COUNTRY": "p.sh. Belgjikë",
+    "CITY": "p.sh. Namur",
+    "STREET": "p.sh. Rue du Coudrier",
+    "BUILDING_NUMBER": "p.sh. 17a",
+    "APARTMENT_NUMBER": "p.sh. 22",
+    "LATITUDE": "p.sh. 50.46991076980096",
+    "LONGITUDE": "p.sh. 4.817955399505059",
+    "THUMBNAIL": "Vertikale · 720x1080 · raporti 2:3. Kjo është imazhi i parë që shohin klientët.",
+    "HERO_IMAGES": "Deri në 3 imazhe horizontale · 1080x720 · Tërhiq për të rirenditur."
+  },
+  "STUDIO_TYPE": {
+    "HAIR_STYLIST": "stilist flokësh",
+    "NAIL_TECHNICIAN": "teknicien thonjsh",
+    "MASSAGE_THERAPIST": "terapist masazhi",
+    "BARBER": "berbër",
+    "MAKEUP_ARTIST": "artist grimi",
+    "ESTHETICIAN": "estetician",
+    "WAX_SPECIALIST": "specialist depilimi me dyll",
+    "TATTOO_ARTIST": "artist tatuazhesh",
+    "MICROBLADING_ARTIST": "artist microblading",
+    "SPRAY_TAN_SPECIALIST": "specialist spray tan",
+    "HENNA_ARTIST": "artist hene"
+  },
+  "PACKAGE_TYPE": "paketë",
+  "SERVICE_TYPE": {
+    "HAIRCUT": "prerje flokësh",
+    "BLOWOUT": "tharje dhe stilim",
+    "HAIR_COLORING": "ngjyrosje flokësh",
+    "HIGHLIGHTS_AND_BALAYAGE": "highlights & balayage",
+    "HAIR_EXTENSIONS": "zgjatim flokësh",
+    "BRAIDS_AND_PROTECTIVE_STYLES": "gërshetim & stilime mbrojtëse",
+    "NATURAL_HAIR_TREATMENT": "trajtim natyral i flokëve",
+    "KERATIN_AND_SMOOTHING": "keratin & zbutje",
+    "LOCS_AND_DREADLOCKS": "locs & dreadlocks",
+    "SCALP_TREATMENT": "trajtim i lëkurës së kokës",
+
+    "MANICURE": "manikyr",
+    "PEDICURE": "pedikyr",
+    "GEL_NAILS": "thonjtë me xhel",
+    "ACRYLIC_NAILS": "thonjtë me akril",
+    "NAIL_ART": "nail art",
+    "NAIL_EXTENSIONS": "zgjatim thonjsh",
+    "PRESS_ON_NAILS": "thonjtë press-on",
+    "NAIL_REPAIR": "riparim thonjsh",
+
+    "SWEDISH_MASSAGE": "masazh suedez",
+    "DEEP_TISSUE_MASSAGE": "masazh i indit të thellë",
+    "HOT_STONE_MASSAGE": "masazh me gurë të nxehtë",
+    "PRENATAL_MASSAGE": "masazh prenatal",
+    "SPORTS_MASSAGE": "masazh sportiv",
+    "LYMPHATIC_DRAINAGE": "drenazh limfatik",
+    "HEAD_AND_SCALP_MASSAGE": "masazh i kokës & lëkurës",
+    "REFLEXOLOGY": "refleksologji",
+
+    "MENS_HAIRCUT": "prerje flokësh për burra",
+    "FADE_AND_TAPER": "fade & taper",
+    "BEARD_TRIM": "rregullim mjekre",
+    "HOT_TOWEL_SHAVE": "rrojë me peshqir të nxehtë",
+    "KIDS_HAIRCUT": "prerje flokësh për fëmijë",
+    "HAIR_DESIGN_AND_LINEUP": "dizajn flokësh & lineup",
+
+    "EVERYDAY_MAKEUP": "grim i përditshëm",
+    "BRIDAL_MAKEUP": "grim nusërie",
+    "EVENT_AND_OCCASION_MAKEUP": "grim për eventi & raste",
+    "AIRBRUSH_MAKEUP": "grim me airbrush",
+    "EDITORIAL_MAKEUP": "grim editorial",
+    "MAKEUP_LESSON": "mësim grimi",
+
+    "CLASSIC_FACIAL": "facial klasik",
+    "DEEP_CLEANSING_FACIAL": "facial me pastrm të thellë",
+    "ANTI_AGING_FACIAL": "facial anti-plakje",
+    "ACNE_TREATMENT": "trajtim akneje",
+    "CHEMICAL_PEEL": "peeling kimik",
+    "DERMAPLANING": "dermaplaning",
+    "MICRODERMABRASION": "mikrodermabrazion",
+    "LED_LIGHT_THERAPY": "terapia me dritë LED",
+    "HYDRAFACIAL": "hydrafacial",
+
+    "BODY_WAXING": "depilim me dyll i trupit",
+    "FACIAL_WAXING": "depilim me dyll i fytyrës",
+    "BIKINI_AND_BRAZILIAN_WAX": "depilim bikini & brazilian",
+    "THREADING": "threading",
+    "SUGARING": "sugaring",
+    "LASER_HAIR_REMOVAL": "heqje qime me lazer",
+
+    "CUSTOM_TATTOO": "tatuazh i personalizuar",
+    "FLASH_TATTOO": "tatuazh flash",
+    "TATTOO_COVERUP": "mbulim tatuazhi",
+    "FINE_LINE_TATTOO": "tatuazh me vija të holla",
+    "BLACKWORK_TATTOO": "tatuazh blackwork",
+    "WATERCOLOR_TATTOO": "tatuazh akuarel",
+    "TATTOO_TOUCH_UP": "rifreskim tatuazhi",
+
+    "MICROBLADING": "microblading",
+    "POWDER_BROWS": "powder brows",
+    "BROW_LAMINATION": "laminim vetullash",
+    "BROW_TINTING": "ngjyrosje vetullash",
+    "BROW_SHAPING": "formësim vetullash",
+    "LASH_EXTENSIONS": "zgjatim qerpikësh",
+    "LASH_LIFT_AND_TINT": "lash lift & ngjyrosje",
+    "NANO_BROWS": "nano brows",
+
+    "FULL_BODY_SPRAY_TAN": "spray tan i plotë trupor",
+    "AIRBRUSH_TAN": "tan me airbrush",
+    "EXPRESS_TAN": "tan ekspres",
+    "BRIDAL_TAN": "tan nusërie",
+
+    "TRADITIONAL_HENNA": "hena tradicionale",
+    "BRIDAL_HENNA": "hena nusërie",
+    "JAGUA_TATTOO": "tatuazh jagua",
+    "GLITTER_TATTOO": "tatuazh me gliter",
+    "BODY_PAINTING": "body painting"
+  },
+  "STUDIOS": "Studio",
+  "SERVICES": "Shërbime",
+  "STUDIO": "Studio",
+  "SERVICE": "Shërbim",
+  "PACKAGE": "Paketë",
+  "NAVIGATIONS":{
+    "HOME": "kryefaqja",
+    "MY_STUDIO": "studioja ime",
+    "CONTACT": "kontakt",
+    "TOS": "kushtet e shërbimit"
+  },
+  "MESSAGES": {
+    "LINK_COPIED": "Lidhja u kopjua në clipboard",
+    "OPEN": "hapur",
+    "CLOSED": "momentalisht i mbyllur",
+    "OPEN_DAYS": "Hapur: ",
+    "CLOSED_ALL_WEEK": "Mbyllur: Gjithë Javën",
+    "OPENS_AT": "hapet në",
+    "CLOSES_AT": "mbyllet në",
+    "TOO_CLOSE_TO_RESCHEDULE": "*Riprogramimi nuk lejohet për takime kaq të afërta",
+    "CANCEL_PENALTY": "*Anulimet e vonuara i nënshtrohen një gjobe",
+    "MORE_DETAILS": "Për më shumë detaje spletka.com/contact",
+    "MISSED_SCHEDULE": "Mosrespektimi i takimeve të rezervuara ndikon negativisht te ofruesit e shërbimeve dhe përdoruesit e tjerë. Dështime të përsëritura për të qenë prezent mund të rezultojnë në pezullim ose përfundim të aksesit në shërbim.",
+    "RATING_GRATITUDE": "Faleminderit që vlerësuat shërbimin",
+    "DRAG_TO_REORDER": "Tërhiq për të rirenditur"
+  },
+  "ERRORS": {
+    "INVALID_EMAIL": "ky email është i pavlefshëm",
+    "INVALID_PASSWORD": "kjo fjalëkalim është i pavlefshëm",
+    "INVALID_PHONE": "ky numër telefoni është i pavlefshëm",
+    "CONFIRM_PASSWORD_MISMATCH": "fjalëkalimet nuk përputhen",
+    "CONFIRM_REGISTRATION_FAILED": "Gabim: konfirmimi i regjistrimit dështoi, provoni të ringarkoni faqen ose kontrolloni lidhjen URL.",
+    "CONTACT_US": "Na kontaktoni nëse gabimi vazhdon!",
+    "PASSWORD_MUST_BE_STRING": "Fjalëkalimi duhet të jetë tekst",
+    "PASSWORD_EXCEEDS_PROCESSING_LENGTH": "Fjalëkalimi tejkalon gjatësinë e lejuar të përpunimit",
+    "PASSWORD_MIN_LENGTH": "Fjalëkalimi duhet të ketë të paktën 12 karaktere",
+    "PASSWORD_MAX_LENGTH": "Fjalëkalimi nuk duhet të kalojë 48 karaktere",
+
+    "SETUP": {
+      "PROFILE": {
+        "TITLE": "Formulari i Profilit të Studios është i Pavlefshëm",
+        "INVALID_PROFILE": "Formulari i Profilit të Studios është i Pavlefshëm",
+        "MISSING_STUDIO_NAME": "Emri i studios është i detyrueshëm",
+        "TOO_SHORT_STUDIO_NAME": "Emri i studios duhet të ketë të paktën 3 karaktere",
+        "MISSING_STUDIO_LINK": "Lidhja e studios është e detyrueshme",
+        "TOO_SHORT_STUDIO_LINK": "Lidhja e studios duhet të ketë të paktën 3 karaktere",
+        "MISSING_STUDIO_TYPES": "Duhet të zgjidhet të paktën një lloj studio",
+        "MISSING_CONTACT_EMAIL": "Email-i i kontaktit është i detyrueshëm",
+        "INVALID_CONTACT_EMAIL": "Vendosni një adresë email kontakti të vlefshme",
+        "MISSING_CONTACT_PHONE": "Numri i telefonit të kontaktit është i detyrueshëm",
+        "INVALID_CONTACT_PHONE": "Vendosni një numër telefoni kontakti të vlefshëm",
+        "INVALID_INSTAGRAM": "Vendosni një URL të vlefshme të profilit Instagram",
+        "INVALID_FACEBOOK": "Vendosni një URL të vlefshme të profilit Facebook",
+        "INVALID_WA_PHONE": "Vendosni një numër WhatsApp të vlefshëm"
+      },
+      "LOCATION": {
+        "TITLE": "Formulari i Vendndodhjes është i Pavlefshëm",
+        "INVALID_LOCATION": "Formulari i Vendndodhjes së Studios është i Pavlefshëm",
+        "MISSING_COUNTRY": "Shteti i studios është i detyrueshëm",
+        "MISSING_CITY": "Qyteti i studios është i detyrueshëm",
+        "MISSING_STREET": "Rruga e studios është e detyrueshme",
+        "MISSING_BUILDING_NUMBER": "Numri i ndërtesës së studios është i detyrueshëm",
+        "MISSING_APARTMENT_NUMBER": "Numri i apartamentit të studios është i detyrueshëm",
+        "INVALID_LATITUDE": "Vendosni një gjerësi gjeografike midis -90 dhe 90",
+        "INVALID_LONGITUDE": "Vendosni një gjatësi gjeografike midis -180 dhe 180",
+        "MISSING_LATITUDE": "Gjerësia gjeografike është e detyrueshme",
+        "MISSING_LONGITUDE": "Gjatësia gjeografike është e detyrueshme"
+      },
+      "MEDIA": {
+        "TITLE": "Formulari i Medias është i Pavlefshëm",
+        "INVALID_MEDIA": "Formulari i Medias është i Pavlefshëm",
+        "MISSING_THUMBNAIL": "Një thumbnail është e detyrueshme",
+        "INVALID_HERO_IMAGES_COUNT": "Duhet të siguroni midis 1 dhe 3 imazhe hero",
+        "INVALID_HERO_IMAGE": "Një ose më shumë imazhe hero janë të pavlefshme"
+      },
+      "SCHEDULE": {
+        "TITLE": "Formulari i Orarit është i Pavlefshëm",
+        "INVALID_SCHEDULES_ARRAY":          "Formulari i orareve është i deformuar",
+        "MISSING_SCHEDULES":                "Lista e orareve mungon",
+        "EMPTY_SCHEDULES":                  "Kërkohet të paktën një orar",
+        "MISSING_EFFECTIVE_FROM":           "Data e hyrjes në fuqi është e detyrueshme",
+        "EFFECTIVE_FROM_INVALID_FORMAT":    "Data e hyrjes në fuqi është e pavlefshme",
+        "MISSING_EFFECTIVE_TO":             "Data e mbarimit të fuqisë është e detyrueshme",
+        "EFFECTIVE_TO_INVALID_FORMAT":      "Data e mbarimit të fuqisë është e pavlefshme",
+        "EFFECTIVE_RANGE_INVALID":          "Data e mbarimit duhet të jetë pas datës së fillimit",
+        "INVALID_SCHEDULE":                 "Orari është i pavlefshëm",
+        "INVALID_DAYS_AMOUNT":              "Numri i ditëve është i pavlefshëm",
+        "INVALID_DAY":                      "Dita është e pavlefshme",
+        "MISSING_DAY_NAME":                 "Emri i ditës është i detyrueshëm",
+        "INVALID_INTERVALS":                "Intervalet janë të pavlefshme",
+        "MISSING_INTERVALS":                "Kërkohet të paktën një interval",
+        "OVERLAPPING_INTERVALS":            "Intervalet mbivendosen",
+        "INVALID_INTERVAL":                 "Intervali është i pavlefshëm",
+        "INVALID_INTERVAL_START":           "Vendosni një fillim intervali të vlefshëm",
+        "INVALID_INTERVAL_END":             "Vendosni një fund intervali të vlefshëm",
+        "INVALID_INTERVAL_RANGE":           "Fundi i intervalit duhet të jetë pas fillimit"
+      },
+      "EXCEPTIONS": {
+        "TITLE": "Formulari i Përjashtimeve të Orarit është i Pavlefshëm",
+        "INVALID_EXCEPTIONS": "Formulari i Përjashtimeve është i Pavlefshëm",
+        "INVALID_EXCEPTIONS_ARRAY": "Përjashtimet duhet të jenë një Array",
+        "INVALID_EXCEPTION": "përjashtimi është i pavlefshëm",
+        "INVALID_EXCEPTION_TYPE": "zgjidhni një lloj përjashtimi të vlefshëm",
+        "INVALID_INTERVALS": "intervalet janë të pavlefshme",
+        "MISSING_INTERVALS": "kërkohet të paktën një interval",
+        "INVALID_APPLIES_TO": "data ose intervali i zgjedhur është i pavlefshëm.",
+        "OVERLAPPING_INTERVALS": "intervalet mbivendosen",
+        "INVALID_INTERVAL": "intervali është i pavlefshëm",
+        "INVALID_INTERVAL_START": "vendosni një fillim intervali të vlefshëm",
+        "INVALID_INTERVAL_END": "vendosni një fund intervali të vlefshëm",
+        "INVALID_INTERVAL_RANGE": "intervali i datave është i pavlefshëm"
+      },
+      "CATEGORIES": {
+        "TITLE": "Formulari i Kategorive është i Pavlefshëm",
+        "EMPTY_NAME": "emri është i detyrueshëm",
+        "DUPLICATE_NAME": "emri duhet të jetë unik"
+      },
+      "SERVICES": {
+        "TITLE": "Formulari i Shërbimeve është i Pavlefshëm",
+        "REQUIRED": "Kërkohet të paktën një shërbim",
+        "INVALID_SERVICE": "është i pavlefshëm",
+        "MISSING_LOCAL_ID": "mungon id-ja lokale",
+        "MISSING_NAME": "emri është i detyrueshëm",
+        "MISSING_LINK": "lidhja është e detyrueshme",
+        "MISSING_CATEGORY": "kategoria është e detyrueshme",
+        "MISSING_CURRENCY": "valuta është e detyrueshme",
+        "INVALID_PRICE": "çmimi është i pavlefshëm",
+        "INVALID_DURATION": "kohëzgjatja është e pavlefshme",
+        "INVALID_SERVICE_TYPES": "llojet e shërbimit janë të pavlefshme",
+        "INVALID_THUMBNAIL": "thumbnail është e detyrueshme",
+        "INVALID_GALLERY": "galeria është e pavlefshme",
+        "DUPLICATE_LINK": "lidhja duhet të jetë unike",
+        "MISSING_PRICE": "çmimi është i detyrueshëm",
+        "MISSING_DURATION": "kohëzgjatja është e detyrueshme"
+      },
+      "PACKAGES": {
+        "TITLE": "Formulari i Paketave është i Pavlefshëm",
+        "INVALID_PACKAGE": "është i pavlefshëm",
+        "MISSING_LOCAL_ID": "mungon id-ja lokale",
+        "MISSING_NAME": "emri është i detyrueshëm",
+        "MISSING_LINK": "lidhja është e detyrueshme",
+        "MISSING_CURRENCY": "valuta është e detyrueshme",
+        "INVALID_PRICE": "çmimi është i pavlefshëm",
+        "INVALID_DURATION": "kohëzgjatja është e pavlefshme",
+        "MISSING_SERVICES": "shërbimet janë të detyrueshme",
+        "INVALID_SERVICES": "shërbime të pavlefshme",
+        "DUPLICATE_SERVICES": "ka shërbime të dyfishta",
+        "DUPLICATE_LINK": "lidhja duhet të jetë unike",
+        "MISSING_PRICE": "çmimi është i detyrueshëm",
+        "MISSING_DURATION": "kohëzgjatja është e detyrueshme"
+      },
+      "DISCOUNTS": {
+        "TITLE": "Formulari i Zbritjeve është i Pavlefshëm",
+        "INVALID_DISCOUNT": "është i pavlefshëm",
+        "MISSING_LOCAL_ID": "mungon id-ja",
+        "MISSING_ARTICLE": "zgjidhni një artikull",
+        "INVALID_PERCENTAGE": "përqindja është e pavlefshme",
+        "MISSING_ARTICLE_LOCAL_ID": "mungon id-ja e artikullit",
+        "INVALID_ARTICLE_TYPE": "lloji i artikullit është i pavlefshëm",
+        "DUPLICATE_ARTICLE_TARGET": "zbritja ekziston tashmë për artikullin e zgjedhur",
+        "MISSING_PERCENTAGE": "përqindja e zbritjes është e detyrueshme"
+      },
+      "BOOKING_RULES": {
+        "TITLE": "Formulari i Rregullave të Rezervimit është i Pavlefshëm",
+        "INVALID_BOOKING_RULES": "Rregullat e rezervimit të studios janë të pavlefshme",
+        "INVALID_EMAIL_REMINDERS": "Kujtuesi me email duhet të jetë ose i vërtetë ose i rremë",
+        "INVALID_SMS_REMINDERS": "Kujtuesi me SMS duhet të jetë ose i vërtetë ose i rremë",
+        "INVALID_MIN_AHEAD": "Koha minimale e rezervimit paraprak duhet të jetë të paktën 30 minuta",
+        "INVALID_MAX_AHEAD": "Koha maksimale e rezervimit paraprak duhet të jetë të paktën 7 ditë",
+        "MIN_AHEAD_EXCEEDS_MAX_AHEAD": "Koha minimale e rezervimit paraprak nuk mund të kalojë kohën maksimale",
+        "MISSING_MIN_AHEAD": "Koha minimale e rezervimit paraprak është e detyrueshme",
+        "MISSING_MAX_AHEAD": "Koha maksimale e rezervimit paraprak është e detyrueshme"
+      },
+      "PUBLISH": {
+        "TITLE_ERROR": "Publikimi i Padisponueshëm - Rregulloni Gabimet Ekzistuese",
+        "TITLE_MODIFY": "Publikimi i Padisponueshëm - Ruani Formularët e Modifikuar"
+      }
+    }
+  },
+  "TEXTFIELD_TITLES": {
+    "STUDIO_TYPE": "Lloji i Studios",
+    "STUDIO_NAME": "Emri i Studios",
+    "STUDIO_LINK": "Lidhja e Studios",
+    "CATEGORY_NAME": "Emri i Kategorisë",
+    "EMAIL": "Adresa E-mail",
+    "PHONE": "Numri i Telefonit",
+    "MESSAGE": "Mesazh",
+    "PASSWORD": "Fjalëkalim",
+    "CONFIRM_PASSWORD": "Konfirmo Fjalëkalimin",
+    "COMMENT": "Koment",
+    "ADDITIONAL": "Shënim shtesë",
+    "INSTAGRAM": "Lidhja Instagram",
+    "FACEBOOK": "Lidhja Facebook",
+    "CONTACT_EMAIL": "Email Kontakti",
+    "CONTACT_PHONE": "Telefon Kontakti",
+    "WHATSAPP": "Telefon WhatsApp",
+    "SEARCH_TAGS": "Etiketat e Kërkimit",
+    "COUNTRY": "Shteti",
+    "CITY": "Qyteti",
+    "STREET": "Rruga",
+    "BUILDING_NUMBER": "Numri i Ndërtesës",
+    "APARTMENT_NUMBER": "Numri i Apartamentit",
+    "LATITUDE": "Gjerësia Gjeografike",
+    "LONGITUDE": "Gjatësia Gjeografike",
+    "THUMBNAIL": "Thumbnail",
+    "HERO_IMAGES": "Imazhet Hero"
+  },
+  "MY_STUDIO": {
+    "LOGIN": {
+      "TITLE": "Hyrje",
+      "TO_REGISTER": {
+        "NORMAL": "nuk keni llogari?",
+        "UNDERLINED": "regjistrohuni këtu!"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Regjistrim",
+      "TO_TERMS": {
+        "NORMAL": "dëshironi më shumë informacion?",
+        "UNDERLINED": "lexoni kushtet tona të shërbimit"
+      }
+    },
+    "CONFIRM": {
+      "TITLE": "Konfirmoni Adresën E-mail",
+      "MESSAGES": {
+        "EMAIL_CONFIRMATION_REQUIRED": "Email-i u dërgua te:",
+        "INSTRUCTION": "klikoni lidhjen e marrë për të verifikuar llogarinë tuaj",
+        "INVALID_EMAIL": "Adresa e pasaktë?",
+        "BACK": "Kthehu",
+        "EMAIL_NOT_RECEIVED": "Mesazhi nuk u mor?",
+        "SEND_AGAIN": "Dërgoje Përsëri"
+      }
+    },
+    "CONFIRMED": {
+      "TITLE": "Regjistrimi u Konfirmua",
+      "BODY": "Regjistrim i suksesshëm për adresën e email-it:"
+    }
+  },
+  "FAQS": {
+    "TITLE_FAQ": "Pyetje të Shpeshta",
+    "TITLE_DIRECT": "Na Pyesni Drejtpërdrejt!",
+    "QUESTIONS": [
+      {"QUESTION": "Si e listoj sallonin tim në platformë?", "ANSWER": "Na kontaktoni dhe merrni udhëzuesin e hyrjes, i cili ju udhëzon se si të jepni detaje të sakta të sallonit, të ngarkoni foto, të listoni shërbimet tuaja dhe të caktoni disponueshmërinë tuaj. Udhëzuesi ynë hap pas hapi e bën të thjeshtë."},
+      {"QUESTION": "A mund t'i menaxhoj takimet e mia nëpërmjet platformës?", "ANSWER": "Po, mund të shikoni, konfirmoni, riprogramoni ose anuloni takimet drejtpërdrejt nëpërmjet platformës. Do të merrni gjithashtu njoftimet për rezervimet e reja."},
+      {"QUESTION": "Si i caktoj shërbimet, çmimet dhe kohëzgjatjet e mia?", "ANSWER": "Mund të shtoni, modifikoni ose hiqni shërbime në çdo kohë në profilin tuaj. Caktoni çmimin, kohëzgjatjen dhe shënimet e veçanta për çdo shërbim për të pasqyruar saktë ofertat tuaja."},
+      {"QUESTION": "A mund të menaxhoj anëtarë të shumtë të stafit?", "ANSWER": "Jo, platforma është menduar për ofruesit individualë të shërbimeve. Qëllimi është të barazojë fushën e lojës me franshizat e mëdha duke përdorur të dhëna dhe statistika për të shfrytëzuar ekspertizën strukturore."},
+      {"QUESTION": "Si i trajtoj anulimet ose mungesat?", "ANSWER": "Platforma ndalon automatikisht munguesit dhe mund të aplikojë tarifa të personalizuara të anulimit të vonuar për takimet e ardhshme."},
+      {"QUESTION": "A do të paguhem nëpërmjet platformës?", "ANSWER": "Jo, momentalisht platforma nuk përpunon pagesa. Ju merrni pagesa drejtpërdrejt nga klientët në sallon."},
+      {"QUESTION": "A mund të ofroj promovime ose zbritje?", "ANSWER": "Mund të krijoni oferta speciale ose paketa për të tërhequr klientë të rinj dhe/ose për të mbajtur ato ekzistues."},
+      {"QUESTION": "Si e menaxhoj informacionin e klientëve?", "ANSWER": "Platforma ofron një sistem të sigurt të menaxhimit të klientëve. Mund të shikoni historikun e rezervimeve, detajet e kontaktit dhe shënimet për çdo klient duke ruajtur pajtueshmërinë me privatësinë."},
+      {"QUESTION": "A mund të ndjek performancën e sallonit tim?", "ANSWER": "Po. Ndërsa pultet tona aktuale ofrojnë njohuri thelbësore, ne po rrokullisin vazhdimisht përditësime të shpeshta për të ofruar një përvojë më të fuqishme. Së shpejti, do të keni qasje në metrika gjithëpërfshirëse — duke përfshirë të ardhurat, shërbimet e njohura, renditjet lokale dhe sjelljen e klientëve të rregullt. Të gjitha të dizajnuara për t'ju ndihmuar të rritni biznesin tuaj."},
+      {"QUESTION": "A ka mbështetje për klientët nëse kam nevojë për ndihmë?", "ANSWER": "Po, platforma ofron mbështetje të dedikuar për pronarët, duke përfshirë video tutoriale, dokumentacion dhe asistencë me email për çdo problem ose pyetje."},
+
+      {"QUESTION": "Çfarë shërbimesh mund të rezervoj nëpërmjet platformës?", "ANSWER": "Mund të rezervoni një gamë të gjerë shërbimesh duke përfshirë prerje flokësh, stilim, ngjyrosje, facial, manikyr, pedikyr, terapia masazhi, trajtime të kujdesit të lëkurës, depilime dhe shumë të tjera."},
+      {"QUESTION": "Si gjej një sallon pranë meje?", "ANSWER": "Përdorni funksionin e kërkimit të vendndodhjes për të gjetur të gjitha shërbimet në zonën tuaj."},
+      {"QUESTION": "A mund të rezervoj shërbime të shumta në një takim?", "ANSWER": "Po, shumë sallone ju lejojnë të rezervoni shërbime të shumta në një takim të vetëm. Kontrolloni profilin e sallonit për paketat e disponueshme për kombinimet e shërbimeve."},
+      {"QUESTION": "Si paguaj për takimin tim?", "ANSWER": "Personalisht tek ofruesi i shërbimit. Platforma nuk përpunon pagesa për shkak të besimit tonë se një platformë e përpunimit të pagesave ka incentiva të keqadjustuara për të shfrytëzuar algoritmikisht ofruesit e shërbimeve."},
+      {"QUESTION": "A mund të rezervoj një takim për dikë tjetër?", "ANSWER": "Po, mund të planifikoni takime për familjen ose miqtë duke ofruar detajet e tyre gjatë procesit të rezervimit."},
+      {"QUESTION": "A ofrojnë sallone programe besnikërie ose zbritje?", "ANSWER": "Shumë sallone ofrojnë shpërblime besnikërie ose oferta promovuese. Kontrolloni profilin e sallonit individual për ofertat e disponueshme."},
+      {"QUESTION": "A është i sigurt informacioni im personal?", "ANSWER": "Absolutisht. Ne përdorim masa sigurie sipas standardeve të industrisë për të mbrojtur informacionin tuaj personal."},
+      {"QUESTION": "Çfarë duhet të bëj nëse has një problem me rezervimin tim?", "ANSWER": "Nëse përjetoni ndonjë problem, kontaktoni direkt sallonin nëpërmjet platformës ose drejtojuni ekipit tonë të mbështetjes për klientët për ndihmë."}
+    ],
+    "ANSWER_NOT_FOUND": {
+      "NORMAL": "Nuk gjetët përgjigje për pyetjen tuaj?",
+      "UNDERLINED": "Na pyesni drejtpërdrejt!"
+    }
+  },
+  "TOS": {
+    "TITLE": "Kushtet e Shërbimit",
+    "TERMS": [
+      {
+        "HEADER": "Hyrje",
+        "BODY": "Këto Kushte të Shërbimit (\"Kushtet\") rregullojnë aksesin dhe përdorimin e faqes së internetit https://spletka.com (\"Faqja e Internetit\") dhe shërbimeve të vëna në dispozicion nëpërmjet saj (\"Shërbimi\"). Faqja e Internetit operohet nën emrin SPLETKA nga një individ banues në Republikën e Serbisë (\"SPLETKA\", \"ne\", \"nesh\" ose \"ynë\"). Duke aksesuar ose përdorur Faqen e Internetit ose Shërbimin, ju pranoni të jeni juridikisht të detyruar nga këto Kushte. Nëse nuk jeni dakord, nuk duhet të përdorni Faqen e Internetit ose Shërbimin."
+      },
+      {
+        "HEADER": "Përshkrimi i Shërbimit",
+        "BODY": "SPLETKA është një platformë softuerike si shërbim e destinuar t'u lejojë mbajtësve të llogarive të regjistruara të prezantojnë shërbime të lidhura me studion nëpërmjet tekstit dhe imazheve dhe t'u mundësojë klientëve të mundshëm të shfletojnë këto shërbime dhe të kërkojnë rezervime. Vizitorët rastësorë ose anonimë mund të shfletojnë përmbajtjen e disponueshme publikisht pa krijuar llogari. SPLETKA nuk vepron si palë në çdo marrëveshje midis ofruesve të shërbimeve dhe klientëve të tyre."
+      },
+      {
+        "HEADER": "Kualifikimi dhe Disponueshmëria",
+        "BODY": "Shërbimi është i disponueshëm për përdoruesit e vendosur në të gjithë kontinentin Evropian. Duke përdorur Shërbimin, ju deklaroni se keni kapacitetin ligjor për të hyrë në marrëveshje detyruese sipas ligjit të aplikueshëm. Nëse e përdorni Shërbimin në emër të një personi tjetër ose entiteti, konfirmoni se jeni të autorizuar ta bëni këtë."
+      },
+      {
+        "HEADER": "Llogaritë",
+        "BODY": "Vetëm pronarët e regjistruar mund të krijojnë dhe mbajnë llogari në Faqen e Internetit. Mbajtësit e llogarive janë përgjegjës për ruajtjen e konfidencialitetit të kredencialeve të hyrjes dhe për të gjitha aktivitetet e kryera nëpërmjet llogarisë së tyre. Ju pranoni të njoftoni menjëherë SPLETKA-n për çdo akses të paautorizuar ose shkelje sigurie. SPLETKA nuk është përgjegjëse për humbjet që rezultojnë nga përdorimi i paautorizuar i llogarisë."
+      },
+      {
+        "HEADER": "Pezullimi dhe Ndërprerja e Llogarisë",
+        "BODY": "SPLETKA rezervon të drejtën të pezullojë ose ndërpresë llogaritë, përkohësisht ose përgjithmonë, sipas gjykimit të saj nëse një përdorues shkel këto Kushte, ligjin e aplikueshëm, ose angazhohet në sjellje që mund të dëmtojë Shërbimin, përdoruesit e tjerë ose palët e treta. Ndërprerja mund të rezultojë në humbjen e aksesit te të dhënat e llogarisë dhe përmbajtja e ngarkuar."
+      },
+      {
+        "HEADER": "Përmbajtja e Përdoruesit",
+        "BODY": "Përdoruesit e regjistruar mund të ngarkojnë dhe publikojnë përmbajtje duke përfshirë tekst dhe imazhe (\"Përmbajtja e Përdoruesit\"). Përdoruesit ruajnë pronësinë e Përmbajtjes së tyre. Duke ngarkuar Përmbajtjen e Përdoruesit, ju i jepni SPLETKA-s një licencë jo-ekskluzive, botërore, pa honorar për të pritur, ruajtur, riprodhuar, shfaqur, shpërndarë dhe përpunuar një përmbajtje të tillë vetëm për funksionimin, përmirësimin dhe promovimin e Shërbimit dhe markës SPLETKA. Ju deklaroni dhe garantoni se keni të gjitha të drejtat e nevojshme për të ngarkuar Përmbajtjen e Përdoruesit dhe se ajo nuk shkel ndonjë ligj ose të drejta të palëve të treta."
+      },
+      {
+        "HEADER": "Përmbajtja e Ndaluar",
+        "BODY": "Përdoruesit nuk mund të ngarkojnë, publikojnë ose shpërndajnë përmbajtje që është e paligjshme, mashtruese, abuzive, shpifëse, e turpshme, e dëmshme, diskriminuese, shkelëse, ose ndryshe shkel ligjet e aplikueshme ose të drejtat e palëve të treta. SPLETKA rezervon të drejtën të heqë çdo përmbajtje që shkel këto Kushte ose paraqet rrezik ligjor ose reputacioni."
+      },
+      {
+        "HEADER": "Abonimet dhe Pagesat",
+        "BODY": "Kërkohet një abonim aktiv për të mbajtur një llogari në Faqen e Internetit. Tarifa e abonimit ngarkohet në bazë të përsëritur deri sa të anulohet. Duke u abonuar, ju autorizoni faturimin e përsëritur duke përdorur metodën e zgjedhur të pagesës. Tarifat e abonimit nuk rimbursohen përveç kur rimbursimet kërkohen nga ligji i aplikueshëm; duke paguar abonimin, ju shprehimisht pranoni ekzekutimin e menjëhershëm dhe pranoni se humbni kështu të drejtën tuaj të tërheqjes. SPLETKA rezervon të drejtën të modifikojë çmimet me njoftim paraprak."
+      },
+      {
+        "HEADER": "Anulimi",
+        "BODY": "Përdoruesit mund të anulojnë abonimin e tyre në çdo kohë nëpërmjet mjeteve të disponueshme të menaxhimit të llogarisë. Anulimi do të hyjë në fuqi në fund të periudhës aktuale të faturimit. Nuk zbatohen tarifa shtesë anulimi."
+      },
+      {
+        "HEADER": "Komentet",
+        "BODY": "Përdoruesit mund të paraqesin vullnetarisht komente, sugjerime ose ide rreth Shërbimit. Duke paraqitur komente, ju pranoni që SPLETKA mund t'i përdorë, zbatojë dhe komercializojë këto komente pa kufizim dhe pa detyrimin e kompensimit, honorareve ose njohjes."
+      },
+      {
+        "HEADER": "Mohimet",
+        "BODY": "Shërbimi ofrohet në bazën \"si është\" dhe \"si disponohet\". SPLETKA nuk jep asnjë garanci të çfarëdo lloji, qofshin shprehëse ose të nënkuptuara, duke përfshirë por pa u kufizuar në tregtueshmërinë, përshtatshmërinë për një qëllim të caktuar ose mosshkeljen. SPLETKA nuk garanton disponueshmëri të pandërprerë, funksionim pa gabime ose saktësinë e çdo përmbajtjeje."
+      },
+      {
+        "HEADER": "Kufizimi i Përgjegjësisë",
+        "BODY": "Në masën maksimale të lejuar nga ligji i aplikueshëm, SPLETKA nuk do të jetë përgjegjëse për ndonjë dëm indirekt, aksidental, rrjedhues, të veçantë ose ndëshkues, duke përfshirë humbjen e fitimeve, të dhënave, biznesit ose emrit të mirë, që lind nga ose në lidhje me përdorimin e Shërbimit. Përgjegjësia totale nuk do të kalojë shumën e paguar nga përdoruesi tek SPLETKA në dymbëdhjetë muajt e mëparshëm, nëse nuk kërkohet ndryshe nga ligji."
+      },
+      {
+        "HEADER": "Ligji Qeverisës",
+        "BODY": "Këto Kushte do të rregullohen dhe interpretohen në përputhje me ligjet e Republikës së Serbisë. Kur zbatohen ligjet e detyrueshme të mbrojtjes së konsumatorëve të Bashkimit Evropian, dispozitat e tilla do të mbizotërojnë në masën e kërkuar."
+      },
+      {
+        "HEADER": "Ndryshimet në Kushte",
+        "BODY": "SPLETKA mund t'i përditësojë këto Kushte herë pas here. Kushtet e përditësuara do të hyjnë në fuqi me publikimin në Faqen e Internetit. Vazhdimi i përdorimit të Shërbimit pas ndryshimeve përbën pranimin e Kushteve të rishikuara."
+      },
+      {
+        "HEADER": "Informacioni i Kontaktit",
+        "BODY": "Për pyetje, njoftime ose komunikime ligjore rreth këtyre Kushteve, përdoruesit duhet të kontaktojnë SPLETKA-n nëpërmjet faqes së kontaktit të disponueshme në https://spletka.com/contact."
+      }
+    ]
+  },
+  "RESERVATION_STATUS": {
+    "PENDING_CONFIRMATION": "Në Pritje të Konfirmimit",
+    "CONFIRMATION_EXPIRED": "Periudha e Konfirmimit Skadoi",
+    "CONFIRMED": "Konfirmuar",
+    "USER_CANCELLED": "Anuluar nga Përdoruesi",
+    "USER_LATE_CANCELLED": "Anulim i Vonuar nga Përdoruesi",
+    "OWNER_CANCELLED": "Anuluar nga Pronari",
+    "OWNER_LATE_CANCELLED": "Anulim i Vonuar nga Pronari",
+    "COMPLETED": "Përfunduar",
+    "MISSED": "Humbur"
+  },
+  "RESERVATION_OVERVIEW": {
+    "TITLE": "Pasqyra e Rezervimit",
+    "STATUS": {
+      "PENDING_CONFIRMATION": "në pritje të konfirmimit",
+      "CONFIRMATION_EXPIRED": "konfirmimi skadoi",
+      "CONFIRMED": "konfirmuar",
+      "USER_CANCELLED": "anuluar",
+      "OWNER_CANCELLED": "anuluar",
+      "COMPLETED": "përfunduar",
+      "MISSED": "s'u paraqit"
+    },
+    "OVERVIEW": {
+      "STUDIO_NAME": "studio",
+      "CATEGORY": "kategori",
+      "SERVICE_NAME": "emri i shërbimit",
+      "SERVICE_TYPE": "lloji i shërbimit",
+      "PRICE": "çmimi",
+      "DURATION": "kohëzgjatja",
+      "DATE": "data",
+      "CONTACT_PHONE": "kontakt",
+      "ADDRESS": "adresa",
+      "STATUS": "statusi"
+    },
+    "POST_COMMENT": {
+      "TITLE": "Faleminderit!",
+      "POSITIVITY": {
+        "LOW": {
+          "PAR1": "Na vjen keq që përvoja juaj nuk ishte e kënaqshme",
+          "PAR2": "Komentet tuaja janë të vlefshme dhe do t'u kushtohet vëmendje e veçantë, shpresojmë të qëndroni me ne ndërsa përmirësojmë platformën"
+        },
+        "MEDIUM": {
+          "PAR1": "Faleminderit që ndatë përvojën tuaj me ne",
+          "PAR2": "Komentet tuaja janë të vlefshme dhe do të ndihmojnë në përmirësimin e studios dhe platformës"
+        },
+        "HIGH": {
+          "PAR1": "Faleminderit për vlerësimin pozitiv!",
+          "PAR2": "Nëse keni kohë, vlerësimi i studios në Google Maps është një mënyrë e shkëlqyer për të shfaqur mbështetje"
+        }
+      }
+    }
+  },
+  "SCHEDULE": {
+    "TITLE": "Zgjidhni Orarin"
+  },
+  "ON_RESERVE": {
+    "LINK_NOT_FOUND": {
+      "NORMAL": "Nuk e morët lidhjen?",
+      "UNDERLINED": "Dërgoje Përsëri"
+    }
+  },
+  "REQUEST_STATUS": {
+    "SUCCESS": {
+      "TITLE": "dërguar me sukses",
+      "BODY": "kërkesa juaj u përpoq me sukses"
+    },
+    "FAILED": {
+      "TITLE": "dërgimi dështoi",
+      "BODY": "kërkesa juaj nuk u krye me sukses"
+    }
+  },
+  "DASHBOARD": {
+    "TITLE": "Paneli i Studios",
+    "STEPS": {
+      "MAIN": "paneli",
+      "SCHEDULE": "orari",
+      "RESERVATIONS": "rezervimet",
+      "RATINGS": "vlerësimet",
+      "CLIENTS": "klientët",
+      "STATISTICS": "statistikat",
+      "SETUP": "konfigurimi i studios"
+    },
+    "MAIN": {
+      "TITLE": "Studioja Ime",
+      "ACTIONS_NEEDED_TABLE_TITLE": "Veprime të Nevojshme",
+      "TODAYS_SCHEDULE_TABLE_TITLE": "Orari i Sotëm"
+    },
+    "SCHEDULE": {
+      "EMPTY_SCHEDULE": "Nuk ka rezervime për këtë periudhë"
+    },
+    "RESERVATIONS": {
+      "TITLE": "Pasqyra e Rezervimeve",
+      "NO_RESERVATIONS": "Aktualisht nuk ka rezervime të planifikuara, as të mëparshme. Çdo rezervim i ardhshëm do të shfaqet dhe do të mbetet i dukshëm këtu për referencë.",
+      "STATUS": "Statusi",
+      "BOOKING_INFO": "Informacioni i Rezervimit",
+      "ARTICLE_INFO": "Informacioni i Artikullit",
+      "RATING": "Vlerësimi",
+      "ADDONS": "Shtesa",
+      "DATE_FILTER": "Data",
+      "STATUS_FILTER": "Statusi",
+      "ARTICLE_FILTER": "Artikulli",
+      "SEARCH_FILTER": "Kërko",
+      "ARTICLE_PLACEHOLDER": "Zgjidhni Artikullin",
+      "STATUS_PLACEHOLDER": "Zgjidhni Statusin",
+      "SEARCH_PLACEHOLDER": "kërko..."
+    },
+    "REVIEWS": {
+      "TITLE": "Pasqyra e Recensioneve",
+      "NO_RATINGS": "Nuk janë bërë recensione. Çdo recension i ardhshëm do të shfaqet dhe do të mbetet i dukshëm këtu për referencë.",
+      "AVERAGE_RATING": "Vlerësimi Mesatar",
+      "FIVE_STAR": "Vlerësime me 5 yje",
+      "ONE_TWO_STAR": "Vlerësime me 1-2 yje",
+      "REVIEWS": "recensione",
+      "UNRATED_BOOKINGS": "Rezervime të Pavlerësuara"
+    }
+  },
+  "SETUP": {
+    "TITLE": "Konfigurimi i Studios",
+    "STEPS": {
+      "INTRO": "hyrje",
+      "PROFILE": "profili i studios",
+      "LOCATION": "vendndodhja",
+      "MEDIA": "media e studios",
+      "SCHEDULE": "orari",
+      "EXCEPTIONS": "përjashtimet e orarit",
+      "CATEGORIES": "kategoritë",
+      "SERVICES": "shërbimet",
+      "PACKAGES": "paketat",
+      "DISCOUNTS": "zbritjet",
+      "BOOKING_RULES": "rregullat e rezervimit",
+      "PUBLISH": "publiko",
+      "DASHBOARD": "paneli"
+    },
+    "INTRO": {
+      "TITLE": "Konfiguroni Studion Tuaj",
+      "PAR1": "Ky konfigurim vendos bazën operative të studios suaj. Detajet e sakta të biznesit rrisin besimin e klientëve, mundësojnë zbulim të saktë dhe sigurojnë funksionimin e besueshëm të motorit të rezervimit.",
+      "PAR2": "Çdo seksion ndikon drejtpërdrejt në mënyrën se si klientët perceptojnë markën tuaj, nga imazhet e listimit deri tek disponueshmëria e planifikimit dhe struktura e shërbimit.",
+      "PAR3": "Të gjitha informacionet mund të modifikohen në çdo kohë, duke lejuar studion tuaj të evoluojë pa ndërprerje operative.",
+      "BUTTON": "Filloni Konfigurimin"
+    },
+    "PROFILE": {
+      "TITLE": "Profili i Studios",
+      "PAR1": "Informacioni i saktë i kontaktit siguron që konfirmimet e rezervimit të arrijnë klientët pa fërkime dhe përmirëson besueshmërinë e platformës."
+    },
+    "LOCATION": {
+      "TITLE": "Vendndodhja",
+      "PAR1": "Të dhënat e sakta të vendndodhjes përmirësojnë renditjen në kërkim, saktësinë e navigimit dhe reduktojnë vonesat e shkaktuara nga gabimet e hartës."
+    },
+    "MEDIA": {
+      "TITLE": "Ngarkimi i Medias",
+      "PAR1": "Ngarkoni imazhe me rezolucion të lartë që përfaqësojnë me saktësi hapësirën, trajtimet dhe rezultatet tuaja. Shmangni fotot e turbullta, të errëta, me filtra të shumtë ose mashtruese.",
+      "SELECT": "Klikoni ose tërhiqni & lëshoni për të ngarkuar",
+      "CHANGE": "Klikoni për të ndryshuar imazhin",
+      "REMOVE": "Klikoni për të hequr imazhin",
+      "INVALID_TYPE": "Gabim: Lloj skedari i pavlefshëm",
+      "MAX_REACHED": "Gabim: Sasia maksimale e imazheve është ngarkuar tashmë"
+    },
+    "SCHEDULE": {
+      "TITLE": "Orari i Punës",
+      "PAR1": "Disponueshmëria e saktë parandalon konfliktet e rezervimit dhe mbron rrjedhën operative.",
+      "SCHEDULE": "Orari",
+      "ADD_INTERVAL": "shto interval",
+      "ADD_SCHEDULE": "shto orar",
+      "EFFECTIVE_FROM": "Efektive Nga",
+      "EFFECTIVE_TO": "Efektive Deri",
+      "START_TIME": "Ora e Fillimit",
+      "END_TIME": "Ora e Mbarimit",
+      "INTERVAL": "Interval",
+      "DEFINE_INTERVAL": "Caktoni orën e fillimit dhe mbarimit"
+    },
+    "EXCEPTIONS": {
+      "TITLE": "Përjashtimet e Orarit",
+      "PAR1": "Konfiguroni datat ose periudhat kur studioja juaj nuk është e disponueshme, qofshin ditë të vetme të mbyllura, periudha të vazhdueshme datash ose pushime vjetore të përsëritura. Çdo mbyllje mund të zbatohet gjatë gjithë ditës ose në intervale kohore të zgjedhura, duke ju lejuar të menaxhoni me saktësi përjashtimet nga orari juaj i rregullt.",
+      "ADD": "shto përjashtim",
+      "STUDIO_CLOSED": "Studioja e Mbyllur:",
+      "STUDIO_IS_CLOSED": "Studioja është plotësisht e mbyllur gjatë periudhës së datës së përjashtimit të zgjedhur",
+      "STUDIO_IS_INTERVAL_CLOSED": "Ose, specifikoni kur studioja do të jetë e mbyllur gjatë kësaj periudhe.",
+      "EXCEPTION": "Përjashtim",
+      "LABEL": "Etiketa e Përjashtimit",
+      "TYPE": "Lloji i Përjashtimit",
+      "ONEOFF": "Njëherë",
+      "RANGE": "Interval",
+      "ANNUAL": "Vjetor"
+    },
+    "CATEGORIES": {
+      "TITLE": "Kategoritë e Shërbimeve",
+      "PAR1": "Definoni dhe rregulloni kategoritë që do të organizojnë shërbimet tuaja. Këto kategori përcaktojnë se si grupohen dhe prezantohen ofertat vizitorëve në faqen e studios suaj, duke ndikuar drejtpërdrejt në përvojën e përdoruesit.",
+      "ADD": "shto kategori",
+      "CATEGORY": "Kategori"
+    },
+    
+    "SERVICES": {
+      "TITLE": "Shërbimet",
+      "PAR1": "Konfiguroni dhe vendosni shërbimet e ofruara, përshkrimet, kohëzgjatjet dhe çmimet e tyre.",
+      "ADD": "shto shërbim",
+      "SERVICE_NAME": "Emri i Shërbimit",
+      "SERVICE_LINK": "Lidhja e Shërbimit",
+      "SERVICE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonservis",
+      "TYPE": "Lloji i Shërbimit",
+      "PRICE": "Çmimi",
+      "CURRENCY": "Valuta",
+      "DURATION": "Kohëzgjatja (min)",
+      "PREREQ": "Shërbim i Parakërkuar",
+      "DESCRIPTION": "Përshkrimi",
+      "THUMBNAIL": "Thumbnail",
+      "THUMBNAIL_PLACEHOLDER": "imazh katrore · 1080x1080",
+      "GALLERY": "Galeria e Shërbimit",
+      "GALLERY_PLACEHOLDER": "imazhe katrorë · 1080x1080 · Tërhiq për të rirenditur."
+    },
+    "PACKAGES": {
+      "TITLE": "Paketat",
+      "PAR1": "Shërbimet e bashkuara rrisin vlerën mesatare të porosisë, duke thjeshtuar njëkohësisht vendimmarrjen për klientët.",
+      "ADD": "shto paketë",
+      "PACKAGE_NAME": "Emri i Paketës",
+      "PACKAGE_LINK": "Lidhja e Paketës",
+      "PACKAGE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonpaket",
+      "DESCRIPTION": "Përshkrimi"
+    },
+    "DISCOUNTS": {
+      "TITLE": "Zbritjet",
+      "PAR1": "Konfiguroni zbritje për shërbimet dhe paketat e listuara.",
+      "ADD": "shto zbritje",
+      "DISCOUNT": "Zbritje",
+      "ARTICLE": "Artikulli",
+      "PERCENTAGE": "Përqindja"
+    },
+    "BOOKING_RULES": {
+      "TITLE": "Rregullat e Rezervimit & Njoftimet",
+      "PAR1": "Definoni rregullat e rezervimit që ndihmojnë në rritjen e kënaqësisë si të klientit ashtu edhe tuajën.",
+      "EMAIL_REMINDERS_TITLE": "Kujtuese me email — dërgohen 24 orë para takimit",
+      "SMS_REMINDERS_TITLE": "Kujtuese me SMS — dërgohen 2 orë para takimit (€0.02 për SMS)",
+      "VISIBLE_TITLE": "I dukshëm - studioja dhe artikujt janë të dukshëm në listat e shfletimit të faqes kryesore",
+      "MIN_AHEAD_TITLE": "Koha Minimale e Rezervimit Paraprak",
+      "MAX_AHEAD_TITLE": "Koha Maksimale e Rezervimit Paraprak"
+    },
+    "PUBLISH": {
+      "TITLE": "Publiko",
+      "PAR1": "Pasi të përfundoni konfigurimin, publikoni studion tuaj tek komuniteti SPLETKA."
+    }
+  }
+}

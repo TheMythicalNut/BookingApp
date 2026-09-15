@@ -1,0 +1,55 @@
+
+<!-- Floating Label -->
+@if(label()){
+    <label [class]="labelClasses()">{{ error()? error() : label() }}</label>
+}
+
+<div class="relative min-w-[180px]">
+
+    <!-- Field -->
+    <div
+    [class]="fieldClasses()"
+    role="combobox"
+    [attr.aria-expanded]="isOpen()"
+    [attr.aria-invalid]="!!error()"
+    [attr.aria-disabled]="disabled()"
+    (click)="toggle(); $event.stopPropagation()"
+    tabindex="0"
+    (focus)="isFocused.set(true)"
+    (blur)="isFocused.set(false)">
+
+        <span class="text-sm text-center text-neutral-700">
+        {{ formatted() || placeholder() }}
+        </span>
+    </div>
+
+  <!-- Dropdown -->
+  @if(isOpen()){
+    <div class="absolute z-20 mt-2 w-full rounded-xl bg-white shadow-lg border border-(--secondary-color) flex max-h-32">
+      <!-- Hours -->
+      <div class="w-1/2 overflow-y-auto scrollbar-none">
+        @for(h of hoursList; track $index){
+          <div
+            (click)="selectTime(h, null); $event.stopPropagation()"
+            class="px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 text-center"
+            [class.bg-gray-200]="h === hours()"
+          >
+            {{ h < 10 ? '0' + h : h }}
+          </div>
+        }
+      </div>
+
+      <!-- Minutes -->
+      <div class="w-1/2 overflow-y-auto border-l border-(--secondary-color) scrollbar-none">
+        @for(m of minutesList; track $index){
+          <div
+            (click)="selectTime(null, m); $event.stopPropagation()"
+            class="px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 text-center"
+            [class.bg-gray-200]="m === minutes()">
+            {{ m < 10 ? '0' + m : m }}
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

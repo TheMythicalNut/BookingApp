@@ -1,0 +1,50 @@
+@if(loading()){
+    <app-spinner class="flex justify-center h-[calc(100dvh)]"></app-spinner>
+}
+@else {
+    @if(reservation()){
+        
+        <div class="w-full flex justify-center overview-y-auto">
+        <div class="w-full h-[calc(100dvh)] overflow-y-auto scrollbar-none flex flex-col gap-4 max-w-4xl transition-transform duration-400"
+            [class.h-[calc(100dvh-144px)]]="getReservationStatus()=== 'CONFIRMED'"
+            [class.h-[calc(100dvh-36px)]]="getReservationStatus()=== 'COMPLETED'">
+
+        <reservation-info
+        [reservation]="this.reservation()"
+        [studio]="this.studio()"
+        [package]="this.package()"
+        [service]="this.service()">
+        </reservation-info>
+        
+        @switch(getReservationStatus()){
+            @case ('CONFIRMED') {
+                <reservation-status-confirmed
+                [reservation]="reservation()"
+                [hasPriv]="hasPrivilege()"
+                (cancel)="cancelReservation($event)"
+                (change)="changeReservation($event)">
+                </reservation-status-confirmed>
+            }
+            @case('COMPLETED'){
+                @if(!hasPrivilege()){
+                    <reservation-status-completed
+                    (review)="reviewReservation($event)">
+                    </reservation-status-completed>
+                }
+            }
+            @case('MISSED'){
+                @if(!hasPrivilege()){
+                    <reservation-status-missed>
+                    </reservation-status-missed>
+                }
+            }
+        }
+
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+
+        </div>
+        </div>
+    }
+}

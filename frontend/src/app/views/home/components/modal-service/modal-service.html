@@ -1,0 +1,150 @@
+<!-- Header -->
+<div class="sticky top-0 bg-white border-b border-gray-200 px-3 py-4">
+    <div class="flex justify-between items-center">
+    <div class="flex flex-row items-center cursor-pointer"
+    (click)="navigateStudio()">
+        <h2 class="playfair-display-500 text-lg text-(--primary-color)">
+        {{ getStudioName() }}
+        </h2>
+        <svg
+        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"
+        class="text-(--secondary-color)">
+        <path d="M13 5H19V11" />
+        <path d="M19 5L5 19" />
+        </svg>
+    </div>
+    <button (click)="onClose()" class="text-(--primary-color) cursor-pointer">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+    </div>
+</div>
+
+<!-- Container -->
+<div class="overflow-y-auto max-h-[calc(90vh-128px)] pb-10 scrollbar-none">
+    <div class="p-3 space-y-4">
+    <div>
+        <div class="flex justify-between items-center">
+        <div class="playfair-display-400 text-(--primary-color) text-lg">{{ getName() }}</div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+            class="transition-opacity duration-200 ease-in-out text-(--primary-color) cursor-pointer"
+            (click)="onShare()"
+            >
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>
+            </svg>
+        </div>
+        </div>
+        <div class="playfair-400 text-(--secondary-color) text-base whitespace-pre-wrap">{{ getTypeName() }}</div>
+        
+        @if(hasDiscount()){
+        <div class="inline-block lora-400 text-center bg-black text-white text-sm p-1 my-1">{{ getDiscount() }}% OFF</div>
+        <div class="flex flex-row gap-1">
+            <div class="playfair-500 text-(--primary-color) text-lg line-through">{{getPrice()}} {{getCurrency()}}</div>
+            <div class="playfair-500 text-(--primary-color) text-lg">{{getDiscountPrice()}} {{getCurrency()}}</div>
+        </div>
+        }
+        @else {
+        <div class="playfair-500 text-(--primary-color) text-lg">{{getPrice()}} {{getCurrency()}}</div> 
+        }
+        <div class="playfair-500 text-(--primary-color) text-lg">{{getDuration()}} min</div>
+    </div>
+
+    <div class="roboto-500 text-(--primary-color) text-sm flex flex-row text-end cursor-pointer"
+    (click)="navigateMaps()">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        width="16" height="16" viewBox="0 0 16 16" 
+        fill="currentColor" 
+        class="me-1 text-(--secondary-color)">
+        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+        </svg>
+        {{getAddress()}}, {{getCity()}}, {{getCountry()}}
+    </div>
+
+    <div class="flex flex-row gap-2 overflow-x-auto scrollbar-none">
+        @for (gimg of getImages(); track $index) {
+        <div class="inline-flex flex-col flex-shrink-0"
+            [style.width.px]="galleryItemSize()">
+            <img [src]="gimg.url" [alt]="getName()"
+            class="w-full aspect-square object-cover rounded cursor-pointer"
+            (click)="openImage(gimg.url, $index)"/>
+
+            <div class="text-xs text-gray-500">
+            {{ gimg.timestamp | date:'dd. MMM' }}
+            </div>
+        </div>
+        }
+    </div>
+    <div>{{getDescription()}}</div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="sticky bottom-0 bg-white border-t border-gray-200 px-2 py-3">
+    @if(getReservable()){
+        @if(!hasPrerequirement()){
+            <button (click)="onReserve()"
+                class="w-full h-5 px-4 bg-(--primary-color) rounded-lg 
+                text-white font-medium transition-colors duration-200 cursor-pointer">
+            {{ getReserveText() }}
+            </button>
+        }
+        @else if (hasPrerequirement()) {
+            <div class="justify-center w-full flex flex-row gap-1 cursor-pointer" (click)="onPrerequirement()">
+                <div class="lora-500 text-(--primary-color)">{{ getPlaceholderPrereq() }}</div>
+                <div class="roboto-500 text-(--primary-color) underline">{{ getPrereqName() }}</div>
+            </div>
+        }
+    }
+</div>
+
+@if (fullscreenImage) {
+  <div class="absolute inset-0 z-50 bg-black/95 flex items-center justify-center"
+    (click)="closeImage()"
+    animate.enter='circle-enter'>
+
+    <!-- HERO CAROUSEL -->
+    <div class="hero-wrapper h-full scrollbar-none">
+        <!-- Scroll container -->
+        <div #scrollContainer
+            class="hero-scroll scrollbar-none"
+            (scroll)="onFullscreenScroll()">
+            
+            <!-- [style.height.px]="getHeroHeight()" -->
+            @for (img of getImages(); track $index) {
+                <img class="hero-item object-cover"
+                    (click)="$event.stopPropagation()"
+                    [src]="img.url" [alt]="getName()"
+                    [width]="innerWidth()";
+                />
+            }
+        </div>
+
+        <!-- Overlay snap controls -->
+        <div class="snap-overlay">
+            @for (img of getImages(); track $index) {
+            <div class="snap-line-clickable" (click)="$event.stopPropagation(); fullscreenScrollTo($index)">
+                <div class="snap-line"
+                    [class.snap-line-active]="$index === fullscreenImageCurrentIndex">
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+    <button class="absolute top-2 right-2 text-white text-2xl font-light cursor-pointer"
+        (click)="closeImage()">
+        ✕
+    </button>
+  </div>
+}

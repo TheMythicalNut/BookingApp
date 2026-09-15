@@ -1,0 +1,13 @@
+.left {
+    white-space: nowrap;              /* never wrap the left side */
+    padding-right: 10vw;               /* small gap before right */
+}
+.right-box {
+    display: inline;                  /* keeps flow context for wrapping */
+    text-align: right;                /* right-align every wrapped line */
+    flex: 1 1 auto;                   /* occupy remaining width */
+}
+.right {
+    white-space: pre-wrap;            /* allow natural wrap */
+    word-break: break-word;
+}

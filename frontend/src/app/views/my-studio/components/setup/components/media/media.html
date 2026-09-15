@@ -1,0 +1,50 @@
+<section class="setup-section">
+    <div>
+        <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ title() }}</h2>
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ par1() }} </p>
+    </div>
+
+    <app-error-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!viewInvalid()"
+    [class.grid-rows-[1fr]]="viewInvalid()"
+    [title]="errorTitle()"
+    [body]="errorBody()">
+    </app-error-message>
+
+    <app-single-image-upload
+    [title]="thumbnailLabel()"
+    [label]="thumbnailLabel()"
+    [placeholder]="thumbnailPlaceholder()"
+    [imageUrl]="thumbnail()"
+    (fileSelected)="setThumbnail($event)">
+    </app-single-image-upload>
+
+    <app-multi-image-upload
+    [title]="heroLabel()"
+    [label]="heroLabel()"
+    [placeholder]="heroPlaceholder()"
+    [imageUrls]="heroImageUrls()";
+    (action)="handleAction($event)"
+    [aspect]="'aspect-[3/2]'">
+    </app-multi-image-upload>
+
+    <div class="flex flex-col items-center gap-2">
+        
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+        
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="saveLabel()"
+        [type]="'outline'"
+        (action)="save()">
+        </app-button>
+
+        <app-button
+        [idleText]="nextLabel()"
+        (action)="next.emit()">
+        </app-button>
+    </div>
+</section>

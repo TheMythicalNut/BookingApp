@@ -1,0 +1,190 @@
+<section class="setup-section" style="background-color: transparent; box-shadow: none; gap: calc(var(--spacing) * 2)">
+    <div class="flex flex-col gap-2 items-start sm:items-end">
+
+        <app-text-field
+        class="w-full flex justify-center"
+        [init]="filters().search"
+        [title]="searchFilterTitle()"
+        [placeholder]="searchPlaceholder()"
+        [required]="false"
+        (onChange)="filters.update( i => !!$event ? ({...i, search: $event }) : ({...i, search: undefined })) ">
+        </app-text-field>
+
+        <app-select
+            class="w-full min-w-0"
+            [init]="filters().article ?? null"
+            [options]="articleNames()"
+            [title]="articleFilterTitle()"
+            [required]="false"
+            [placeholder]="selectArticlePlaceholder()"
+            [hasClear]="true"
+            (onChange)="filters.update( i => !!$event ? ({...i, article: $event }) : ({...i, article: undefined })) ">
+        </app-select>
+
+        <app-date-select
+            class="w-full min-w-0"
+            [init]="filters().date ?? ''"
+            [title]="dateFilterTitle()"
+            [required]="false"
+            [hasClear]="true"
+            (onChange)="filters.update( i => !!$event ? ({...i, date: $event }) : ({...i, date: undefined })) ">
+        </app-date-select>
+
+        <app-select
+            class="w-full min-w-0"
+            [init]="filters().status ? (statusMap().get(filters().status!) ?? null) : null"
+            [options]="statusNames()"
+            [title]="statusFilterTitle()"
+            [required]="false"
+            [placeholder]="selectStatusPlaceholder()"
+            [hasClear]="true"
+            (onChange)="filters.update( i => !!$event ? ({...i, status: reverseStatusMap().get($event) ?? undefined }) : ({...i, status: undefined })) ">
+        </app-select>
+
+    </div>
+
+    @if(hasReservations()){
+        <div class="rounded-2xl min-w-0 w-full overflow-x-auto border border-neutral-200 bg-white shadow-sm py-2 transition-all">
+            <table class="w-full text-left" style="font-size: 14px; border-collapse: collapse; table-layout: auto;">
+    
+            <colgroup>
+                <col style="width: 1%;">
+                <col style="width: 50%;">
+                <col style="width: 24%;">
+                <col style="width: 25%;">
+            </colgroup>
+    
+            <!-- Header -->
+            <thead>
+                <tr class="border-b border-neutral-100">
+                    <th class="ps-2 lora-500 text-(--secondary-color) tracking-wide uppercase py-2 pr-4 whitespace-nowrap leading-1" style="font-size: 12px;">{{status()}}</th>
+                    <th class="lora-500 text-(--secondary-color) tracking-wide uppercase py-2 pr-4 whitespace-nowrap" style="font-size: 12px;">{{bookingInfo()}}</th>
+                    <th class="lora-500 text-(--secondary-color) tracking-wide uppercase py-2 pr-4 whitespace-nowrap" style="font-size: 12px;">{{articleInfo()}}</th>
+                    <th class="lora-500 text-(--secondary-color) tracking-wide uppercase py-2 whitespace-nowrap"       style="font-size: 12px;">{{rating()}}</th>
+                </tr>
+            </thead>
+    
+            <!-- Rows -->
+            <tbody>
+                @for (r of filteredReservations(); track r.id) {
+                <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition-colors">
+    
+                    <!-- Col 1: Status symbol — centered, tooltip on hover -->
+                    <td class="py-1.5 pr-4">
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+    
+                            <!-- Tooltip wrapper -->
+                            <div style="position: relative; display: inline-flex;" class="status-tooltip-anchor">
+                                <span
+                                    class="inline-flex items-center justify-center rounded-full"
+                                    style="width: 22px; height: 22px; font-size: 14px; font-weight: 600; line-height: 1; cursor: default;"
+    
+                                    [style.background-color]="
+                                        r.status.status === 'PENDING_CONFIRMATION'                                 ? '#fffbeb' :
+                                        r.status.status === 'CONFIRMATION_EXPIRED' || r.status.status === 'MISSED' ? '#fef2f2' :
+                                        r.status.status === 'CONFIRMED'                                            ? '#eff6ff' :
+                                        r.status.status === 'COMPLETED'                                            ? '#f0fdf4' :
+                                        r.status.status === 'USER_LATE_CANCELLED'                                  ? '#fff7ed' :
+                                        '#f5f5f5'"
+    
+                                    [style.color]="
+                                        r.status.status === 'PENDING_CONFIRMATION'                                 ? '#b45309' :
+                                        r.status.status === 'CONFIRMATION_EXPIRED' || r.status.status === 'MISSED' ? '#dc2626' :
+                                        r.status.status === 'CONFIRMED'                                            ? '#1d4ed8' :
+                                        r.status.status === 'COMPLETED'                                            ? '#15803d' :
+                                        r.status.status === 'USER_LATE_CANCELLED'                                  ? '#c2410c' :
+                                        '#737373'">
+    
+                                    @switch (r.status.status) {
+                                        @case ('PENDING_CONFIRMATION')  { ? }
+                                        @case ('CONFIRMATION_EXPIRED')  { ⊘ }
+                                        @case ('CONFIRMED')             { ✓ }
+                                        @case ('COMPLETED')             { ★ }
+                                        @case ('MISSED')                { ! }
+                                        @default                        { ✕ }
+                                    }
+                                </span>
+    
+                                <!-- Tooltip bubble — shown on hover via CSS, floats above layout -->
+                                <span class="status-tooltip">{{ trstatus(r.status.status) }}</span>
+                            </div>
+    
+                            @if (r.status.comment) {
+                                <p class="lora-400 text-(--secondary-color) truncate mt-1" style="font-size: 12px; max-width: 140px; opacity: 0.7; text-align: center;" [title]="r.status.comment">
+                                    {{ r.status.comment }}
+                                </p>
+                            }
+                        </div>
+                    </td>
+    
+                    <!-- Col 2: Booking info -->
+                    <td class="py-1.5 pr-4 align-top">
+                        <p class="lora-500 text-(--primary-color)">{{ r.userEmail }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">{{ r.userPhone }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">
+                            {{ r.timeslot.date }} {{ r.timeslot.start }}{{ r.timeslot.end ? ' – ' + r.timeslot.end : '' }}
+                        </p>
+                        @if (r.additionalNote) {
+                            <p class="lora-400 text-(--secondary-color) truncate" style="font-size: 12px; opacity: 0.7;" [title]="r.additionalNote">
+                                {{ r.additionalNote }}
+                            </p>
+                        }
+                    </td>
+    
+                    <!-- Col 3: Article info -->
+                    <td class="py-1.5 pr-4 align-top whitespace-nowrap">
+                        <p class="lora-500 text-(--primary-color)">{{ r.articleName }}</p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">{{ r.categoryName }}</p>
+                        <p class="lora-500 text-(--primary-color)">
+                            {{ r.price }} {{ r.currency }}
+                            @if (r.discount > 0) {
+                                <span class="lora-400 text-green-600 ml-1">-{{ r.discount }}%</span>
+                            }
+                        </p>
+                        <p class="lora-400 text-(--secondary-color)" style="font-size: 12px;">{{ r.duration }}m</p>
+                    </td>
+    
+                    <!-- Col 4: Rating -->
+                    <td class="py-1.5 align-top whitespace-nowrap">
+                        @if (r.rating) {
+                            <p class="text-amber-400" style="font-size: 13px;">{{ '★'.repeat(r.rating.rating) }}{{ '☆'.repeat(5 - r.rating.rating) }}</p>
+                            @if (r.rating.comment) {
+                                <p class="lora-400 text-(--secondary-color)" style="font-size: 12px; max-width: 120px; white-space: normal; word-break: break-word;">
+                                    "{{ r.rating.comment }}"
+                                </p>
+                            }
+                        } @else {
+                            <span class="text-neutral-300">—</span>
+                        }
+                    </td>
+    
+                    <!-- Add-ons (commented out)
+                    <td class="py-1.5 pr-4">
+                        @if (r.addons.length) {
+                            <div class="flex flex-wrap gap-1">
+                            @for (addon of r.addons; track addon.id) {
+                                <span class="px-1.5 py-0 rounded-full bg-blue-50 text-blue-700 whitespace-nowrap" style="font-size: 12px;">
+                                {{ addon.name }}
+                                </span>
+                            }
+                            </div>
+                        } @else {
+                            <span class="text-neutral-300">—</span>
+                        }
+                    </td>
+                    -->
+    
+                </tr>
+                }
+            </tbody>
+    
+            </table>
+        </div>
+    }
+    @else {
+        <div class="rounded-2xl flex grow border border-neutral-200 bg-white shadow-sm py-2 px-2 md:px-4 lg:px-6 transition-all">
+            <p class="helper lora-400 text-sm leading-3 text-(--secondary-color)"> {{ noReservationsText() }} </p>
+        </div>
+    }
+
+</section>

@@ -1,0 +1,276 @@
+<section class="setup-section"
+style="background-color: transparent; box-shadow: none;">
+
+  <!-- Section Header -->
+  <div class="bg-white shadow-md rounded-2xl p-4 lora-400 text-(--primary-color)">
+    <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ getTitle() }}</h2>
+    <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1">{{ getPar1() }}</p>
+
+    <app-error-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!viewInvalid()"
+    [class.grid-rows-[1fr]]="viewInvalid()"
+    [title]="errorTitle()"
+    [body]="errorBody()">
+    </app-error-message>
+  </div>
+
+
+  @for (exception of exceptions(); track $index; let exceptionIndex = $index) {
+        
+    <div class="rounded-2xl border border-neutral-200 bg-white shadow-sm px-2 md:px-4 lg:px-6 transition-all"
+      [class.border-red-500]="hasErrorIndex()[exceptionIndex].self"
+      [class.py-4]="isExpanded(exception.localID!)"
+      [class.py-2]="!isExpanded(exception.localID!)">
+
+      @if (!isExpanded(exception.localID!)) {
+        <!-- HEADER -->
+        <div class="flex justify-between items-center cursor-pointer"
+        (click)="expandException(exception.localID!)">
+          <span class="text-sm font-medium text-neutral-500">
+            {{ !!exception.label ? exception.label : ( this.getExceptionText() + ' ' + (exceptionIndex + 1))  }}
+          </span>
+
+          <button
+              type="button"
+              aria-label="Remove Exception"
+              (click)="removeException(exceptionIndex)"
+              class="h-5 w-5 rounded-lg
+                  cursor-pointer
+                  border border-red-200 bg-white text-red-500
+                  flex items-center justify-center shadow-sm
+                  transition-all duration-200 hover:bg-red-50 hover:scale-105
+                  focus:outline-none focus:ring-2 focus:ring-red-500
+                  disabled:opacity-50 disabled:cursor-not-allowed">
+              ✕
+          </button>
+        </div>
+      }
+      @else {
+
+          <!-- Exception Header -->
+          <div class="w-full flex justify-between items-center">
+              <span class="text-sm font-medium text-neutral-500 cursor-pointer"
+              (click)="collapseException(exception.localID!)">
+              {{ getExceptionText() + ' ' + (exceptionIndex + 1) }}
+              </span>
+
+              <!-- Remove Button -->
+              <button
+                  type="button"
+                  aria-label="Remove Exception"
+                  (click)="removeException(exceptionIndex)"
+                  class="h-5 w-5 rounded-lg
+                      cursor-pointer
+                      border border-red-200 bg-white text-red-500
+                      flex items-center justify-center shadow-sm
+                      transition-all duration-200 hover:bg-red-50 hover:scale-105
+                      focus:outline-none focus:ring-2 focus:ring-red-500
+                      disabled:opacity-50 disabled:cursor-not-allowed">
+                  ✕
+              </button>
+          </div>
+
+          <!-- Exception Header Fields -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start w-full min-w-0">
+
+              <app-text-field
+                  class="w-full min-w-0"
+                  [init]="exception.label"
+                  [title]="getExceptionTitleText()"
+                  (onChange)="setExceptionLabel(exceptionIndex, $event)"
+                  [required]="false">
+              </app-text-field>
+
+              <app-select
+                  class="w-full min-w-0"
+                  [init]="getExceptionType(exception.type)"
+                  [options]="exceptionTypeNames()"
+                  [title]="getExceptionTypeText()"
+                  (onChange)="setExceptionType(exceptionIndex, $event)">
+              </app-select>
+
+
+              @switch (exception.type) {
+
+                @case ('annual') {
+                    <app-select
+                      class="w-full min-w-0"
+                      [init]="exception.appliesTo?.month ? monthNames()[exception.appliesTo!.month! - 1] : ''"
+                      [options]="monthNames()"
+                      [title]="getMonthText()"
+                      (onChange)="setExceptionAppliesToMonth(exceptionIndex, $event)">
+                    </app-select>
+
+                    <app-select
+                      class="w-full min-w-0"
+                      [init]="exception.appliesTo?.day?.toString() ?? ''"
+                      [options]="monthDaysString[exception.appliesTo?.month ?? 0]"
+                      [title]="getDayText()"
+                      (onChange)="setExceptionAppliesToDay(exceptionIndex, $event)">
+                    </app-select>
+                }
+
+                @case ('oneOff') {
+                    <app-date-select
+                      class="w-full min-w-0"
+                      [init]="exception.appliesTo?.date"
+                      [title]="getDateText()"
+                      (onChange)="setExceptionAppliesToDate(exceptionIndex, $event)">
+                    </app-date-select>
+                }
+
+                @case ('range') {
+                    <app-date-select
+                      class="w-full min-w-0"
+                      [init]="exception.appliesTo?.startDate"
+                      [title]="getStartDateText()"
+                      (onChange)="setExceptionAppliesToStartDate(exceptionIndex, $event)">
+                    </app-date-select>
+
+                    <app-date-select
+                      class="w-full min-w-0"
+                      [init]="exception.appliesTo?.endDate"
+                      [title]="getEndDateText()"
+                      (onChange)="setExceptionAppliesToEndDate(exceptionIndex, $event)">
+                    </app-date-select>
+                }
+              }
+
+          </div>
+
+            <!-- Exception Configuration Block -->
+            <div class="space-y-6 pt-4">
+
+              <!-- Studio Closed Section -->
+              <div class="border-t pt-4 space-y-3">
+
+                <div class="flex items-center gap-2">
+                  <app-checkbox
+                    [checked]="exception.isClosed === true"
+                    (checkedChange)="setExceptionIsClosed(exceptionIndex, $event)">
+                  </app-checkbox>
+
+                  <label class="lora-500 text-md text-(--primary-color)">
+                    {{ getStudioClosedText() }}
+                  </label>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="lora-400 text-sm text-(--secondary-color)">
+                    {{ getStudioClosedHelperText() }}
+                  </div>
+                  <div class="lora-400 text-sm text-(--secondary-color)">
+                    {{ getStudioClosedIntervalHelperText() }}
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Intervals -->
+              <div class="flex flex-col items-center gap-4 pb-4">
+
+                @for (interval of exception.intervals; track $index; let intervalIndex = $index) {
+
+                <div
+                  class="relative rounded-2xl border border-neutral-200 bg-white p-2 sm:p-3 md:p-4 lg:p-6 shadow-sm
+                        transition-all duration-200 hover:shadow-md hover:ring-1 hover:ring-neutral-300 w-full"
+                  [class.border-red-500]="hasErrorIndex()[exceptionIndex].intervals[intervalIndex]"
+                  [class.opacity-50]="exception.isClosed"
+                  [class.pointer-events-none]="exception.isClosed">
+
+                <!-- Interval Header -->
+                <div class="flex items-start justify-between mb-4">
+                  <div class="flex flex-col">
+                    <span class="text-sm lora-500 text-(--secondary-color)">
+                      {{ getIntervalText() + ' ' + (intervalIndex + 1) }}
+                    </span>
+                    <span class="text-xs lora-400 text-(--secondary-color)">
+                      {{ getDefineIntervalText() }}
+                    </span>
+                  </div>
+
+                  <button
+                    type="button"
+                    aria-label="Remove Interval"
+                    [disabled]="exception.isClosed"
+                    (click)="removeExceptionInterval(exceptionIndex, intervalIndex)"
+                    class="h-5 w-5 rounded-full border border-red-200 bg-white text-red-500
+                          flex items-center justify-center shadow-sm
+                          transition-all duration-200 hover:bg-red-50 hover:scale-105
+                          focus:outline-none focus:ring-2 focus:ring-red-500
+                          disabled:opacity-50 disabled:cursor-not-allowed">
+                    ✕
+                  </button>
+                </div>
+
+                <!-- Time Inputs -->
+                <div class="flex flex-wrap gap-[5dvw] justify-center items-end">
+                  <app-time-input
+                    [value]="interval.start"
+                    [label]="getstartText()"
+                    [disabled]="exception.isClosed ?? true"
+                    (change)="setExceptionIntervalStart(exceptionIndex, intervalIndex, $event)">
+                  </app-time-input>
+
+                  <app-time-input
+                    [value]="interval.end"
+                    [label]="getendText()"
+                    [min]="interval.start"
+                    [disabled]="exception.isClosed ?? true"
+                    (change)="setExceptionIntervalEnd(exceptionIndex, intervalIndex, $event)">
+                  </app-time-input>
+                </div>
+
+                </div>
+                }
+
+              <!-- Add Interval Button -->
+              <app-button
+                [idleText]="getAddIntervalButtonText()"
+                [disabled]="exception.isClosed === true"
+                [type]="'secondary'"
+                (action)="addExceptionInterval(exceptionIndex)">
+              </app-button>
+            </div>
+
+
+            </div>
+        }
+    </div>
+  }
+
+    <div class="flex flex-col items-center gap-2 mt-2">
+      
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+
+        <app-notify-message
+        class="grid transition-all duration-300 overflow-hidden"
+        [class.grid-rows-[0fr]]="!hasNotification()"
+        [class.grid-rows-[1fr]]="hasNotification()"
+        [title]="notifyTitle()"
+        [body]="notifyBody()"
+        ></app-notify-message>
+
+        <app-button
+        [idleText]="getAddButtonText()"
+        [type]="'secondary'"
+        (action)="addException()">
+        </app-button>
+
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="getSaveButtonText()"
+        [type]="'outline'"
+        (action)="save()">
+        </app-button>
+
+        <app-button
+        [idleText]="getNextButtonText()"
+        (action)="next.emit()">
+        </app-button>
+    </div>
+
+</section>

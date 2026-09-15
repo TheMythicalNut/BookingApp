@@ -1,0 +1,100 @@
+<section class="setup-section">
+    <div>
+        <h2 class="lora-500 text-xl tracking-tight text-(--primary-color) mb-1">{{ title() }}</h2>
+        <p class="helper lora-400 text-sm leading-3 text-(--secondary-color) mb-1"> {{ par1() }} </p>
+    </div>
+
+    <app-error-message
+    class="grid transition-all duration-300 overflow-hidden"
+    [class.grid-rows-[0fr]]="!viewInvalid()"
+    [class.grid-rows-[1fr]]="viewInvalid()"
+    [title]="errorTitle()"
+    [body]="errorBody()">
+    </app-error-message>
+
+    <app-select
+    class="w-full flex justify-center"
+    [init]="view().country"
+    [isAutocomplete]="true"
+    [title]="countryLabel()"
+    [validator]="studioCountryValidator"
+    [placeholder]="countryPlaceholder()"
+    [options]="getCountryNames()"
+    (onChange)="setStudioCountry($event)">
+    </app-select>
+
+    <app-select
+    class="w-full flex justify-center"
+    [init]="view().city"
+    [isAutocomplete]="true"
+    [title]="cityLabel()"
+    [validator]="studioCityValidator"
+    [placeholder]="cityPlaceholder()"
+    [options]="getCityNames()"
+    (onChange)="setStudioCity($event)">
+    </app-select>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().street"
+    [title]="streetLabel()"
+    [validator]="studioStreetValidator"
+    [placeholder]="streetPlaceholder()"
+    (onChange)="setStudioStreet($event)">
+    </app-text-field>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().buildingNumber"
+    [title]="buildingNumberLabel()"
+    [validator]="studioBuildingNumberValidator"
+    [placeholder]="buildingNumberPlaceholder()"
+    (onChange)="setStudioBuildingNumber($event)">
+    </app-text-field>
+
+    <app-text-field
+    class="w-full flex justify-center"
+    [init]="view().apartmentNumber"
+    [title]="apartmentNumberLabel()"
+    [validator]="studioApartmentNumberValidator"
+    [placeholder]="apartmentNumberPlaceholder()"
+    (onChange)="setStudioApartmentNumber($event)">
+    </app-text-field>
+
+    <app-number-field
+    class="w-full flex justify-center"
+    [init]="view().latitude ?? null"
+    [title]="latitudeLabel()"
+    [validator]="studioLatitudeValidator"
+    [placeholder]="latitudePlaceholder()"
+    (onChange)="setStudioLatitude($event)">
+    </app-number-field>
+
+    <app-number-field
+    class="w-full flex justify-center"
+    [init]="view().longitude ?? null"
+    [title]="longitudeLabel()"
+    [validator]="studioLongitudeValidator"
+    [placeholder]="longitudePlaceholder()"
+    (onChange)="setStudioLongitude($event)">
+    </app-number-field>
+
+    <div class="flex flex-col items-center gap-2">
+        
+        <app-request-status-message
+        [status]="requestStatus()">
+        </app-request-status-message>
+
+        <app-button
+        [disabled]="viewInvalid()"
+        [idleText]="saveLabel()"
+        [type]="'outline'"
+        (action)="save()">
+        </app-button>
+
+        <app-button
+        [idleText]="nextLabel()"
+        (action)="next.emit()">
+        </app-button>
+    </div>
+</section>

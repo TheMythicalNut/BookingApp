@@ -1,0 +1,53 @@
+@if(active()){
+<div class="overflow-hidden pb-6">
+    @if(loading()){
+        <app-spinner class="min-h-[calc(100vh-92px)]"></app-spinner>
+    }
+    @else{
+    <ngx-masonry
+      [options]="masonryOptions"
+      class="w-full">
+      @for (studio of masonryItems(); track trackByStudio($index, studio)) {
+        @if(studio.real){
+        <div ngxMasonryItem
+          class="article-container cursor-pointer mb-4 pb-2 hover:shadow-md transition-shadow duration-300"
+          (click)="selectStudio(studio.id!)">
+
+          <!-- IMAGE -->
+          <div class="relative w-full">
+            <img
+              class="w-full shadow-sm block animated-image"
+              #imgEl
+              (load)="imgEl.classList.add('loaded')"
+              [src]="studio.thumbnail"
+              [alt]="studio.name"
+              [style.height.px]="getArticleHeight(studio.score)"
+              style="object-fit: cover"/>
+          </div>
+
+          <!-- TEXT -->
+          <div class="w-full playfair-display-400 text-center text-(--primary-color) mt-3">
+            <div class="text-lg">
+              {{ studio.name }}
+            </div>
+
+            <div class="whitespace-pre-wrap playfair-400 text-(--secondary-color) text-sm mt-1">
+              {{ getTypeName()(studio.type!) }}
+            </div>
+
+            <div class="text-base mt-1 text-gray-600">
+              {{ studio.city }}, {{ studio.country | uppercase }}
+            </div>
+          </div>
+
+        </div>
+        } 
+        @else {
+          <div ngxMasonryItem class="article-container masonry-filler"></div>
+        }
+      }
+
+    </ngx-masonry>
+    }
+</div>
+}

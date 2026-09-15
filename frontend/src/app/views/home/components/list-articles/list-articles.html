@@ -1,0 +1,73 @@
+@if(active()){
+    <div class="pb-6"
+    animate.enter="shown--transition">
+    @if(loading()){
+        <app-spinner class="min-h-[calc(100vh-92px)]"></app-spinner>
+    }
+    @else{
+    <div class="@container">
+        <div class="grid grid-cols-2 gap-3 p-4 @min-[600px]:grid-cols-3 @min-[768px]:grid-cols-4">
+            @for (article of articles(); track $index) {
+                <div class="static article-container cursor-pointer hover:shadow-md transition-shadow duration-300" 
+                    (click)="selectArticle(article)">
+                    @if(isS(article)){
+                        <div class="relative inline-block">
+                            <img
+                            class="animated-image"
+                            #imgEl
+                            (load)="imgEl.classList.add('loaded')"
+                            [src]="article.thumbnail.url"
+                            [alt]="article.name"
+                            [style.object-fit]=" 'cover' ">
+                            @if(article.discount !== 0){
+                                <div class="absolute lora-400 text-center top-1 right-1 bg-black text-white py-1 px-2 text-sm aspect-square">{{article.discount}}%<br>OFF</div>
+                            }
+                        </div>
+                        <div class="w-full playfair-display-400 text-center text-(--primary-color) mt-3 mb-4">
+                            <div class="text-lg">{{article.name | uppercase}}</div>
+                            <div class="whitespace-pre-wrap playfair-400 text-(--secondary-color) text-sm mt-1">
+                                {{ getTypeName()(article.type!) }}
+                            </div>
+                            <div class="text-base mt-1"
+                            [class.line-through]="article.discount">{{article.price}} {{article.currency}}</div>
+                        </div>
+                    }
+                    @else if(isP(article)){
+                        <div class="relative inline-block aspect-square">
+                            <div class="thumbnail-grid"
+                            [class.count-1]="getPackageImageCount(article)===1"
+                            [class.count-2]="getPackageImageCount(article)===2"
+                            [class.count-3]="getPackageImageCount(article)===3"
+                            [class.count-4]="getPackageImageCount(article)===4"
+                            
+                            >
+                            @for (img of getPackageImages()(article); track $index) {
+                            <div class="thumb-cell">
+                                <img
+                                class="animated-image"
+                                #imgEl
+                                (load)="imgEl.classList.add('loaded')"
+                                [src]="img"/>
+                            </div>
+                            }
+                            </div>
+                            @if(article.discount !== 0){
+                                <div class="absolute lora-400 text-center top-1 right-1 bg-black text-white py-1 px-2 text-sm aspect-square">{{article.discount}}%<br>OFF</div>
+                            }
+                        </div>
+                        <div class="w-full playfair-display-400 text-center text-(--primary-color) mt-3 mb-4">
+                            <div class="text-lg">{{article.name | uppercase}}</div>
+                            <div class="playfair-400 text-(--secondary-color) text-sm mt-1">
+                                {{ getPackageTypeName() }}
+                            </div>
+                            <div class="text-base mt-1"
+                            [class.line-through]="article.discount">{{article.price}} {{article.currency}}</div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    }
+</div>
+}

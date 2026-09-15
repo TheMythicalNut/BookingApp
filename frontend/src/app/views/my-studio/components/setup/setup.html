@@ -1,0 +1,75 @@
+<div class="bg-[#F7F8FA] min-h-[100dvh]">
+
+  <!-- SIDEBAR NAVIGATION -->
+  <my-studio-sidebar
+  [title]="getTitle()"
+  [options]="SetupStates()"
+  [type]="'SETUP'"
+  (select)="navigate($event)">
+  </my-studio-sidebar>
+  
+  <main class="padding-start p-2">
+        @switch (pageState()) {
+            @case ('INTRO') {
+                <setup-introduction class="w-full flex justify-center"
+                (select)="navigate($event)">
+                </setup-introduction>
+            }
+            @case ('PROFILE') {
+                <setup-profile class="w-full flex justify-center"
+                (next)="navigate('LOCATION')">
+                </setup-profile>
+            }
+            @case ('LOCATION') {
+                <setup-location class="w-full flex justify-center"
+                (next)="navigate('MEDIA')">
+                </setup-location>
+            }
+            @case ('MEDIA') {
+                <setup-media class="w-full flex justify-center"
+                (next)="navigate('SCHEDULE')">
+                </setup-media>
+            }
+            @case ('SCHEDULE') { 
+                <setup-schedule class="w-full flex justify-center"
+                (next)="navigate('EXCEPTIONS')">
+                </setup-schedule>
+            }
+            @case ('EXCEPTIONS') {
+                <setup-schedule-exceptions class="w-full flex justify-center"
+                (next)="navigate('CATEGORIES')">
+                </setup-schedule-exceptions>
+            }
+            @case('CATEGORIES'){
+                <setup-categories class="w-full flex justify-center"
+                (next)="navigate('SERVICES')">
+                </setup-categories>
+            }
+            @case ('SERVICES') {
+                <setup-services class="w-full flex justify-center"
+                (next)="navigate('PACKAGES')">
+                </setup-services>
+            }
+            @case ('PACKAGES') {
+                <setup-packages class="w-full flex justify-center"
+                (next)="navigate('DISCOUNTS')">
+                </setup-packages>
+            }
+            @case ('DISCOUNTS') {
+                <setup-discounts class="w-full flex justify-center"
+                (next)="navigate('BOOKING_RULES')">
+                </setup-discounts>
+            }
+            @case ('BOOKING_RULES') {
+                <setup-booking-rules class="w-full flex justify-center"
+                (next)="navigate('PUBLISH')">
+                </setup-booking-rules>
+            }
+            @case ('PUBLISH') {
+                <setup-publish class="w-full flex justify-center"
+                (next)="navigate('DASHBOARD')">
+                </setup-publish>
+            }
+        }
+    </main>
+</div>

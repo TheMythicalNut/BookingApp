@@ -1,0 +1,15 @@
+<div class="min-h-0">
+    <div class="border border-orange-500 rounded-sm p-1"
+        animate.enter="shown--transition"
+        animate.leave="hidden--transition">
+        <div class="lora-500 text-md text-orange-600">{{title()}}</div>
+        @if(singleError()){
+            <div class="lora-400 text-sm text-orange-400">{{ body()[0] }}</div>
+        }
+        @else{
+            @for (item of body(); track $index) {
+                <div class="lora-400 text-sm text-orange-400">{{ $index + '. ' + item}}</div>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+ngx-masonry {
+  display: block;
+  width: 100%;
+}
+
+.article-container {
+  contain: layout paint style; /* Isolates the element for faster recalc */
+  content-visibility: auto;    /* Optional: performance boost for off-screen items */ 
+  width: calc(50% - 8px);
+}
+
+@media (min-width: 600px) {
+  .article-container {
+    width: calc((100% - 32px) / 3);
+  }
+}
+
+@media (min-width: 768px) {
+  .article-container {
+    width: calc(25% - 12px);
+  }
+}
+.masonry-filler {
+  height: 1px !important; /* Minimal height to maintain layout */
+  visibility: hidden;
+  pointer-events: none;
+}

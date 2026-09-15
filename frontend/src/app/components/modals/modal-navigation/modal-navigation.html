@@ -1,0 +1,33 @@
+@if(isOpen()){
+<div class="fixed inset-0 z-40 flex items-center justify-center bg-white shown--transition text-xl playfair-400">
+  <div class="relative flex flex-col items-center space-y-4">
+    @switch(mode()){
+      @case('navigation'){
+        @for (nav of navigations; track $index) {
+          <div (click)="navigate(nav.dest)" class="cursor-pointer">
+            {{ nav.name | translate }}
+          </div>
+        }
+
+      }
+      @case('language'){
+        @for (lang of languages; track $index) {
+          <div (click)="selectLanguage(lang)" class="cursor-pointer">
+            {{ lang }}
+          </div>
+        }
+      }
+    }
+  </div>
+  <div class="absolute left-0 right-0 bottom-4 text-center cursor-pointer">
+    @switch (mode()) {
+      @case('navigation'){
+        <div class="underline" (click)="mode.set('language')">{{ 'BUTTON.TO_CHANGE_LANGUAGE' | translate }} : {{currentLanguage()}}</div>
+      }
+      @case('language'){
+        <div class="underline" (click)="mode.set('navigation')">{{ 'BUTTON.BACK_TO_NAVIGATION' | translate }}</div>
+      }
+    }
+  </div>
+</div>
+}

@@ -1,0 +1,23 @@
+@keyframes visible-flex {
+    0%, 25% {
+        visibility: visible;
+        padding-bottom: 0;
+    }
+
+    50% {
+        padding-bottom: 32px;
+    }
+
+    100% {
+        visibility: visible;
+        padding-bottom: 32px;
+    }
+}
+
+.visible-flex {
+    transform-origin: top;
+    animation-name: visible-flex;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-fill-mode: forwards;
+}

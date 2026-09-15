@@ -1,0 +1,101 @@
+@if (isOpen()) {
+<div class="fixed inset-0 z-50 flex justify-end"
+    animate.enter="sidebar-overlay-enter"
+    animate.leave="sidebar-overlay-leave"
+     (click)="onBackdropClick()">
+     <div class="absolute inset-0 bg-black/25"></div>
+
+    <!-- Modal Panel -->
+     <div class="relative w-[90dvw] max-w-4xl bg-white px-1 pt-2 pb-12 h-full shadow-2xl transition-all"
+          (click)="$event.stopPropagation()">
+
+          <app-text-input 
+          [value]="search()"
+          [placeholder]="searchPlaceholder()"
+          [leadingIcon]="'search'"
+          (changed)="searchChange($event)">
+          </app-text-input>
+
+          <div class="h-full flex flex-col overflow-y-auto scrollbar-none gap-4 mt-4">
+               @if(filteredPackages().length > 0){
+               <div>
+                    <div class="flex flex-row justify-between cursor-pointer" (click)="dropped[0] = !dropped[0]">
+                         <div class="px-2 playfair-display-400 text-(--secondary-color) text-xl">{{ getPackageTypeName | uppercase }}</div>
+
+                         @if(!dropped[0]){
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                              fill="none" stroke="currentColor" stroke-width="2" 
+                              stroke-linecap="round" stroke-linejoin="round" 
+                              class="text-(--secondary-color)">
+                              <path d="m6 9 6 6 6-6"/>
+                         </svg>
+                         }
+                         @else{
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round" 
+                              class="text-(--secondary-color)">
+                              <path d="m18 15-6-6-6 6"/>
+                         </svg>
+                         }
+
+                    </div>
+                    <hr class="text-(--secondary-color)">
+                    <div class="mt-2 flex flex-col gap-2 transition-all ease-in-out overflow-hidden"
+                         [style.transition-duration.ms]="totalDelay(filteredPackages().length)"
+                         [style.max-height]="dropped[0] ?  (48 * packageCount()) + 'px' : '0'"
+                         [style.opacity]="dropped[0] ? '1' : '0'">
+                    @for (pckage of filteredPackages(); track $index) {
+                         <div class="px-2 lora-400 text-(--primary-color) cursor-pointer" 
+                              (click)="onPackage.emit(pckage.id)">
+                              {{pckage.name}}
+                         </div>
+                    }
+                    </div>
+               </div>
+               }
+               @for (cat of categories(); track $index) {
+                    @if(filteredServices()(cat.services).length > 0){
+                    <div>
+                         <div class="flex flex-row justify-between cursor-pointer" (click)="dropped[$index + 1] = !dropped[$index + 1]">
+                              <div class="px-2 playfair-display-400 text-(--secondary-color) text-xl">{{cat.name | uppercase}}</div>
+
+                              @if(!dropped[$index + 1]){
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                   fill="none" stroke="currentColor" stroke-width="2" 
+                                   stroke-linecap="round" stroke-linejoin="round" 
+                                   class="text-(--secondary-color)">
+                                   <path d="m6 9 6 6 6-6"/>
+                              </svg>
+                              }
+                              @else{
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                   fill="none" stroke="currentColor" stroke-width="2"
+                                   stroke-linecap="round" stroke-linejoin="round" 
+                                   class="text-(--secondary-color)">
+                                   <path d="m18 15-6-6-6 6"/>
+                              </svg>
+                              }
+
+                         </div>
+                         <hr class="text-(--secondary-color)">
+                         <div class="mt-2 flex flex-col gap-2 transition-all ease-in-out overflow-hidden"
+                              [style.transition-duration.ms]="totalDelay(filteredServices()(cat.services).length)"
+                              [style.max-height]="dropped[$index + 1] ?  (48 * cat.services.length) + 'px' : '0'"
+                              [style.opacity]="dropped[$index + 1] ? '1' : '0'">
+                         @for (service of services(); track $index) {
+                              @if(filteredServices()(cat.services).includes(service.id)){
+                                   <div class="px-2 lora-400 cursor-pointer" (click)="onService.emit(service.id)">
+                                        <div class="text-(--primary-color) text-md">{{service.name}}</div>
+                                        <div class="text-(--secondary-color) text-sm"> {{getServiceTypeName(service.type)}} </div>
+                                   </div>
+                              }
+                         }
+                         </div>
+                    </div>
+                    }
+               }
+          </div>
+    </div>
+</div>
+}

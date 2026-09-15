@@ -1,0 +1,789 @@
+{
+  "ALERTS": {
+    "WARNING": "Opozorilo"
+  },
+  "DATEPICKER": {
+    "TITLE": "Izberite datum ali obdobje"
+  },
+  "TIMEPICKER": {
+    "TITLE": "Začetek časovnega okna",
+    "START": "Začetek okna",
+    "END": "Konec okna"
+  },
+  "BUTTON": {
+    "CONTINUE": "nadaljuj",
+    "SEND": "pošlji",
+    "CONFIRM": "potrdi",
+    "RESERVE": "rezerviraj",
+    "BOOK": "naroči se",
+    "LOGIN": "prijava",
+    "REGISTER": "registracija",
+    "RESCHEDULE": "prestavi termin",
+    "CANCEL": "prekliči",
+    "BACK": "nazaj",
+    "OK": "v redu",
+    "REVIEW": "oceni",
+    "TO_CHANGE_LANGUAGE": "spremeni jezik",
+    "BACK_TO_NAVIGATION": "nazaj na navigacijo",
+    "SAVE": "shrani",
+    "NEXT": "naprej",
+    "LOG_OUT": "odjava",
+    "PUBLISH": "objavi",
+    "CLEAR": "počisti",
+    "MODIFY": "uredi",
+    "MARK_COMPLETED": "označi kot opravljeno",
+    "MARK_MISSED": "označi kot zamujeno",
+    "MARK_CANCELLED": "označi kot preklicano"
+  },
+  "DATE": {
+    "MONTH": "Mesec",
+    "MONTHS": "Meseci",
+    "WEEK": "Teden",
+    "WEEKS": "Tedni",
+    "DAY": "Dan",
+    "DAYS": "Dnevi",
+    "HOURS": "Ure",
+    "MINUTES": "Minute",
+    "DATE": "Datum",
+    "START_DATE": "Datum začetka",
+    "END_DATE": "Datum konca",
+    "TODAY": "Danes",
+    "TOMORROW": "Jutri",
+    "SUN": "Ned",
+    "MON": "Pon",
+    "TUE": "Tor",
+    "WED": "Sre",
+    "THU": "Čet",
+    "FRI": "Pet",
+    "SAT": "Sob",
+    "SUNDAY": "Nedelja",
+    "MONDAY": "Ponedeljek",
+    "TUESDAY": "Torek",
+    "WEDNESDAY": "Sreda",
+    "THURSDAY": "Četrtek",
+    "FRIDAY": "Petek",
+    "SATURDAY": "Sobota",
+    "JANUARY": "Januar",
+    "FEBRUARY": "Februar",
+    "MARCH": "Marec",
+    "APRIL": "April",
+    "MAY": "Maj",
+    "JUNE": "Junij",
+    "JULY": "Julij",
+    "AUGUST": "Avgust",
+    "SEPTEMBER": "September",
+    "OCTOBER": "Oktober",
+    "NOVEMBER": "November",
+    "DECEMBER": "December",
+    "JAN": "Jan",
+    "FEB": "Feb",
+    "MAR": "Mar",
+    "APR": "Apr",
+    "JUN": "Jun",
+    "JUL": "Jul",
+    "AUG": "Avg",
+    "SEP": "Sep",
+    "OCT": "Okt",
+    "NOV": "Nov",
+    "DEC": "Dec"
+  },
+  "PLACEHOLDER": {
+    "LOCATION": "lokacija",
+    "TIMESLOT": "termin",
+    "SERVICE_TYPE": "vrsta storitve",
+    "SEARCH": "išči...",
+    "EMAIL": "oseba@email.com",
+    "PHONE": "+386 12 345 678",
+    "MESSAGE": "Imam vprašanje o...",
+    "ADDITIONAL": "Potrebujem tudi...",
+    "PREREQUIRE": "Zahteva:",
+    "PASSWORD": "********",
+    "INSTAGRAM": "https://www.instagram.com/vasstudio",
+    "FACEBOOK": "https://www.facebook.com/vasstudio",
+    "STUDIO_NAME": "npr. Mala Velora",
+    "STUDIO_LINK": "https://spletka.com/malavelora",
+    "COUNTRY": "npr. Slovenija",
+    "CITY": "npr. Ljubljana",
+    "STREET": "npr. Čopova ulica",
+    "BUILDING_NUMBER": "npr. 17a",
+    "APARTMENT_NUMBER": "npr. 22",
+    "LATITUDE": "npr. 46.05108",
+    "LONGITUDE": "npr. 14.50513",
+    "THUMBNAIL": "Pokončno · 720x1080 · razmerje 2:3. To je prva slika, ki jo stranke vidijo.",
+    "HERO_IMAGES": "Do 3 ležeče slike · 1080x720 · Povlecite za spremembo vrstnega reda."
+  },
+  "STUDIO_TYPE": {
+    "HAIR_STYLIST": "frizerka / frizer",
+    "NAIL_TECHNICIAN": "manikir tehnik",
+    "MASSAGE_THERAPIST": "masažni terapevt",
+    "BARBER": "brivec",
+    "MAKEUP_ARTIST": "ličilka / ličilec",
+    "ESTHETICIAN": "kozmetičarka / kozmetičar",
+    "WAX_SPECIALIST": "specialist za voskanje",
+    "TATTOO_ARTIST": "tattoo umetnik",
+    "MICROBLADING_ARTIST": "microblading umetnik",
+    "SPRAY_TAN_SPECIALIST": "specialist za spray tan",
+    "HENNA_ARTIST": "henna umetnik"
+  },
+  "PACKAGE_TYPE": "paket",
+  "SERVICE_TYPE": {
+    "HAIRCUT": "striženje",
+    "BLOWOUT": "fen oblikovanje",
+    "HAIR_COLORING": "barvanje las",
+    "HIGHLIGHTS_AND_BALAYAGE": "meliranje in balayage",
+    "HAIR_EXTENSIONS": "podaljšanje las",
+    "BRAIDS_AND_PROTECTIVE_STYLES": "pletenice in zaščitne frizure",
+    "NATURAL_HAIR_TREATMENT": "nega naravnih las",
+    "KERATIN_AND_SMOOTHING": "keratin in glajenje",
+    "LOCS_AND_DREADLOCKS": "loki in dredi",
+    "SCALP_TREATMENT": "nega lasišča",
+
+    "MANICURE": "manikura",
+    "PEDICURE": "pedikura",
+    "GEL_NAILS": "gel nohti",
+    "ACRYLIC_NAILS": "akrilni nohti",
+    "NAIL_ART": "nail art",
+    "NAIL_EXTENSIONS": "podaljšanje nohtov",
+    "PRESS_ON_NAILS": "press-on nohti",
+    "NAIL_REPAIR": "popravilo nohtov",
+
+    "SWEDISH_MASSAGE": "švedska masaža",
+    "DEEP_TISSUE_MASSAGE": "masaža globokih tkiv",
+    "HOT_STONE_MASSAGE": "masaža z vročimi kamni",
+    "PRENATAL_MASSAGE": "prenatalna masaža",
+    "SPORTS_MASSAGE": "športna masaža",
+    "LYMPHATIC_DRAINAGE": "limfna drenaža",
+    "HEAD_AND_SCALP_MASSAGE": "masaža glave in lasišča",
+    "REFLEXOLOGY": "refleksologija",
+
+    "MENS_HAIRCUT": "moško striženje",
+    "FADE_AND_TAPER": "fade in taper",
+    "BEARD_TRIM": "urejanje brade",
+    "HOT_TOWEL_SHAVE": "britje z vročo brisačo",
+    "KIDS_HAIRCUT": "otroško striženje",
+    "HAIR_DESIGN_AND_LINEUP": "dizajn las in liniranje",
+
+    "EVERYDAY_MAKEUP": "vsakodnevno ličenje",
+    "BRIDAL_MAKEUP": "poročno ličenje",
+    "EVENT_AND_OCCASION_MAKEUP": "ličenje za posebne priložnosti",
+    "AIRBRUSH_MAKEUP": "airbrush ličenje",
+    "EDITORIAL_MAKEUP": "uredniško ličenje",
+    "MAKEUP_LESSON": "tečaj ličenja",
+
+    "CLASSIC_FACIAL": "klasična nega obraza",
+    "DEEP_CLEANSING_FACIAL": "globinsko čiščenje obraza",
+    "ANTI_AGING_FACIAL": "anti-age nega obraza",
+    "ACNE_TREATMENT": "tretma za akne",
+    "CHEMICAL_PEEL": "kemični piling",
+    "DERMAPLANING": "dermaplaning",
+    "MICRODERMABRASION": "mikrodermabrazija",
+    "LED_LIGHT_THERAPY": "LED svetlobna terapija",
+    "HYDRAFACIAL": "hydrafacial",
+
+    "BODY_WAXING": "voskanje telesa",
+    "FACIAL_WAXING": "voskanje obraza",
+    "BIKINI_AND_BRAZILIAN_WAX": "bikini in brazilsko voskanje",
+    "THREADING": "threading",
+    "SUGARING": "sugaring",
+    "LASER_HAIR_REMOVAL": "laserska odstranitev dlak",
+
+    "CUSTOM_TATTOO": "unikatna tetovaža",
+    "FLASH_TATTOO": "flash tetovaža",
+    "TATTOO_COVERUP": "prekrivanje tetovaže",
+    "FINE_LINE_TATTOO": "fine line tetovaža",
+    "BLACKWORK_TATTOO": "blackwork tetovaža",
+    "WATERCOLOR_TATTOO": "akvarel tetovaža",
+    "TATTOO_TOUCH_UP": "dopolnitev tetovaže",
+
+    "MICROBLADING": "microblading",
+    "POWDER_BROWS": "powder obrvi",
+    "BROW_LAMINATION": "laminacija obrvi",
+    "BROW_TINTING": "barvanje obrvi",
+    "BROW_SHAPING": "oblikovanje obrvi",
+    "LASH_EXTENSIONS": "podaljšanje trepalnic",
+    "LASH_LIFT_AND_TINT": "lift in barvanje trepalnic",
+    "NANO_BROWS": "nano obrvi",
+
+    "FULL_BODY_SPRAY_TAN": "spray tan celega telesa",
+    "AIRBRUSH_TAN": "airbrush tan",
+    "EXPRESS_TAN": "express tan",
+    "BRIDAL_TAN": "poročni tan",
+
+    "TRADITIONAL_HENNA": "tradicionalna henna",
+    "BRIDAL_HENNA": "poročna henna",
+    "JAGUA_TATTOO": "jagua tetovaža",
+    "GLITTER_TATTOO": "bleščeča tetovaža",
+    "BODY_PAINTING": "body painting"
+  },
+  "STUDIOS": "Studii",
+  "SERVICES": "Storitve",
+  "STUDIO": "Studio",
+  "SERVICE": "Storitev",
+  "PACKAGE": "Paket",
+  "NAVIGATIONS": {
+    "HOME": "domov",
+    "MY_STUDIO": "moj studio",
+    "CONTACT": "kontakt",
+    "TOS": "pogoji uporabe"
+  },
+  "MESSAGES": {
+    "LINK_COPIED": "Povezava kopirana v odložišče",
+    "OPEN": "odprto",
+    "CLOSED": "trenutno zaprto",
+    "OPEN_DAYS": "Delovni čas: ",
+    "CLOSED_ALL_WEEK": "Zaprto: cel teden",
+    "OPENS_AT": "odpre ob",
+    "CLOSES_AT": "zapre ob",
+    "TOO_CLOSE_TO_RESCHEDULE": "*Prestavljanje termina ni dovoljeno za tako bližnje termine",
+    "CANCEL_PENALTY": "*Pozna odpoved je predmet kazni",
+    "MORE_DETAILS": "Za več informacij spletka.com/contact",
+    "MISSED_SCHEDULE": "Zamujeni termini negativno vplivajo na izvajalce storitev in druge uporabnike. Ponavljajoče zamujanje dogovorjenih terminov lahko povzroči začasno ali trajno ukinitev dostopa do storitve.",
+    "RATING_GRATITUDE": "Hvala za oceno storitve",
+    "DRAG_TO_REORDER": "Povlecite za spremembo vrstnega reda"
+  },
+  "ERRORS": {
+    "INVALID_EMAIL": "ta e-poštni naslov ni veljaven",
+    "INVALID_PASSWORD": "to geslo ni veljavno",
+    "INVALID_PHONE": "ta telefonska številka ni veljavna",
+    "CONFIRM_PASSWORD_MISMATCH": "gesli se ne ujemata",
+    "CONFIRM_REGISTRATION_FAILED": "Napaka: potrditev registracije ni uspela, poskusite osvežiti stran in/ali preverite URL.",
+    "CONTACT_US": "Kontaktirajte nas, če napaka ne izgine!",
+    "PASSWORD_MUST_BE_STRING": "Geslo mora biti besedilo",
+    "PASSWORD_EXCEEDS_PROCESSING_LENGTH": "Geslo presega dovoljeno dolžino za obdelavo",
+    "PASSWORD_MIN_LENGTH": "Geslo mora imeti vsaj 12 znakov",
+    "PASSWORD_MAX_LENGTH": "Geslo ne sme biti daljše od 48 znakov",
+
+    "SETUP": {
+      "PROFILE": {
+        "TITLE": "Obrazec profila studia ni veljaven",
+        "INVALID_PROFILE": "Obrazec profila studia ni veljaven",
+        "MISSING_STUDIO_NAME": "Ime studia je obvezno",
+        "TOO_SHORT_STUDIO_NAME": "Ime studia mora imeti vsaj 3 znake",
+        "MISSING_STUDIO_LINK": "Povezava studia je obvezna",
+        "TOO_SHORT_STUDIO_LINK": "Povezava studia mora imeti vsaj 3 znake",
+        "MISSING_STUDIO_TYPES": "Izbrati morate vsaj eno vrsto studia",
+        "MISSING_CONTACT_EMAIL": "Kontaktni e-poštni naslov je obvezen",
+        "INVALID_CONTACT_EMAIL": "Vnesite veljaven kontaktni e-poštni naslov",
+        "MISSING_CONTACT_PHONE": "Kontaktna telefonska številka je obvezna",
+        "INVALID_CONTACT_PHONE": "Vnesite veljavno kontaktno telefonsko številko",
+        "INVALID_INSTAGRAM": "Vnesite veljaven URL Instagram profila",
+        "INVALID_FACEBOOK": "Vnesite veljaven URL Facebook profila",
+        "INVALID_WA_PHONE": "Vnesite veljavno WhatsApp telefonsko številko"
+      },
+      "LOCATION": {
+        "TITLE": "Obrazec lokacije ni veljaven",
+        "INVALID_LOCATION": "Obrazec lokacije studia ni veljaven",
+        "MISSING_COUNTRY": "Država studia je obvezna",
+        "MISSING_CITY": "Mesto studia je obvezno",
+        "MISSING_STREET": "Ulica studia je obvezna",
+        "MISSING_BUILDING_NUMBER": "Hišna številka studia je obvezna",
+        "MISSING_APARTMENT_NUMBER": "Številka stanovanja studia je obvezna",
+        "INVALID_LATITUDE": "Vnesite geografsko širino med -90 in 90",
+        "INVALID_LONGITUDE": "Vnesite geografsko dolžino med -180 in 180",
+        "MISSING_LATITUDE": "Geografska širina je obvezna",
+        "MISSING_LONGITUDE": "Geografska dolžina je obvezna"
+      },
+      "MEDIA": {
+        "TITLE": "Obrazec medijev ni veljaven",
+        "INVALID_MEDIA": "Obrazec medijev ni veljaven",
+        "MISSING_THUMBNAIL": "Sličica je obvezna",
+        "INVALID_HERO_IMAGES_COUNT": "Zagotoviti morate med 1 in 3 hero slike",
+        "INVALID_HERO_IMAGE": "Ena ali več hero slik ni veljavnih"
+      },
+      "SCHEDULE": {
+        "TITLE": "Obrazec urnika ni veljaven",
+        "INVALID_SCHEDULES_ARRAY": "Obrazec urnika je nepravilen",
+        "MISSING_SCHEDULES": "Seznam urnikov manjka",
+        "EMPTY_SCHEDULES": "Zahtevan je vsaj en urnik",
+        "MISSING_EFFECTIVE_FROM": "Datum začetka veljavnosti je obvezen",
+        "EFFECTIVE_FROM_INVALID_FORMAT": "Datum začetka veljavnosti ni veljaven",
+        "MISSING_EFFECTIVE_TO": "Datum konca veljavnosti je obvezen",
+        "EFFECTIVE_TO_INVALID_FORMAT": "Datum konca veljavnosti ni veljaven",
+        "EFFECTIVE_RANGE_INVALID": "Datum konca veljavnosti mora biti po datumu začetka",
+        "INVALID_SCHEDULE": "Urnik ni veljaven",
+        "INVALID_DAYS_AMOUNT": "Število dni ni veljavno",
+        "INVALID_DAY": "Dan ni veljaven",
+        "MISSING_DAY_NAME": "Ime dneva je obvezno",
+        "INVALID_INTERVALS": "Intervali niso veljavni",
+        "MISSING_INTERVALS": "Zahtevan je vsaj en interval",
+        "OVERLAPPING_INTERVALS": "Intervali se prekrivajo",
+        "INVALID_INTERVAL": "Interval ni veljaven",
+        "INVALID_INTERVAL_START": "Vnesite veljaven začetek intervala",
+        "INVALID_INTERVAL_END": "Vnesite veljaven konec intervala",
+        "INVALID_INTERVAL_RANGE": "Konec intervala mora biti po začetku"
+      },
+      "EXCEPTIONS": {
+        "TITLE": "Obrazec izjem urnika ni veljaven",
+        "INVALID_EXCEPTIONS": "Obrazec izjem ni veljaven",
+        "INVALID_EXCEPTIONS_ARRAY": "Izjeme morajo biti niz",
+        "INVALID_EXCEPTION": "izjema ni veljavna",
+        "INVALID_EXCEPTION_TYPE": "izberite veljavno vrsto izjeme",
+        "INVALID_INTERVALS": "intervali niso veljavni",
+        "MISSING_INTERVALS": "zahtevan je vsaj en interval",
+        "INVALID_APPLIES_TO": "izbrani datum ali obdobje ni veljavno.",
+        "OVERLAPPING_INTERVALS": "intervali se prekrivajo",
+        "INVALID_INTERVAL": "interval ni veljaven",
+        "INVALID_INTERVAL_START": "vnesite veljaven začetek intervala",
+        "INVALID_INTERVAL_END": "vnesite veljaven konec intervala",
+        "INVALID_INTERVAL_RANGE": "obseg intervala ni veljaven"
+      },
+      "CATEGORIES": {
+        "TITLE": "Obrazec kategorij ni veljaven",
+        "EMPTY_NAME": "ime je obvezno",
+        "DUPLICATE_NAME": "ime mora biti edinstveno"
+      },
+      "SERVICES": {
+        "TITLE": "Obrazec storitev ni veljaven",
+        "REQUIRED": "Potrebna je vsaj ena storitev",
+        "INVALID_SERVICE": "ni veljavna",
+        "MISSING_LOCAL_ID": "manjka lokalni id",
+        "MISSING_NAME": "ime je obvezno",
+        "MISSING_LINK": "povezava je obvezna",
+        "MISSING_CATEGORY": "kategorija je obvezna",
+        "MISSING_CURRENCY": "valuta je obvezna",
+        "INVALID_PRICE": "cena ni veljavna",
+        "INVALID_DURATION": "trajanje ni veljavno",
+        "INVALID_SERVICE_TYPES": "vrste storitev niso veljavne",
+        "INVALID_THUMBNAIL": "sličica je obvezna",
+        "INVALID_GALLERY": "galerija ni veljavna",
+        "DUPLICATE_LINK": "povezava mora biti edinstvena",
+        "MISSING_PRICE": "cena je obvezna",
+        "MISSING_DURATION": "trajanje je obvezno"
+      },
+      "PACKAGES": {
+        "TITLE": "Obrazec paketov ni veljaven",
+        "INVALID_PACKAGE": "ni veljaven",
+        "MISSING_LOCAL_ID": "manjka lokalni id",
+        "MISSING_NAME": "ime je obvezno",
+        "MISSING_LINK": "povezava je obvezna",
+        "MISSING_CURRENCY": "valuta je obvezna",
+        "INVALID_PRICE": "cena ni veljavna",
+        "INVALID_DURATION": "trajanje ni veljavno",
+        "MISSING_SERVICES": "storitve so obvezne",
+        "INVALID_SERVICES": "neveljavne storitve",
+        "DUPLICATE_SERVICES": "vsebuje podvojene storitve",
+        "DUPLICATE_LINK": "povezava mora biti edinstvena",
+        "MISSING_PRICE": "cena je obvezna",
+        "MISSING_DURATION": "trajanje je obvezno"
+      },
+      "DISCOUNTS": {
+        "TITLE": "Obrazec popustov ni veljaven",
+        "INVALID_DISCOUNT": "ni veljaven",
+        "MISSING_LOCAL_ID": "manjka id",
+        "MISSING_ARTICLE": "izberite artikel",
+        "INVALID_PERCENTAGE": "odstotek ni veljaven",
+        "MISSING_ARTICLE_LOCAL_ID": "manjka id artikla",
+        "INVALID_ARTICLE_TYPE": "vrsta artikla ni veljavna",
+        "DUPLICATE_ARTICLE_TARGET": "popust za izbrani artikel že obstaja",
+        "MISSING_PERCENTAGE": "odstotek popusta je obvezen"
+      },
+      "BOOKING_RULES": {
+        "TITLE": "Obrazec pravil rezervacije ni veljaven",
+        "INVALID_BOOKING_RULES": "Pravila rezervacije studia niso veljavna",
+        "INVALID_EMAIL_REMINDERS": "Opomnik po e-pošti mora biti resnično ali neresnično",
+        "INVALID_SMS_REMINDERS": "SMS opomnik mora biti resnično ali neresnično",
+        "INVALID_MIN_AHEAD": "Minimalni čas vnaprej mora biti vsaj 30 minut",
+        "INVALID_MAX_AHEAD": "Maksimalni čas vnaprej mora biti vsaj 7 dni",
+        "MIN_AHEAD_EXCEEDS_MAX_AHEAD": "Minimalni čas vnaprej ne sme preseči maksimalnega",
+        "MISSING_MIN_AHEAD": "Minimalni čas vnaprej je obvezen",
+        "MISSING_MAX_AHEAD": "Maksimalni čas vnaprej je obvezen"
+      },
+      "PUBLISH": {
+        "TITLE_ERROR": "Objava ni na voljo — odpravite obstoječe napake",
+        "TITLE_MODIFY": "Objava ni na voljo — shranite spremenjene obrazce"
+      }
+    }
+  },
+  "TEXTFIELD_TITLES": {
+    "STUDIO_TYPE": "Vrsta studia",
+    "STUDIO_NAME": "Ime studia",
+    "STUDIO_LINK": "Povezava studia",
+    "CATEGORY_NAME": "Ime kategorije",
+    "EMAIL": "E-poštni naslov",
+    "PHONE": "Telefonska številka",
+    "MESSAGE": "Sporočilo",
+    "PASSWORD": "Geslo",
+    "CONFIRM_PASSWORD": "Potrditev gesla",
+    "COMMENT": "Komentar",
+    "ADDITIONAL": "Opomba",
+    "INSTAGRAM": "Instagram povezava",
+    "FACEBOOK": "Facebook povezava",
+    "CONTACT_EMAIL": "Kontaktni e-poštni naslov",
+    "CONTACT_PHONE": "Kontaktna telefonska številka",
+    "WHATSAPP": "WhatsApp telefonska številka",
+    "SEARCH_TAGS": "Iskalne oznake",
+    "COUNTRY": "Država",
+    "CITY": "Mesto",
+    "STREET": "Ulica",
+    "BUILDING_NUMBER": "Hišna številka",
+    "APARTMENT_NUMBER": "Številka stanovanja",
+    "LATITUDE": "Geografska širina",
+    "LONGITUDE": "Geografska dolžina",
+    "THUMBNAIL": "Sličica",
+    "HERO_IMAGES": "Hero slike"
+  },
+  "MY_STUDIO": {
+    "LOGIN": {
+      "TITLE": "Prijava",
+      "TO_REGISTER": {
+        "NORMAL": "nimate računa?",
+        "UNDERLINED": "registrirajte se tukaj!"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Registracija",
+      "TO_TERMS": {
+        "NORMAL": "potrebujete več informacij?",
+        "UNDERLINED": "preberite naše pogoje uporabe"
+      }
+    },
+    "CONFIRM": {
+      "TITLE": "Potrditev e-poštnega naslova",
+      "MESSAGES": {
+        "EMAIL_CONFIRMATION_REQUIRED": "E-pošta poslana na:",
+        "INSTRUCTION": "kliknite na prejeto povezavo za potrditev vašega računa",
+        "INVALID_EMAIL": "Naslov ni pravilen?",
+        "BACK": "Nazaj",
+        "EMAIL_NOT_RECEIVED": "Sporočila niste prejeli?",
+        "SEND_AGAIN": "Pošlji znova"
+      }
+    },
+    "CONFIRMED": {
+      "TITLE": "Registracija potrjena",
+      "BODY": "Uspešna registracija za e-poštni naslov:"
+    }
+  },
+  "FAQS": {
+    "TITLE_FAQ": "Pogosta vprašanja",
+    "TITLE_DIRECT": "Vprašajte nas neposredno!",
+    "QUESTIONS": [
+      {"QUESTION": "Kako dodam svoj salon na platformo?", "ANSWER": "Stopite v stik z nami in pridobite uvajalni vodnik, ki vas po korakih vodi skozi vnos podatkov o salonu, nalaganje fotografij, objavo storitev in nastavitev razpoložljivosti."},
+      {"QUESTION": "Ali lahko upravljam termine prek platforme?", "ANSWER": "Da, termine si lahko ogledate, potrdite, prestavite ali prekličete neposredno prek platforme. Prejemali boste tudi obvestila o novih rezervacijah."},
+      {"QUESTION": "Kako nastavim storitve, cene in trajanja?", "ANSWER": "Storitve lahko kadar koli dodate, uredite ali odstranite v svojem profilu. Za vsako storitev nastavite ceno, trajanje in posebne opombe, da natančno prikažete svojo ponudbo."},
+      {"QUESTION": "Ali lahko upravljam več zaposlenih?", "ANSWER": "Ne, platforma je namenjena posameznim izvajalcem storitev. Cilj je izenačiti možnosti z velikimi franšizami z uporabo podatkov in statistik za strukturno strokovno znanje."},
+      {"QUESTION": "Kako ravnam s preklici ali izostanki?", "ANSWER": "Platforma samodejno blokira izostalce in lahko za prihodnje termine zaračuna prilagojeno pristojbino za odpoved."},
+      {"QUESTION": "Ali bom plačan prek platforme?", "ANSWER": "Ne, platforma trenutno ne obdeluje plačil. Plačila prejemate neposredno od strank v salonu."},
+      {"QUESTION": "Ali lahko ponudim promocije ali popuste?", "ANSWER": "Ustvarite lahko posebne ponudbe ali paketne dogovore za privabljanje novih strank in ohranjanje obstoječih."},
+      {"QUESTION": "Kako upravljam podatke o strankah?", "ANSWER": "Platforma zagotavlja varen sistem za upravljanje strank. Ogledate si lahko zgodovino rezervacij, kontaktne podatke in opombe za vsako stranko ob hkratnem upoštevanju zasebnosti."},
+      {"QUESTION": "Ali lahko sledim uspešnosti svojega salona?", "ANSWER": "Da. Medtem ko naše trenutne nadzorne plošče ponujajo osnovne vpoglede, aktivno uvajamo pogoste posodobitve za bogatejšo izkušnjo. Kmalu boste imeli dostop do obsežnih metrik — vključno s prihodki, priljubljenimi storitvami, lokalnimi uvrstitvami in vedenjem stalnih strank. Vse zasnovano za pomoč pri rasti vašega posla."},
+      {"QUESTION": "Ali obstaja podpora strankam, če potrebujem pomoč?", "ANSWER": "Da, platforma ponuja namensko podporo lastnikom, vključno z video vadnicami, dokumentacijo in e-poštno pomočjo pri vseh težavah ali vprašanjih."},
+
+      {"QUESTION": "Katere storitve lahko rezerviram prek platforme?", "ANSWER": "Rezervirate lahko širok nabor storitev, vključno s striženjem, oblikovanjem, barvanjem, negami obraza, manikuro, pedikuro, masažno terapijo, negami kože, epilacijo in več."},
+      {"QUESTION": "Kako najdem salon v svoji bližini?", "ANSWER": "Uporabite funkcijo iskanja po lokaciji za iskanje vseh storitev v vaši okolici."},
+      {"QUESTION": "Ali lahko rezerviram več storitev v enem terminu?", "ANSWER": "Da, številni saloni vam omogočajo rezervacijo več storitev v enem terminu. Preverite profil salona za razpoložljive pakete kombiniranih storitev."},
+      {"QUESTION": "Kako plačam za termin?", "ANSWER": "Osebno pri izvajalcu storitve. Platforma ne obdeluje plačil, saj verjamemo, da imajo platforme za obdelavo plačil napačne spodbude za algoritmično izkoriščanje izvajalcev storitev."},
+      {"QUESTION": "Ali lahko rezerviram termin za drugo osebo?", "ANSWER": "Da, termine za družinske člane ali prijatelje rezervirate z vnosom njihovih podatkov med postopkom rezervacije."},
+      {"QUESTION": "Ali saloni ponujajo programe zvestobe ali popuste?", "ANSWER": "Številni saloni ponujajo nagrade za zvestobo ali promocijske ponudbe. Preverite profil posameznega salona za razpoložljive ugodnosti."},
+      {"QUESTION": "Ali so moji osebni podatki varni?", "ANSWER": "Absolutno. Uporabljamo industrijske varnostne standarde za zaščito vaših osebnih podatkov."},
+      {"QUESTION": "Kaj storim, če naletim na težavo z rezervacijo?", "ANSWER": "Ob kakršnih koli težavah stopite v stik s salonom neposredno prek platforme ali se obrnite na našo ekipo za podporo strankam."}
+    ],
+    "ANSWER_NOT_FOUND": {
+      "NORMAL": "Niste našli odgovora na vaše vprašanje?",
+      "UNDERLINED": "Vprašajte nas neposredno!"
+    }
+  },
+  "TOS": {
+    "TITLE": "Pogoji uporabe",
+    "TERMS": [
+      {
+        "HEADER": "Uvod",
+        "BODY": "Ti Pogoji uporabe (\"Pogoji\") urejajo dostop in uporabo spletnega mesta https://spletka.com (\"Spletno mesto\") ter storitev, ki so na voljo prek njega (\"Storitev\"). Spletno mesto deluje pod imenom SPLETKA kot fizična oseba s stalnim prebivališčem v Republiki Srbiji (\"SPLETKA\", \"mi\", \"nas\" ali \"naš\"). Z dostopanjem ali uporabo Spletnega mesta ali Storitve se strinjate, da vas ti Pogoji pravno zavezujejo. Če se ne strinjate, Spletnega mesta ali Storitve ne smete uporabljati."
+      },
+      {
+        "HEADER": "Opis storitve",
+        "BODY": "SPLETKA je platforma SaaS, namenjena registriranim imetnikom računov za predstavitev storitev, povezanih s studiom, prek besedila in slik, ter potencialnim strankam za brskanje po teh storitvah in oddajo zahtevkov za rezervacije. Priložnostni ali anonimni obiskovalci si lahko ogledajo javno dostopno vsebino brez ustvarjanja računa. SPLETKA ne nastopa kot stranka v kakršnem koli dogovoru med izvajalci storitev in njihovimi strankami."
+      },
+      {
+        "HEADER": "Upravičenost in razpoložljivost",
+        "BODY": "Storitev je na voljo uporabnikom po vsej evropski celini. Z uporabo Storitve izjavljate, da imate pravno sposobnost za sklepanje zavezujočih pogodb po veljavni zakonodaji. Če Storitev uporabljate v imenu druge osebe ali subjekta, potrjujete, da ste za to pooblaščeni."
+      },
+      {
+        "HEADER": "Računi",
+        "BODY": "Samo registrirani lastniki lahko ustvarijo in vzdržujejo račun na Spletnem mestu. Imetniki računov so odgovorni za varovanje zaupnosti svojih prijavnih podatkov in za vse dejavnosti, ki se izvajajo prek njihovega računa. Strinjate se, da boste SPLETKA takoj obvestili o vsakem nepooblaščenem dostopu ali varnostni kršitvi. SPLETKA ni odgovorna za izgube, nastale zaradi nepooblaščene uporabe računa."
+      },
+      {
+        "HEADER": "Začasna ukinitev in prenehanje računa",
+        "BODY": "SPLETKA si pridržuje pravico do začasne ali trajne ukinitve računov po lastni presoji, če uporabnik krši te Pogoje, veljavno zakonodajo ali se obnaša na način, ki bi lahko škodoval Storitvi, drugim uporabnikom ali tretjim osebam. Ukinitev lahko povzroči izgubo dostopa do podatkov računa in naložene vsebine."
+      },
+      {
+        "HEADER": "Vsebina uporabnikov",
+        "BODY": "Registrirani uporabniki lahko nalagajo in objavljajo vsebino, vključno z besedilom in slikami (\"Vsebina uporabnikov\"). Uporabniki obdržijo lastništvo nad svojo Vsebino. Z nalaganjem Vsebine SPLETKA podeljujete neizključno, svetovno, brezplačno licenco za gostovanje, shranjevanje, reprodukcijo, prikazovanje, distribucijo in obdelavo takšne vsebine izključno za delovanje, izboljšanje in promocijo Storitve in blagovne znamke SPLETKA. Izjavljate in jamčite, da imate vse potrebne pravice za nalaganje Vsebine in da ne krši nobene zakonodaje ali pravic tretjih oseb."
+      },
+      {
+        "HEADER": "Prepovedana vsebina",
+        "BODY": "Uporabniki ne smejo nalagati, objavljati ali distribuirati vsebine, ki je nezakonita, zavajajoča, žaljiva, obrekljiva, obscena, škodljiva, diskriminatorna, ki krši pravice ali kako drugače krši veljavno zakonodajo ali pravice tretjih oseb. SPLETKA si pridržuje pravico do odstranitve vsebine, ki krši te Pogoje ali predstavlja pravno ali ugledno tveganje."
+      },
+      {
+        "HEADER": "Naročnine in plačila",
+        "BODY": "Za vzdrževanje računa na Spletnem mestu je potrebna aktivna naročnina. Naročnina se zaračunava redno do preklica. Z naročnino pooblaščate redno zaračunavanje z izbranim načinom plačila. Naročnine so nevračljive, razen kadar to zahteva veljavna zakonodaja; s plačilom naročnine izrecno soglašate s takojšnjim izvajanjem in priznavate, da s tem izgubite pravico do odstopa. SPLETKA si pridržuje pravico do spremembe cen z vnaprejšnjim obvestilom."
+      },
+      {
+        "HEADER": "Odpoved",
+        "BODY": "Uporabniki lahko kadar koli odpovedo naročnino prek razpoložljivih orodij za upravljanje računa. Odpoved začne veljati ob koncu trenutnega obračunskega obdobja. Nobenih dodatnih stroškov za odpoved ni."
+      },
+      {
+        "HEADER": "Povratne informacije",
+        "BODY": "Uporabniki lahko prostovoljno pošljejo povratne informacije, predloge ali ideje v zvezi s Storitvijo. S posredovanjem povratnih informacij soglašate, da jih SPLETKA lahko uporabi, uvede in komercializira brez omejitev in brez obveznosti nadomestila, avtorskih honorarjev ali priznavanja."
+      },
+      {
+        "HEADER": "Omejitve odgovornosti",
+        "BODY": "Storitev se zagotavlja \"takšna, kakršna je\" in \"v obsegu razpoložljivosti\". SPLETKA ne daje nobenih jamstev, niti izrecnih niti implicitnih, vključno z, a ne omejujoč se na, primernostjo za trg, primernostjo za določen namen ali nekršenjem pravic. SPLETKA ne zagotavlja neprekinjene razpoložljivosti, delovanja brez napak ali točnosti katere koli vsebine."
+      },
+      {
+        "HEADER": "Omejitev odgovornosti",
+        "BODY": "V največji meri, ki jo dopušča veljavna zakonodaja, SPLETKA ne bo odgovorna za kakršno koli posredno, naključno, posledično, posebno ali kazensko škodo, vključno z izgubo dobička, podatkov, posla ali dobrega ugleda, ki izhaja iz ali v zvezi z uporabo Storitve. Skupna odgovornost ne sme preseči zneska, ki ga je uporabnik plačal SPLETKA v preteklih dvanajstih mesecih, razen če zakon ne določa drugače."
+      },
+      {
+        "HEADER": "Merodajno pravo",
+        "BODY": "Ti Pogoji se urejajo in razlagajo v skladu z zakonodajo Republike Srbije. Kjer se uporabljajo obvezne določbe o varstvu potrošnikov Evropske unije, te določbe prevladajo v zahtevanem obsegu."
+      },
+      {
+        "HEADER": "Spremembe pogojev",
+        "BODY": "SPLETKA lahko občasno posodobi te Pogoje. Posodobljeni Pogoji začnejo veljati z objavo na Spletnem mestu. Nadaljnja uporaba Storitve po spremembah pomeni sprejetje revidiranih Pogojev."
+      },
+      {
+        "HEADER": "Kontaktni podatki",
+        "BODY": "Za vprašanja, obvestila ali pravna sporočila v zvezi s temi Pogoji morajo uporabniki stopiti v stik s SPLETKA prek kontaktne strani na https://spletka.com/contact."
+      }
+    ]
+  },
+  "RESERVATION_STATUS": {
+    "PENDING_CONFIRMATION": "Čaka na potrditev",
+    "CONFIRMATION_EXPIRED": "Rok za potrditev je potekel",
+    "CONFIRMED": "Potrjeno",
+    "USER_CANCELLED": "Preklical uporabnik",
+    "USER_LATE_CANCELLED": "Pozno preklical uporabnik",
+    "OWNER_CANCELLED": "Preklical lastnik",
+    "OWNER_LATE_CANCELLED": "Pozno preklical lastnik",
+    "COMPLETED": "Opravljeno",
+    "MISSED": "Zamujeno"
+  },
+  "RESERVATION_OVERVIEW": {
+    "TITLE": "Pregled rezervacije",
+    "STATUS": {
+      "PENDING_CONFIRMATION": "čaka na potrditev",
+      "CONFIRMATION_EXPIRED": "potrditev potekla",
+      "CONFIRMED": "potrjeno",
+      "USER_CANCELLED": "preklicano",
+      "OWNER_CANCELLED": "preklicano",
+      "COMPLETED": "opravljeno",
+      "MISSED": "se ni pojavil"
+    },
+    "OVERVIEW": {
+      "STUDIO_NAME": "studio",
+      "CATEGORY": "kategorija",
+      "SERVICE_NAME": "ime storitve",
+      "SERVICE_TYPE": "vrsta storitve",
+      "PRICE": "cena",
+      "DURATION": "trajanje",
+      "DATE": "datum",
+      "CONTACT_PHONE": "kontakt",
+      "ADDRESS": "naslov",
+      "STATUS": "status"
+    },
+    "POST_COMMENT": {
+      "TITLE": "Hvala vam!",
+      "POSITIVITY": {
+        "LOW": {
+          "PAR1": "Žal nam je, da vaša izkušnja ni bila zadovoljiva",
+          "PAR2": "Vaše povratne informacije so dragocene in bodo deležne posebne pozornosti, upamo, da ostanete z nami, medtem ko izboljšujemo platformo"
+        },
+        "MEDIUM": {
+          "PAR1": "Hvala, ker ste z nami delili svojo izkušnjo",
+          "PAR2": "Vaše povratne informacije so dragocene in bodo pripomogle k izboljšanju tako studia kot platforme"
+        },
+        "HIGH": {
+          "PAR1": "Hvala za pozitivno oceno!",
+          "PAR2": "Če imate čas, je ocenjevanje studia na Google Zemljevidih odličen način za izkazovanje podpore"
+        }
+      }
+    }
+  },
+  "SCHEDULE": {
+    "TITLE": "Izberite termin"
+  },
+  "ON_RESERVE": {
+    "LINK_NOT_FOUND": {
+      "NORMAL": "Niste prejeli povezave?",
+      "UNDERLINED": "Pošlji znova"
+    }
+  },
+  "REQUEST_STATUS": {
+    "SUCCESS": {
+      "TITLE": "uspešno poslano",
+      "BODY": "vaša zahteva je bila uspešna"
+    },
+    "FAILED": {
+      "TITLE": "pošiljanje ni uspelo",
+      "BODY": "vaša zahteva ni bila uspešna"
+    }
+  },
+  "DASHBOARD": {
+    "TITLE": "Nadzorna plošča studia",
+    "STEPS": {
+      "MAIN": "nadzorna plošča",
+      "SCHEDULE": "urnik",
+      "RESERVATIONS": "rezervacije",
+      "RATINGS": "ocene",
+      "CLIENTS": "stranke",
+      "STATISTICS": "statistike",
+      "SETUP": "nastavitev studia"
+    },
+    "MAIN": {
+      "TITLE": "Moj studio",
+      "ACTIONS_NEEDED_TABLE_TITLE": "Potrebna dejanja",
+      "TODAYS_SCHEDULE_TABLE_TITLE": "Današnji urnik"
+    },
+    "SCHEDULE": {
+      "EMPTY_SCHEDULE": "Za to obdobje ni rezervacij"
+    },
+    "RESERVATIONS": {
+      "TITLE": "Pregled rezervacij",
+      "NO_RESERVATIONS": "Trenutno ni načrtovanih rezervacij niti preteklih. Vse prihodnje rezervacije se bodo tukaj pojavile in ostale vidljive kot referenca.",
+      "STATUS": "Status",
+      "BOOKING_INFO": "Podatki o rezervaciji",
+      "ARTICLE_INFO": "Podatki o artiklu",
+      "RATING": "Ocena",
+      "ADDONS": "Dodatki",
+      "DATE_FILTER": "Datum",
+      "STATUS_FILTER": "Status",
+      "ARTICLE_FILTER": "Artikel",
+      "SEARCH_FILTER": "Iskanje",
+      "ARTICLE_PLACEHOLDER": "Izberite artikel",
+      "STATUS_PLACEHOLDER": "Izberite status",
+      "SEARCH_PLACEHOLDER": "išči..."
+    },
+    "REVIEWS": {
+      "TITLE": "Pregled ocen",
+      "NO_RATINGS": "Ni še nobenih ocen. Vse prihodnje ocene se bodo tukaj pojavile in ostale vidljive kot referenca.",
+      "AVERAGE_RATING": "Povprečna ocena",
+      "FIVE_STAR": "5-zvezdičaste ocene",
+      "ONE_TWO_STAR": "1-2 zvezdičasti oceni",
+      "REVIEWS": "ocene",
+      "UNRATED_BOOKINGS": "Neocenjene rezervacije"
+    }
+  },
+  "SETUP": {
+    "TITLE": "Nastavitev studia",
+    "STEPS": {
+      "INTRO": "uvod",
+      "PROFILE": "profil studia",
+      "LOCATION": "lokacija",
+      "MEDIA": "mediji studia",
+      "SCHEDULE": "urnik",
+      "EXCEPTIONS": "izjeme urnika",
+      "CATEGORIES": "kategorije",
+      "SERVICES": "storitve",
+      "PACKAGES": "paketi",
+      "DISCOUNTS": "popusti",
+      "BOOKING_RULES": "pravila rezervacije",
+      "PUBLISH": "objavi",
+      "DASHBOARD": "nadzorna plošča"
+    },
+    "INTRO": {
+      "TITLE": "Konfigurirajte vaš studio",
+      "PAR1": "Ta nastavitev vzpostavlja operativne temelje vašega studia. Točni poslovni podatki povečujejo zaupanje strank, omogočajo natančno odkrivanje in zagotavljajo zanesljivo delovanje sistema rezervacij.",
+      "PAR2": "Vsak razdelek neposredno vpliva na to, kako stranke dojemajo vašo blagovno znamko — od slik v oglasu do razpoložljivosti urnika in strukture storitev.",
+      "PAR3": "Vse informacije je mogoče kadar koli urediti, kar vašemu studiu omogoča razvoj brez operativnih motenj.",
+      "BUTTON": "Začni nastavitev"
+    },
+    "PROFILE": {
+      "TITLE": "Profil studia",
+      "PAR1": "Točni kontaktni podatki zagotavljajo, da potrditve rezervacij brez težav dosežejo stranke, in izboljšujejo zanesljivost platforme."
+    },
+    "LOCATION": {
+      "TITLE": "Lokacija",
+      "PAR1": "Natančni podatki o lokaciji izboljšajo uvrstitev v iskanju, točnost navigacije in zmanjšajo zamude zaradi napak pri kartiranju."
+    },
+    "MEDIA": {
+      "TITLE": "Nalaganje medijev",
+      "PAR1": "Naložite visokokakovostne slike, ki natančno predstavljajo vaš prostor, tretmaje in rezultate. Izogibajte se zamegljenimi, temnimi, močno filtriranimi ali zavajajočimi fotografijami.",
+      "SELECT": "Kliknite ali povlecite in spustite za nalaganje",
+      "CHANGE": "Kliknite za zamenjavo slike",
+      "REMOVE": "Kliknite za odstranitev slike",
+      "INVALID_TYPE": "Napaka: neveljavna vrsta datoteke",
+      "MAX_REACHED": "Napaka: največje dovoljeno število slik je že naloženo"
+    },
+    "SCHEDULE": {
+      "TITLE": "Delovni urnik",
+      "PAR1": "Točna razpoložljivost preprečuje konflikte pri rezervacijah in varuje operativni tok.",
+      "SCHEDULE": "Urnik",
+      "ADD_INTERVAL": "dodaj interval",
+      "ADD_SCHEDULE": "dodaj urnik",
+      "EFFECTIVE_FROM": "Velja od",
+      "EFFECTIVE_TO": "Velja do",
+      "START_TIME": "Čas začetka",
+      "END_TIME": "Čas konca",
+      "INTERVAL": "Interval",
+      "DEFINE_INTERVAL": "Določite čas začetka in konca"
+    },
+    "EXCEPTIONS": {
+      "TITLE": "Izjeme urnika",
+      "PAR1": "Konfigurirajte datume ali obdobja, ko vaš studio ni na voljo — bodisi posamezni zaprti dnevi, neprekinjena časovna obdobja ali letne ponavljajoče se počitnice. Vsako zaprtje se lahko nanaša na cel dan ali na izbrane časovne intervale, kar vam omogoča natančno upravljanje izjem od rednega urnika.",
+      "ADD": "dodaj izjemo",
+      "STUDIO_CLOSED": "Studio zaprt:",
+      "STUDIO_IS_CLOSED": "Studio je popolnoma zaprt med izbranim obdobjem izjeme",
+      "STUDIO_IS_INTERVAL_CLOSED": "Ali pa navedite, kdaj bo studio zaprt v tem obdobju.",
+      "EXCEPTION": "Izjema",
+      "LABEL": "Oznaka izjeme",
+      "TYPE": "Vrsta izjeme",
+      "ONEOFF": "Enkratno",
+      "RANGE": "Obdobje",
+      "ANNUAL": "Letno"
+    },
+    "CATEGORIES": {
+      "TITLE": "Kategorije storitev",
+      "PAR1": "Določite in uredite kategorije, ki bodo organizirale vaše storitve. Te kategorije določajo, kako so ponudbe razvrščene in prikazane obiskovalcem na strani vašega studia, kar neposredno vpliva na uporabniško izkušnjo.",
+      "ADD": "dodaj kategorijo",
+      "CATEGORY": "Kategorija"
+    },
+    "SERVICES": {
+      "TITLE": "Storitve",
+      "PAR1": "Nastavite in konfigurirajte ponujene storitve, njihove opise, trajanja in cene.",
+      "ADD": "dodaj storitev",
+      "SERVICE_NAME": "Ime storitve",
+      "SERVICE_LINK": "Povezava storitve",
+      "SERVICE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonservis",
+      "TYPE": "Vrsta storitve",
+      "PRICE": "Cena",
+      "CURRENCY": "Valuta",
+      "DURATION": "Trajanje (min)",
+      "PREREQ": "Predhodna storitev",
+      "DESCRIPTION": "Opis",
+      "THUMBNAIL": "Sličica",
+      "THUMBNAIL_PLACEHOLDER": "kvadratna slika · 1080x1080",
+      "GALLERY": "Galerija storitve",
+      "GALLERY_PLACEHOLDER": "kvadratne slike · 1080x1080 · Povlecite za spremembo vrstnega reda."
+    },
+    "PACKAGES": {
+      "TITLE": "Paketi",
+      "PAR1": "Paketne storitve povečujejo povprečno vrednost naročila in hkrati strankam olajšajo odločanje.",
+      "ADD": "dodaj paket",
+      "PACKAGE_NAME": "Ime paketa",
+      "PACKAGE_LINK": "Povezava paketa",
+      "PACKAGE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonpaket",
+      "DESCRIPTION": "Opis"
+    },
+    "DISCOUNTS": {
+      "TITLE": "Popusti",
+      "PAR1": "Konfigurirajte popuste za navedene storitve in pakete.",
+      "ADD": "dodaj popust",
+      "DISCOUNT": "Popust",
+      "ARTICLE": "Artikel",
+      "PERCENTAGE": "Odstotek"
+    },
+    "BOOKING_RULES": {
+      "TITLE": "Pravila rezervacije in obvestila",
+      "PAR1": "Določite pravila rezervacije, ki pomagajo povečati zadovoljstvo strank in vaše lastno.",
+      "EMAIL_REMINDERS_TITLE": "Opomniki po e-pošti — poslani 24 ur pred terminom",
+      "SMS_REMINDERS_TITLE": "SMS opomniki — poslani 2 uri pred terminom (€0,02 na SMS)",
+      "VISIBLE_TITLE": "Vidljivo — studio in artikli so vidni v listah na domači strani",
+      "MIN_AHEAD_TITLE": "Minimalni čas rezervacije vnaprej",
+      "MAX_AHEAD_TITLE": "Maksimalni čas rezervacije vnaprej"
+    },
+    "PUBLISH": {
+      "TITLE": "Objavi",
+      "PAR1": "Po zaključku nastavitve objavite vaš studio skupnosti SPLETKA."
+    }
+  }
+}

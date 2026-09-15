@@ -1,0 +1,33 @@
+
+@keyframes reveal-modal {
+    0% {
+        transform: translateY(100dvh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes hide-modal {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100dvh);
+    }
+}
+
+.reveal-modal {
+    animation-name: reveal-modal;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.hide-modal {
+    animation-name: hide-modal;
+    animation-fill-mode: forwards;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}

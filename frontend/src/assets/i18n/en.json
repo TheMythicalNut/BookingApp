@@ -1,0 +1,792 @@
+{
+  "ALERTS": {
+    "WARNING": "Warning"
+  },
+  "DATEPICKER": {
+    "TITLE": "Select Date or Range"
+  },
+  "TIMEPICKER": {
+    "TITLE": "Start Time Window",
+    "START": "Window Start",
+    "END": "Window End"
+  },
+  "BUTTON": {
+    "CONTINUE": "continue",
+    "SEND": "send",
+    "CONFIRM": "confirm",
+    "RESERVE": "reserve",
+    "BOOK": "book",
+    "LOGIN": "login",
+    "REGISTER": "register",
+    "RESCHEDULE": "reschedule",
+    "CANCEL": "cancel",
+    "BACK": "back",
+    "OK": "ok",
+    "REVIEW": "review",
+    "TO_CHANGE_LANGUAGE": "change language",
+    "BACK_TO_NAVIGATION": "back to navigation",
+    "SAVE": "save",
+    "NEXT": "next",
+    "LOG_OUT": "log out",
+    "PUBLISH": "publish",
+    "CLEAR": "clear",
+    "MODIFY": "modify",
+    "MARK_COMPLETED": "mark as completed",
+    "MARK_MISSED": "mark as missed",
+    "MARK_CANCELLED": "mark as cancelled"
+  },
+  "DATE": {
+      "MONTH": "Month",
+      "MONTHS": "Months",
+      "WEEK": "Week",
+      "WEEKS": "Weeks",
+      "DAY": "Day",
+      "DAYS": "Days",
+      "HOURS": "Hours",
+      "MINUTES": "Minutes",
+      "DATE": "Date",
+      "START_DATE": "Start Date",
+      "END_DATE": "End Date",
+      "TODAY": "Today",
+      "TOMORROW": "Tomorrow",
+      "SUN": "Sun",
+      "MON": "Mon",
+      "TUE": "Tue",
+      "WED": "Wed",
+      "THU": "Thu",
+      "FRI": "Fri",
+      "SAT": "Sat",
+      "SUNDAY": "Sunday",
+      "MONDAY": "Monday",
+      "TUESDAY": "Tuesday",
+      "WEDNESDAY": "Wednesday",
+      "THURSDAY": "Thursday",
+      "FRIDAY": "Friday",
+      "SATURDAY": "Saturday",
+      "JANUARY": "January",
+      "FEBRUARY": "February",
+      "MARCH": "March",
+      "APRIL": "April",
+      "MAY": "May",
+      "JUNE": "June",
+      "JULY": "July",
+      "AUGUST": "August",
+      "SEPTEMBER": "September",
+      "OCTOBER": "October",
+      "NOVEMBER": "November",
+      "DECEMBER": "December",
+      "JAN": "Jan",
+      "FEB": "Feb",
+      "MAR": "Mar",
+      "APR": "Apr",
+      "JUN": "Jun",
+      "JUL": "Jul",
+      "AUG": "Aug",
+      "SEP": "Sep",
+      "OCT": "Oct",
+      "NOV": "Nov",
+      "DEC": "Dec"
+  },
+  "PLACEHOLDER": {
+    "LOCATION": "location",
+    "TIMESLOT": "timeslot",
+    "SERVICE_TYPE": "service type",
+    "SEARCH": "search...",
+    "EMAIL": "person@email.com",
+    "PHONE": "+404 12 345 67 89",
+    "MESSAGE": "I have a question about...",
+    "ADDITIONAL": "I also require...",
+    "PREREQUIRE": "Requires:",
+    "PASSWORD": "********",
+    "INSTAGRAM": "https://www.instagram.com/yourstudio",
+    "FACEBOOK": "https://www.facebook.com/yourstudio",
+    "STUDIO_NAME": "e.g. Mala Velora",
+    "STUDIO_LINK": "https://spletka.com/malavelora",
+    "COUNTRY": "e.g. Belgium",
+    "CITY": "e.g. Namur",
+    "STREET": "e.g. Rue du Coudrier",
+    "BUILDING_NUMBER": "e.g. 17a",
+    "APARTMENT_NUMBER": "e.g. 22",
+    "LATITUDE": "e.g. 50.46991076980096",
+    "LONGITUDE": "e.g. 4.817955399505059",
+    "THUMBNAIL": "Vertical · 720x1080 · 2:3 ratio. This is the first image clients see.",
+    "HERO_IMAGES": "Up to 3 horizontal images · 1080x720 · Drag to reorder."
+  },
+  "STUDIO_TYPE": {
+    "HAIR_STYLIST": "hair stylist",
+    "NAIL_TECHNICIAN": "nail technician",
+    "MASSAGE_THERAPIST": "massage therapist",
+    "BARBER": "barber",
+    "MAKEUP_ARTIST": "makeup artist",
+    "ESTHETICIAN": "esthetician",
+    "WAX_SPECIALIST": "wax specialist",
+    "TATTOO_ARTIST": "tattoo artist",
+    "MICROBLADING_ARTIST": "microblading artist",
+    "SPRAY_TAN_SPECIALIST": "spray tan specialist",
+    "HENNA_ARTIST": "henna artist"
+  },
+  "PACKAGE_TYPE": "package",
+  "SERVICE_TYPE": {
+    "HAIRCUT": "haircut",
+    "BLOWOUT": "blowout",
+    "HAIR_COLORING": "hair coloring",
+    "HIGHLIGHTS_AND_BALAYAGE": "highlights & balayage",
+    "HAIR_EXTENSIONS": "hair extensions",
+    "BRAIDS_AND_PROTECTIVE_STYLES": "braids & protective styles",
+    "NATURAL_HAIR_TREATMENT": "natural hair treatment",
+    "KERATIN_AND_SMOOTHING": "keratin & smoothing",
+    "LOCS_AND_DREADLOCKS": "locs & dreadlocks",
+    "SCALP_TREATMENT": "scalp treatment",
+
+    "MANICURE": "manicure",
+    "PEDICURE": "pedicure",
+    "GEL_NAILS": "gel nails",
+    "ACRYLIC_NAILS": "acrylic nails",
+    "NAIL_ART": "nail art",
+    "NAIL_EXTENSIONS": "nail extensions",
+    "PRESS_ON_NAILS": "press-on nails",
+    "NAIL_REPAIR": "nail repair",
+
+    "SWEDISH_MASSAGE": "swedish massage",
+    "DEEP_TISSUE_MASSAGE": "deep tissue massage",
+    "HOT_STONE_MASSAGE": "hot stone massage",
+    "PRENATAL_MASSAGE": "prenatal massage",
+    "SPORTS_MASSAGE": "sports massage",
+    "LYMPHATIC_DRAINAGE": "lymphatic drainage",
+    "HEAD_AND_SCALP_MASSAGE": "head & scalp massage",
+    "REFLEXOLOGY": "reflexology",
+
+    "MENS_HAIRCUT": "men's haircut",
+    "FADE_AND_TAPER": "fade & taper",
+    "BEARD_TRIM": "beard trim",
+    "HOT_TOWEL_SHAVE": "hot towel shave",
+    "KIDS_HAIRCUT": "kids haircut",
+    "HAIR_DESIGN_AND_LINEUP": "hair design & lineup",
+
+    "EVERYDAY_MAKEUP": "everyday makeup",
+    "BRIDAL_MAKEUP": "bridal makeup",
+    "EVENT_AND_OCCASION_MAKEUP": "event & occasion makeup",
+    "AIRBRUSH_MAKEUP": "airbrush makeup",
+    "EDITORIAL_MAKEUP": "editorial makeup",
+    "MAKEUP_LESSON": "makeup lesson",
+
+    "CLASSIC_FACIAL": "classic facial",
+    "DEEP_CLEANSING_FACIAL": "deep cleansing facial",
+    "ANTI_AGING_FACIAL": "anti-aging facial",
+    "ACNE_TREATMENT": "acne treatment",
+    "CHEMICAL_PEEL": "chemical peel",
+    "DERMAPLANING": "dermaplaning",
+    "MICRODERMABRASION": "microdermabrasion",
+    "LED_LIGHT_THERAPY": "LED light therapy",
+    "HYDRAFACIAL": "hydrafacial",
+
+    "BODY_WAXING": "body waxing",
+    "FACIAL_WAXING": "facial waxing",
+    "BIKINI_AND_BRAZILIAN_WAX": "bikini & brazilian wax",
+    "THREADING": "threading",
+    "SUGARING": "sugaring",
+    "LASER_HAIR_REMOVAL": "laser hair removal",
+
+    "CUSTOM_TATTOO": "custom tattoo",
+    "FLASH_TATTOO": "flash tattoo",
+    "TATTOO_COVERUP": "tattoo cover-up",
+    "FINE_LINE_TATTOO": "fine line tattoo",
+    "BLACKWORK_TATTOO": "blackwork tattoo",
+    "WATERCOLOR_TATTOO": "watercolor tattoo",
+    "TATTOO_TOUCH_UP": "tattoo touch-up",
+
+    "MICROBLADING": "microblading",
+    "POWDER_BROWS": "powder brows",
+    "BROW_LAMINATION": "brow lamination",
+    "BROW_TINTING": "brow tinting",
+    "BROW_SHAPING": "brow shaping",
+    "LASH_EXTENSIONS": "lash extensions",
+    "LASH_LIFT_AND_TINT": "lash lift & tint",
+    "NANO_BROWS": "nano brows",
+
+    "FULL_BODY_SPRAY_TAN": "full body spray tan",
+    "AIRBRUSH_TAN": "airbrush tan",
+    "EXPRESS_TAN": "express tan",
+    "BRIDAL_TAN": "bridal tan",
+
+    "TRADITIONAL_HENNA": "traditional henna",
+    "BRIDAL_HENNA": "bridal henna",
+    "JAGUA_TATTOO": "jagua tattoo",
+    "GLITTER_TATTOO": "glitter tattoo",
+    "BODY_PAINTING": "body painting"
+  },
+  "STUDIOS": "Studios",
+  "SERVICES": "Services",
+  "STUDIO": "Studio",
+  "SERVICE": "Service",
+  "PACKAGE": "Package",
+  "NAVIGATIONS":{
+    "HOME": "home",
+    "MY_STUDIO": "my studio",
+    "CONTACT": "contact",
+    "TOS": "terms of service"
+  },
+  "MESSAGES": {
+    "LINK_COPIED": "Link copied to Clipboard",
+    "OPEN": "open",
+    "CLOSED": "closed at the moment",
+    "OPEN_DAYS": "Open : ",
+    "CLOSED_ALL_WEEK": "Closed: All Week",
+    "OPENS_AT": "opens at",
+    "CLOSES_AT": "closes at",
+    "TOO_CLOSE_TO_RESCHEDULE": "*Rescheduling is not allowed for appointments this close",
+    "CANCEL_PENALTY": "*Late cancellations are subject to a penalty",
+    "MORE_DETAILS": "For more details spletka.com/contact",
+    "MISSED_SCHEDULE": "Missed scheduled appointments negatively impact service providers and other users. Repeated failures to attend scheduled appointments may result in suspension or termination of access to the service.",
+    "RATING_GRATITUDE": "Thank you for rating the service",
+    "DRAG_TO_REORDER": "Drag to reorder"
+  },
+  "ERRORS": {
+    "INVALID_EMAIL": "this email is invalid",
+    "INVALID_PASSWORD": "this password is invalid",
+    "INVALID_PHONE": "this phone number is invalid",
+    "CONFIRM_PASSWORD_MISMATCH": "passwords do not match",
+    "CONFIRM_REGISTRATION_FAILED": "Error: register confirmation failed, try reloading the page and or check the url link.",
+    "CONTACT_US": "Contact us if the error persists!",
+    "PASSWORD_MUST_BE_STRING": "Password must be a string",
+    "PASSWORD_EXCEEDS_PROCESSING_LENGTH": "Password exceeds allowed processing length",
+    "PASSWORD_MIN_LENGTH": "Password must be at least 12 characters long",
+    "PASSWORD_MAX_LENGTH": "Password must not exceed 48 characters",
+
+    "SETUP": {
+      "PROFILE": {
+        "TITLE": "Studio Profile Form Invalid",
+        "INVALID_PROFILE": "Studio Profile Form is Invalid",
+        "MISSING_STUDIO_NAME": "Studio name is required",
+        "TOO_SHORT_STUDIO_NAME": "Studio name must be at least 3 characters long",
+        "MISSING_STUDIO_LINK": "Studio link is required",
+        "TOO_SHORT_STUDIO_LINK": "Studio link must be at least 3 characters long",
+        "MISSING_STUDIO_TYPES": "At least one studio type must be selected",
+        "MISSING_CONTACT_EMAIL": "Contact email is required",
+        "INVALID_CONTACT_EMAIL": "Enter a valid contact email address",
+        "MISSING_CONTACT_PHONE": "Contact phone is required",
+        "INVALID_CONTACT_PHONE": "Enter a valid contact phone number",
+        "INVALID_INSTAGRAM": "Enter a valid Instagram profile URL",
+        "INVALID_FACEBOOK": "Enter a valid Facebook profile URL",
+        "INVALID_WA_PHONE": "Enter a valid WhatsApp phone number"
+      },
+      "LOCATION": {
+        "TITLE": "Locaiton Form Invalid",
+        "INVALID_LOCATION": "Studio Location Form is Invalid",
+        "MISSING_COUNTRY": "Studio country is required",
+        "MISSING_CITY": "Studio city is required",
+        "MISSING_STREET": "Studio street is required",
+        "MISSING_BUILDING_NUMBER": "Studio building number is required",
+        "MISSING_APARTMENT_NUMBER": "Studio apartment number is required",
+        "INVALID_LATITUDE": "Enter a latitude between -90 and 90",
+        "INVALID_LONGITUDE": "Enter a longitude between -180 and 180",
+        "MISSING_LATITUDE": "Latitude is required",
+        "MISSING_LONGITUDE": "Longitude is required"
+      },
+      "MEDIA": {
+        "TITLE": "Media Form Invalid",
+        "INVALID_MEDIA": "Media Form is Invalid",
+        "MISSING_THUMBNAIL": "A thumbnail is required",
+        "INVALID_HERO_IMAGES_COUNT": "You must provide between 1 and 3 hero images",
+        "INVALID_HERO_IMAGE": "One or more hero images are invalid"
+      },
+      "SCHEDULE": {
+        "TITLE": "Schedule Form Invalid",
+        "INVALID_SCHEDULES_ARRAY":          "Schedules form is malformed",
+        "MISSING_SCHEDULES":                "Schedules list is missing",
+        "EMPTY_SCHEDULES":                  "At least one schedule is required",
+        "MISSING_EFFECTIVE_FROM":           "Effective from date is required",
+        "EFFECTIVE_FROM_INVALID_FORMAT":    "Effective from date is invalid",
+        "MISSING_EFFECTIVE_TO":             "Effective to date is required",
+        "EFFECTIVE_TO_INVALID_FORMAT":      "Effective to date is invalid",
+        "EFFECTIVE_RANGE_INVALID":          "Effective to must be after effective from",
+        "INVALID_SCHEDULE":                 "Schedule is invalid",
+        "INVALID_DAYS_AMOUNT":              "Amount of days is invalid",
+        "INVALID_DAY":                      "Day is invalid",
+        "MISSING_DAY_NAME":                 "Day name is required",
+        "INVALID_INTERVALS":                "Intervals are invalid",
+        "MISSING_INTERVALS":                "At least one interval is required",
+        "OVERLAPPING_INTERVALS":            "Intervals are overlapping",
+        "INVALID_INTERVAL":                 "Interval is invalid",
+        "INVALID_INTERVAL_START":           "Enter a valid interval start",
+        "INVALID_INTERVAL_END":             "Enter a valid interval end",
+        "INVALID_INTERVAL_RANGE":           "Interval end must be after interval start"
+      },
+      "EXCEPTIONS": {
+        "TITLE": "Schedule Exceptions Form Invalid",
+        "INVALID_EXCEPTIONS": "Exceptions Form is Invalid",
+        "INVALID_EXCEPTIONS_ARRAY": "Exceptions must be an Array",
+        "INVALID_EXCEPTION": "exception is invalid",
+        "INVALID_EXCEPTION_TYPE": "select a valid exception type",
+        "INVALID_INTERVALS": "intervals are invalid",
+        "MISSING_INTERVALS": "atleast one interval is required",
+        "INVALID_APPLIES_TO": "the selected date or range is invalid.",
+        "OVERLAPPING_INTERVALS": "intervals are overlapping",
+        "INVALID_INTERVAL": "interval is invalid",
+        "INVALID_INTERVAL_START": "enter a valid interval start",
+        "INVALID_INTERVAL_END": "enter a valid interval end",
+        "INVALID_INTERVAL_RANGE": "interval range is invalid"
+      },
+      "CATEGORIES": {
+        "TITLE": "Categories Form Invalid",
+        "EMPTY_NAME": "name is required",
+        "DUPLICATE_NAME": "name must be unique"
+      },
+      "SERVICES": {
+        "TITLE": "Services Form Invalid",
+        "REQUIRED": "Atleast one service is required",
+        "INVALID_SERVICE": "is invalid",
+        "MISSING_LOCAL_ID": "missing local id",
+        "MISSING_NAME": "name is required",
+        "MISSING_LINK": "link is required",
+        "MISSING_CATEGORY": "category is required",
+        "MISSING_CURRENCY": "currency is required",
+        "INVALID_PRICE": "price is invalid",
+        "INVALID_DURATION": "duration is invalid",
+        "INVALID_SERVICE_TYPES": "service types invalid",
+        "INVALID_THUMBNAIL": "thumbnail is required",
+        "INVALID_GALLERY": "gallery is invalid",
+        "DUPLICATE_LINK": "link must be unique",
+        "MISSING_PRICE": "price is required",
+        "MISSING_DURATION": "duration is required"
+      },
+      "PACKAGES": {
+        "TITLE": "Packages Form Invalid",
+        "INVALID_PACKAGE": "is invalid",
+        "MISSING_LOCAL_ID": "missing local id",
+        "MISSING_NAME": "name is required",
+        "MISSING_LINK": "link is required",
+        "MISSING_CURRENCY": "currency is required",
+        "INVALID_PRICE": "price is invalid",
+        "INVALID_DURATION": "duration is invalid",
+        "MISSING_SERVICES": "services are required",
+        "INVALID_SERVICES": "invalid services",
+        "DUPLICATE_SERVICES": "has duplicate services",
+        "DUPLICATE_LINK": "link must be unique",
+        "MISSING_PRICE": "price is required",
+        "MISSING_DURATION": "duration is required"
+      },
+      "DISCOUNTS": {
+        "TITLE": "Discounts Form Invalid",
+        "INVALID_DISCOUNT": "is invalid",
+        "MISSING_LOCAL_ID": "missing id",
+        "MISSING_ARTICLE": "select an article",
+        "INVALID_PERCENTAGE": "percentage is invalid",
+        "MISSING_ARTICLE_LOCAL_ID": "missing article id",
+        "INVALID_ARTICLE_TYPE": "article type is invalid",
+        "DUPLICATE_ARTICLE_TARGET": "discount already exsists for the selected article",
+        "MISSING_PERCENTAGE": "discount percentage is required"
+      },
+      "BOOKING_RULES": {
+        "TITLE": "Booking Rules Form Invalid",
+        "INVALID_BOOKING_RULES": "Studio booking rules are invalid",
+        "INVALID_EMAIL_REMINDERS": "Email reminder must be either true or falsee",
+        "INVALID_SMS_REMINDERS": "SMS reminder must be either true or false",
+        "INVALID_MIN_AHEAD": "Minimum schedule-ahead time must be at least 30 minutes",
+        "INVALID_MAX_AHEAD": "Maximum schedule-ahead time must be at least 7 days",
+        "MIN_AHEAD_EXCEEDS_MAX_AHEAD": "Minimum schedule-ahead time cannot exceed the maximum schedule-ahead time",
+        "MISSING_MIN_AHEAD": "Minimum schedule-ahead time is required",
+        "MISSING_MAX_AHEAD": "Maximum schedule-ahead time is required"
+      },
+      "PUBLISH": {
+        "TITLE_ERROR": "Publish Unavailable - Fix Existing Errors",
+        "TITLE_MODIFY": "Publish Unavailable - Save Modified Forms"
+      }
+    }
+  },
+  "TEXTFIELD_TITLES": {
+    "STUDIO_TYPE": "Studio Type",
+    "STUDIO_NAME": "Studio Name",
+    "STUDIO_LINK": "Studio Link",
+    "CATEGORY_NAME": "Category Name",
+    "EMAIL": "E-mail Address",
+    "PHONE": "Phone Number",
+    "MESSAGE": "Message",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "COMMENT": "Comment",
+    "ADDITIONAL": "Additional note",
+    "INSTAGRAM": "Instagram Link",
+    "FACEBOOK": "Facebook Link",
+    "CONTACT_EMAIL": "Contact Email",
+    "CONTACT_PHONE": "Contact Phone",
+    "WHATSAPP": "WhatsApp Phone",
+    "SEARCH_TAGS": "Search Tags",
+    "COUNTRY": "Country",
+    "CITY": "City",
+    "STREET": "Street",
+    "BUILDING_NUMBER": "Building Number",
+    "APARTMENT_NUMBER": "Apartment Number",
+    "LATITUDE": "Latitude",
+    "LONGITUDE": "Longitude",
+    "THUMBNAIL": "Thumbnail",
+    "HERO_IMAGES": "Hero Images"
+  },
+  "MY_STUDIO": {
+    "LOGIN": {
+      "TITLE": "Login",
+      "TO_REGISTER": {
+        "NORMAL": "don't have an account?",
+        "UNDERLINED": "register here!"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Register",
+      "TO_TERMS": {
+        "NORMAL": "need more info?",
+        "UNDERLINED": "read our terms of service"
+      }
+    },
+    "CONFIRM": {
+      "TITLE": "Confirm E-mail Address",
+      "MESSAGES": {
+        "EMAIL_CONFIRMATION_REQUIRED": "Email sent to:",
+        "INSTRUCTION": "click on the received link to verify your account",
+        "INVALID_EMAIL": "Address incorrect?",
+        "BACK": "Back",
+        "EMAIL_NOT_RECEIVED": "Message not received?",
+        "SEND_AGAIN": "Send Again"
+      }
+    },
+    "CONFIRMED": {
+      "TITLE": "Registration Confirmed",
+      "BODY": "Successful registration for e-mail address:"
+    }
+  },
+  "FAQS": {
+    "TITLE_FAQ": "Frequent Questions",
+    "TITLE_DIRECT": "Ask us Directly!",
+    "QUESTIONS": [
+      {"QUESTION": "How do I list my salon on the platform?", "ANSWER": "Contact us and get the oboarding guide, that instructs you on how to provide accurate salon details, upload photos, list your services, and set your availability. Our step-by-step onboarding guide makes it simple."},
+      {"QUESTION": "Can I manage my appointments through the platform?", "ANSWER": "Yes, you can view, confirm, reschedule, or cancel appointments directly through the platform. You’ll also receive notifications for new bookings."},
+      {"QUESTION": "How do I set my services, prices, and durations?", "ANSWER": "You can add, edit, or remove services at any time in your profile. Set the price, duration, and any special notes for each service to reflect your offerings accurately."},
+      {"QUESTION": "Can I manage multiple staff members?", "ANSWER": "No, the platform is meant for individual service providers. The goal is to level the playing field with big franchises using data and statistics to leverage structural expertise"},
+      {"QUESTION": "How do I handle cancellations or no-shows?", "ANSWER": "The platform automatically bans no-shows and may apply custom cancellation mark-up fee's for future appointments."},
+      {"QUESTION": "Will I get paid through the platform?", "ANSWER": "No, at the moment, the platform does not process payments. You receive payments directly from clients at the salon."},
+      {"QUESTION": "Can I offer promotions or discounts?", "ANSWER": "You can create special offers, or package deals to attract new clients and or retain existing ones."},
+      {"QUESTION": "How do I manage client information?", "ANSWER": "The platform provides a secure client management system. You can view booking history, contact details, and notes for each client while maintaining privacy compliance."},
+      {"QUESTION": "Can I track my salon’s performance?", "ANSWER": "Yes. While our current dashboards offer essential insights, we are actively rolling out frequent updates to provide a more robust experience. Soon, you’ll have access to comprehensive metrics—including revenue, popular services, locale rankings, and recurring client behaviour. All designed to help you scale your business."},
+      {"QUESTION": "Is there customer support if I need help?", "ANSWER": "Yes, the platform offers dedicated support for owners, including video tutorials, documentation, and email assistance for any issues or questions."},
+
+      {"QUESTION": "What services can I book through the platform?", "ANSWER": "You can book a wide range of services including haircuts, styling, coloring, facials, manicures, pedicures, massage therapy, skincare treatments, depilations, and more."},
+      {"QUESTION": "How do I find a salon near me?", "ANSWER": "Use the location search feature to find all services in your area."},
+      {"QUESTION": "Can I book multiple services in one appointment?", "ANSWER": "Yes, many salons allow you to book multiple services in a single appointment. Check the salon’s profile for available packages for service combinations."},
+      {"QUESTION": "How do I pay for my appointment?", "ANSWER": "In person with the service provider. The platform does not process payments due to our belief that a payment processing platform has maladjusted incentives to algorithmically take advantage of service providers."},
+      {"QUESTION": "Can I book an appointment for someone else?", "ANSWER": "Yes, you can schedule appointments for family or friends by providing their details during the booking process."},
+      {"QUESTION": "Do salons offer loyalty programs or discounts?", "ANSWER": "Many salons provide loyalty rewards or promotional offers. Check the individual salon’s profile for available deals."},
+      {"QUESTION": "Is my personal information safe?", "ANSWER": "Absolutely. We use industry-standard security measures to protect your personal information"},
+      {"QUESTION": "What should I do if I encounter an issue with my booking?", "ANSWER": "If you experience any issues, contact the salon directly through the platform or reach out to our customer support team for assistance."}
+    ],
+    "ANSWER_NOT_FOUND": {
+      "NORMAL": "Didn't find an answer for your question?",
+      "UNDERLINED": "Ask us directly!"
+    }
+  },
+  "TOS": {
+    "TITLE": "Terms Of Service",
+    "TERMS": [
+      {
+        "HEADER": "Introduction",
+        "BODY": "These Terms of Service (\"Terms\") govern access to and use of the website https://spletka.com (the \"Website\") and the services made available through it (the \"Service\"). The Website is operated under the name SPLETKA by an individual residing in the Republic of Serbia (\"SPLETKA\", \"we\", \"us\", or \"our\"). By accessing or using the Website or Service, you agree to be legally bound by these Terms. If you do not agree, you must not use the Website or Service."
+      },
+      {
+        "HEADER": "Service Description",
+        "BODY": "SPLETKA is a software-as-a-service platform intended to allow registered account holders to present studio-related services through text and images and to enable potential customers to browse such services and request bookings. Casual or anonymous visitors may browse publicly available content without creating an account. SPLETKA does not act as a party to any agreement between service providers and their customers."
+      },
+      {
+        "HEADER": "Eligibility and Availability",
+        "BODY": "The Service is available to users located throughout the European continent. By using the Service, you represent that you have the legal capacity to enter into binding agreements under applicable law. If you use the Service on behalf of another person or entity, you confirm that you are authorized to do so."
+      },
+      {
+        "HEADER": "Accounts",
+        "BODY": "Only registered owners may create and maintain an account on the Website. Account holders are responsible for maintaining the confidentiality of their login credentials and for all activities conducted through their account. You agree to notify SPLETKA immediately of any unauthorized access or security breach. SPLETKA is not responsible for losses resulting from unauthorized account use."
+      },
+      {
+        "HEADER": "Account Suspension and Termination",
+        "BODY": "SPLETKA reserves the right to suspend or terminate accounts, temporarily or permanently, at its discretion if a user violates these Terms, applicable law, or engages in behavior that may harm the Service, other users, or third parties. Termination may result in loss of access to account data and uploaded content."
+      },
+      {
+        "HEADER": "User Content",
+        "BODY": "Registered users may upload and publish content including text and images (\"User Content\"). Users retain ownership of their User Content. By uploading User Content, you grant SPLETKA a non-exclusive, worldwide, royalty-free license to host, store, reproduce, display, distribute, and process such content solely for the operation, improvement, and promotion of the SPLETKA Service and brand. You represent and warrant that you have all necessary rights to upload the User Content and that it does not violate any law or third-party rights."
+      },
+      {
+        "HEADER": "Prohibited Content",
+        "BODY": "Users may not upload, publish, or distribute content that is unlawful, misleading, abusive, defamatory, obscene, harmful, discriminatory, infringing, or otherwise violates applicable laws or third-party rights. SPLETKA reserves the right to remove any content that violates these Terms or poses legal or reputational risk."
+      },
+      {
+        "HEADER": "Subscriptions and Payments",
+        "BODY": "An active subscription is required to maintain an account on the Website. The subscription fee is charged on a recurring basis until canceled. By subscribing, you authorize recurring billing using the selected payment method. Subscription fees are non-refundable except where refunds are required by applicable law; by paying the subscription, you expressly consent to immediate performance and acknowledge that you thereby lose your right of withdrawal. SPLETKA reserves the right to modify pricing with prior notice."
+      },
+      {
+        "HEADER": "Cancellation",
+        "BODY": "Users may cancel their subscription at any time through available account management tools. Cancellation will take effect at the end of the current billing period. No additional cancellation fees apply."
+      },
+      {
+        "HEADER": "Feedback",
+        "BODY": "Users may voluntarily submit feedback, suggestions, or ideas regarding the Service. By submitting feedback, you agree that SPLETKA may use, implement, and commercialize such feedback without restriction and without obligation of compensation, royalties, or acknowledgment."
+      },
+      {
+        "HEADER": "Disclaimers",
+        "BODY": "The Service is provided on an \"as is\" and \"as available\" basis. SPLETKA makes no warranties of any kind, whether express or implied, including but not limited to merchantability, fitness for a particular purpose, or non-infringement. SPLETKA does not guarantee uninterrupted availability, error-free operation, or the accuracy of any content."
+      },
+      {
+        "HEADER": "Limitation of Liability",
+        "BODY": "To the maximum extent permitted by applicable law, SPLETKA shall not be liable for any indirect, incidental, consequential, special, or punitive damages, including loss of profits, data, business, or goodwill, arising out of or related to use of the Service. Total liability shall not exceed the amount paid by the user to SPLETKA in the preceding twelve months, unless otherwise required by law."
+      },
+      {
+        "HEADER": "Governing Law",
+        "BODY": "These Terms shall be governed by and construed in accordance with the laws of the Republic of Serbia. Where mandatory consumer protection laws of the European Union apply, such provisions shall prevail to the extent required."
+      },
+      {
+        "HEADER": "Changes to Terms",
+        "BODY": "SPLETKA may update these Terms from time to time. Updated Terms will become effective upon publication on the Website. Continued use of the Service after changes constitutes acceptance of the revised Terms."
+      },
+      {
+        "HEADER": "Contact Information",
+        "BODY": "For questions, notices, or legal communications regarding these Terms, users must contact SPLETKA through the contact page available at https://spletka.com/contact."
+      }
+    ]
+  },
+  "RESERVATION_STATUS": {
+    "PENDING_CONFIRMATION": "Pending Confirmation",
+    "CONFIRMATION_EXPIRED": "Confirmation Period Expired",
+    "CONFIRMED": "Confirmed",
+    "USER_CANCELLED": "User Cancelled",
+    "USER_LATE_CANCELLED": "User Late Cancelled",
+    "OWNER_CANCELLED": "Owner Cancelled",
+    "OWNER_LATE_CANCELLED": "Owner Late Cancelled",
+    "COMPLETED": "Completed",
+    "MISSED": "Missed"
+  },
+  "RESERVATION_OVERVIEW": {
+    "TITLE": "Reservation Overview",
+    "STATUS": {
+      "PENDING_CONFIRMATION": "pending confirmation",
+      "CONFIRMATION_EXPIRED": "confirmation expired",
+      "CONFIRMED": "confirmed",
+      "USER_CANCELLED": "cancelled",
+      "OWNER_CANCELLED": "cancelled",
+      "COMPLETED": "completed",
+      "MISSED": "no-show"
+    },
+    "OVERVIEW": {
+      "STUDIO_NAME": "studio",
+      "CATEGORY": "category",
+      "SERVICE_NAME": "service name",
+      "SERVICE_TYPE": "service type",
+      "PRICE": "price",
+      "DURATION": "duration",
+      "DATE": "date",
+      "CONTACT_PHONE": "contact",
+      "ADDRESS": "address",
+      "STATUS": "status"
+    },
+    "POST_COMMENT": {
+      "TITLE": "Thank You!",
+      "POSITIVITY": {
+        "LOW": {
+          "PAR1": "We’re sorry that your experience was not satisfactory",
+          "PAR2": "Your feedback is valuable and will be given special attention, we hope you stick with us as we improve the platform"
+        },
+        "MEDIUM": {
+          "PAR1": "Thank you for sharing your experience with us",
+          "PAR2": "Your feedback is valuable and will help improve both the studio and the platform"
+        },
+        "HIGH": {
+          "PAR1": "Thank you for the positive review!",
+          "PAR2": "If you have the time, reviewing the studio on Google Maps is a great way of showing support"
+        }
+      }
+    }
+  },
+  "SCHEDULE": {
+    "TITLE": "Choose Timeslot"
+  },
+  "ON_RESERVE": {
+    "LINK_NOT_FOUND": {
+      "NORMAL": "Didn't receive the link?",
+      "UNDERLINED": "Resend"
+    }
+  },
+  "REQUEST_STATUS": {
+    "SUCCESS": {
+      "TITLE": "sent successfully",
+      "BODY": "the request you made was successful"
+    },
+    "FAILED": {
+      "TITLE": "failed to send",
+      "BODY": "the request you made was not successful"
+    }
+  },
+  "DASHBOARD": {
+    "TITLE": "Studio Dashboard",
+    "STEPS": {
+      "MAIN": "dashboard",
+      "SCHEDULE": "schedule",
+      "RESERVATIONS": "reservations",
+      "RATINGS": "ratings",
+      "CLIENTS": "clients",
+      "STATISTICS": "statistics",
+      "SETUP": "studio setup"
+    },
+    "MAIN": {
+      "TITLE": "My Studio",
+      "ACTIONS_NEEDED_TABLE_TITLE": "Actions Needed",
+      "TODAYS_SCHEDULE_TABLE_TITLE": "Today's Schedule"
+    },
+    "SCHEDULE": {
+      "EMPTY_SCHEDULE": "No reservations for this period"
+    },
+    "RESERVATIONS": {
+      "TITLE": "Reservation Overview",
+      "NO_RESERVATIONS": "No reservations are currently, or have been previously, scheduled. Any future reservations will appear and remain visible here for reference.",
+      "STATUS": "Status",
+      "BOOKING_INFO": "Booking Info",
+      "ARTICLE_INFO": "Article Info",
+      "RATING": "Rating",
+      "ADDONS": "Add-ons",
+      "DATE_FILTER": "Date",
+      "STATUS_FILTER": "Status",
+      "ARTICLE_FILTER": "Article",
+      "SEARCH_FILTER": "Search",
+      "ARTICLE_PLACEHOLDER": "Select Article",
+      "STATUS_PLACEHOLDER": "Select Status",
+      "SEARCH_PLACEHOLDER": "search..."
+    },
+    "REVIEWS": {
+      "TITLE": "Reviews Overview",
+      "NO_RATINGS": "No reviews have been made. Any future reviews will appear and remain visible here for reference.",
+      "AVERAGE_RATING": "Average Rating",
+      "FIVE_STAR": "5-star ratings",
+      "ONE_TWO_STAR": "1-2 star ratings",
+      "REVIEWS": "reviews",
+      "UNRATED_BOOKINGS": "Unrated Bookings"
+    }
+  },
+  "SETUP": {
+    "TITLE": "Studio Setup",
+    "STEPS": {
+      "INTRO": "introduction",
+      "PROFILE": "studio profile",
+      "LOCATION": "location",
+      "MEDIA": "studio media",
+      "SCHEDULE": "schedule",
+      "EXCEPTIONS": "schedule exceptions",
+      "CATEGORIES": "categories",
+      "SERVICES": "services",
+      "PACKAGES": "packages",
+      "DISCOUNTS": "discounts",
+      "BOOKING_RULES": "booking rules",
+      "PUBLISH": "publish",
+      "DASHBOARD": "dashboard"
+    },
+    "INTRO": {
+      "TITLE": "Configure Your Studio",
+      "PAR1": "This setup establishes the operational foundation of your studio. Accurate business details improve customer trust, enable precise discovery, and ensure your booking engine functions reliably.",
+      "PAR2": "Each section directly impacts how clients perceive your brand, from your listing imagery to scheduling availability and service structure.",
+      "PAR3": "All information can be edited at any time, allowing your studio to evolve without operational disruption.",
+      "BUTTON": "Start Setup"
+    },
+    "PROFILE": {
+      "TITLE": "Studio Profile",
+      "PAR1": "Accurate contact information ensures booking confirmations reach clients without friction and improves platform reliability."
+    },
+    "LOCATION": {
+      "TITLE": "Location",
+      "PAR1": "Precise location data improves search ranking, navigation accuracy, and reduces late arrivals caused by mapping errors."
+    },
+    "MEDIA": {
+      "TITLE": "Media Upload",
+      "PAR1": "Upload high-resolution images that accurately represent your space, treatments, and results. Avoid blurry, dark, heavily filtered, or misleading photos.",
+      "SELECT": "Click or drag & drop to upload",
+      "CHANGE": "Click to change image",
+      "REMOVE": "Click to remove image",
+      "INVALID_TYPE": "Error: Invalid file type",
+      "MAX_REACHED": "Error: Maximum amount of images already uploaded"
+    },
+    "SCHEDULE": {
+      "TITLE": "Working Schedule",
+      "PAR1": "Accurate availability prevents booking conflicts and protects operational flow.",
+      "SCHEDULE": "Schedule",
+      "ADD_INTERVAL": "add interval",
+      "ADD_SCHEDULE": "add schedule",
+      "EFFECTIVE_FROM": "Effective From",
+      "EFFECTIVE_TO": "Effective To",
+      "START_TIME": "Start Time",
+      "END_TIME": "End Time",
+      "INTERVAL": "Interval",
+      "DEFINE_INTERVAL": "Define start and end time"
+    },
+    "EXCEPTIONS": {
+      "TITLE": "Schedule Exceptions",
+      "PAR1": "Configure dates or periods when your studio is unavailable, either single closed days, continuous date ranges, or recurring annual holidays. Each closure can apply to the entire day or to selected time intervals, allowing you to accurately manage exceptions to your regular schedule.",
+      "ADD": "add exception",
+      "STUDIO_CLOSED": "Studio Closed:",
+      "STUDIO_IS_CLOSED": "Studio is fully closed during selected exception date period",
+      "STUDIO_IS_INTERVAL_CLOSED": "Or, specify when the studio will be closed during this period.",
+      "EXCEPTION": "Exception",
+      "LABEL": "Exception Label",
+      "TYPE": "Type of Exception",
+      "ONEOFF": "One Off",
+      "RANGE": "Range",
+      "ANNUAL": "Annual"
+    },
+    "CATEGORIES": {
+      "TITLE": "Service Categories",
+      "PAR1": "Define and arrange the categories that will organize your services. These categories determine how offerings are grouped and presented to visitors on your studio page, directly influencing user experience.",
+      "ADD": "add category",
+      "CATEGORY": "Category"
+    },
+    
+    "SERVICES": {
+      "TITLE": "Services",
+      "PAR1": "Setup and configure offered services, their descriptions, durations, and pricing.",
+      "ADD": "add service",
+      "SERVICE_NAME": "Service Name",
+      "SERVICE_LINK": "Service Link",
+      "SERVICE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonservis",
+      "TYPE": "Service Type",
+      "PRICE": "Price",
+      "CURRENCY": "Currency",
+      "DURATION": "Duration (min)",
+      "PREREQ": "Prerequired Service",
+      "DESCRIPTION": "Description",
+      "THUMBNAIL": "Thumbnail",
+      "THUMBNAIL_PLACEHOLDER": "square image · 1080x1080",
+      "GALLERY": "Service Gallery",
+      "GALLERY_PLACEHOLDER": "square images · 1080x1080 · Drag to reorder."
+    },
+    "PACKAGES": {
+      "TITLE": "Packages",
+      "PAR1": "Bundled services increase average order value, while simplifying decision making for clients.",
+      "ADD": "add package",
+      "PACKAGE_NAME": "Package Name",
+      "PACKAGE_LINK": "Package Link",
+      "PACKAGE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonpaket",
+      "DESCRIPTION": "Description"
+    },
+    "DISCOUNTS": {
+      "TITLE": "Discounts",
+      "PAR1": "Configure discounts for listed services and packages.",
+      "ADD": "add discount",
+      "DISCOUNT": "Discount",
+      "ARTICLE": "Article",
+      "PERCENTAGE": "Percentage"
+
+    },
+    "BOOKING_RULES": {
+      "TITLE": "Booking Rules & Notifications",
+      "PAR1": "Define booking rules that help increase both customer and your satisfaction.",
+      "EMAIL_REMINDERS_TITLE": "Email reminders — sent 24h before appointment",
+      "SMS_REMINDERS_TITLE": "SMS reminders — sent 2h before appointment (€0.02 per SMS)",
+      "VISIBLE_TITLE": "Visible - studio and articles are visible in the home page browsable lists",
+      "MIN_AHEAD_TITLE": "Minimum Schedule Ahead",
+      "MAX_AHEAD_TITLE": "Maximum Schedule Ahead"
+    },
+    "PUBLISH": {
+      "TITLE": "Publish",
+      "PAR1": "After completing the setup, publish your studio to the SPLETKA community."
+
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<button
+  [class]="buttonClass()"
+  (click)="onAction(); $event.stopPropagation()"
+  [disabled]="disabled()">
+  <span class="relative z-10 flex items-center justify-center">
+    @switch(status()){
+      @case ('loading') { <app-spinner></app-spinner> }
+      @case ('error') { <span class="transition-opacity duration-200">{{ errorText() }}</span> }
+      @case ('idle') { <span class="transition-opacity duration-200">{{ idleText() }}</span> }
+    }
+  </span>
+</button>

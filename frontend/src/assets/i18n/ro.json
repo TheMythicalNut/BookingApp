@@ -1,0 +1,790 @@
+{
+  "ALERTS": {
+    "WARNING": "Avertisment"
+  },
+  "DATEPICKER": {
+    "TITLE": "Selectați Data sau Intervalul"
+  },
+  "TIMEPICKER": {
+    "TITLE": "Fereastra de Început",
+    "START": "Început Fereastră",
+    "END": "Sfârșit Fereastră"
+  },
+  "BUTTON": {
+    "CONTINUE": "continuă",
+    "SEND": "trimite",
+    "CONFIRM": "confirmă",
+    "RESERVE": "rezervă",
+    "BOOK": "programează",
+    "LOGIN": "autentificare",
+    "REGISTER": "înregistrare",
+    "RESCHEDULE": "reprogramează",
+    "CANCEL": "anulează",
+    "BACK": "înapoi",
+    "OK": "ok",
+    "REVIEW": "recenzie",
+    "TO_CHANGE_LANGUAGE": "schimbă limba",
+    "BACK_TO_NAVIGATION": "înapoi la navigare",
+    "SAVE": "salvează",
+    "NEXT": "următor",
+    "LOG_OUT": "deconectare",
+    "PUBLISH": "publică",
+    "CLEAR": "șterge",
+    "MODIFY": "modifică",
+    "MARK_COMPLETED": "marchează ca finalizat",
+    "MARK_MISSED": "marchează ca ratat",
+    "MARK_CANCELLED": "marchează ca anulat"
+  },
+  "DATE": {
+      "MONTH": "Lună",
+      "MONTHS": "Luni",
+      "WEEK": "Săptămână",
+      "WEEKS": "Săptămâni",
+      "DAY": "Zi",
+      "DAYS": "Zile",
+      "HOURS": "Ore",
+      "MINUTES": "Minute",
+      "DATE": "Dată",
+      "START_DATE": "Dată început",
+      "END_DATE": "Dată sfârșit",
+      "TODAY": "Astăzi",
+      "TOMORROW": "Mâine",
+      "SUN": "Dum",
+      "MON": "Lun",
+      "TUE": "Mar",
+      "WED": "Mie",
+      "THU": "Joi",
+      "FRI": "Vin",
+      "SAT": "Sâm",
+      "SUNDAY": "Duminică",
+      "MONDAY": "Luni",
+      "TUESDAY": "Marți",
+      "WEDNESDAY": "Miercuri",
+      "THURSDAY": "Joi",
+      "FRIDAY": "Vineri",
+      "SATURDAY": "Sâmbătă",
+      "JANUARY": "Ianuarie",
+      "FEBRUARY": "Februarie",
+      "MARCH": "Martie",
+      "APRIL": "Aprilie",
+      "MAY": "Mai",
+      "JUNE": "Iunie",
+      "JULY": "Iulie",
+      "AUGUST": "August",
+      "SEPTEMBER": "Septembrie",
+      "OCTOBER": "Octombrie",
+      "NOVEMBER": "Noiembrie",
+      "DECEMBER": "Decembrie",
+      "JAN": "Ian",
+      "FEB": "Feb",
+      "MAR": "Mar",
+      "APR": "Apr",
+      "JUN": "Iun",
+      "JUL": "Iul",
+      "AUG": "Aug",
+      "SEP": "Sep",
+      "OCT": "Oct",
+      "NOV": "Nov",
+      "DEC": "Dec"
+  },
+  "PLACEHOLDER": {
+    "LOCATION": "locație",
+    "TIMESLOT": "interval orar",
+    "SERVICE_TYPE": "tip serviciu",
+    "SEARCH": "caută...",
+    "EMAIL": "persoana@email.com",
+    "PHONE": "+404 12 345 67 89",
+    "MESSAGE": "Am o întrebare despre...",
+    "ADDITIONAL": "Mai am nevoie de...",
+    "PREREQUIRE": "Necesită:",
+    "PASSWORD": "********",
+    "INSTAGRAM": "https://www.instagram.com/studioul-tau",
+    "FACEBOOK": "https://www.facebook.com/studioul-tau",
+    "STUDIO_NAME": "ex. Mala Velora",
+    "STUDIO_LINK": "https://spletka.com/malavelora",
+    "COUNTRY": "ex. România",
+    "CITY": "ex. Cluj-Napoca",
+    "STREET": "ex. Strada Florilor",
+    "BUILDING_NUMBER": "ex. 17a",
+    "APARTMENT_NUMBER": "ex. 22",
+    "LATITUDE": "ex. 50.46991076980096",
+    "LONGITUDE": "ex. 4.817955399505059",
+    "THUMBNAIL": "Vertical · 720x1080 · Raport 2:3. Aceasta este prima imagine văzută de clienți.",
+    "HERO_IMAGES": "Până la 3 imagini orizontale · 1080x720 · Trageți pentru a reordona."
+  },
+  "STUDIO_TYPE": {
+    "HAIR_STYLIST": "stilist",
+    "NAIL_TECHNICIAN": "tehnician unghii",
+    "MASSAGE_THERAPIST": "terapeut masaj",
+    "BARBER": "frizer",
+    "MAKEUP_ARTIST": "artist machiaj",
+    "ESTHETICIAN": "esteticiană",
+    "WAX_SPECIALIST": "specialist epilare cu ceară",
+    "TATTOO_ARTIST": "artist tatuaje",
+    "MICROBLADING_ARTIST": "artist microblading",
+    "SPRAY_TAN_SPECIALIST": "specialist bronzare spray",
+    "HENNA_ARTIST": "artist henna"
+  },
+  "PACKAGE_TYPE": "pachet",
+  "SERVICE_TYPE": {
+    "HAIRCUT": "tuns",
+    "BLOWOUT": "coafare",
+    "HAIR_COLORING": "vopsit păr",
+    "HIGHLIGHTS_AND_BALAYAGE": "șuvițe & balayage",
+    "HAIR_EXTENSIONS": "extensii păr",
+    "BRAIDS_AND_PROTECTIVE_STYLES": "împletituri & stiluri protective",
+    "NATURAL_HAIR_TREATMENT": "tratament păr natural",
+    "KERATIN_AND_SMOOTHING": "keratină & netezire",
+    "LOCS_AND_DREADLOCKS": "locs & dreadlocks",
+    "SCALP_TREATMENT": "tratament scalp",
+
+    "MANICURE": "manichiură",
+    "PEDICURE": "pedichiură",
+    "GEL_NAILS": "unghii gel",
+    "ACRYLIC_NAILS": "unghii acril",
+    "NAIL_ART": "nail art",
+    "NAIL_EXTENSIONS": "extensii unghii",
+    "PRESS_ON_NAILS": "unghii press-on",
+    "NAIL_REPAIR": "reparare unghii",
+
+    "SWEDISH_MASSAGE": "masaj suedez",
+    "DEEP_TISSUE_MASSAGE": "masaj în profunzime",
+    "HOT_STONE_MASSAGE": "masaj cu pietre calde",
+    "PRENATAL_MASSAGE": "masaj prenatal",
+    "SPORTS_MASSAGE": "masaj sportiv",
+    "LYMPHATIC_DRAINAGE": "drenaj limfatic",
+    "HEAD_AND_SCALP_MASSAGE": "masaj cap & scalp",
+    "REFLEXOLOGY": "reflexologie",
+
+    "MENS_HAIRCUT": "tuns bărbați",
+    "FADE_AND_TAPER": "fade & taper",
+    "BEARD_TRIM": "îngrijire barbă",
+    "HOT_TOWEL_SHAVE": "ras cu prosop cald",
+    "KIDS_HAIRCUT": "tuns copii",
+    "HAIR_DESIGN_AND_LINEUP": "design & aliniere păr",
+
+    "EVERYDAY_MAKEUP": "machiaj de zi",
+    "BRIDAL_MAKEUP": "machiaj mireasă",
+    "EVENT_AND_OCCASION_MAKEUP": "machiaj pentru ocazii",
+    "AIRBRUSH_MAKEUP": "machiaj airbrush",
+    "EDITORIAL_MAKEUP": "machiaj editorial",
+    "MAKEUP_LESSON": "lecție de machiaj",
+
+    "CLASSIC_FACIAL": "facial clasic",
+    "DEEP_CLEANSING_FACIAL": "facial cu curățare profundă",
+    "ANTI_AGING_FACIAL": "facial anti-îmbătrânire",
+    "ACNE_TREATMENT": "tratament acnee",
+    "CHEMICAL_PEEL": "peeling chimic",
+    "DERMAPLANING": "dermaplaning",
+    "MICRODERMABRASION": "microdermabrazie",
+    "LED_LIGHT_THERAPY": "terapie cu lumină LED",
+    "HYDRAFACIAL": "hydrafacial",
+
+    "BODY_WAXING": "epilare corp cu ceară",
+    "FACIAL_WAXING": "epilare față cu ceară",
+    "BIKINI_AND_BRAZILIAN_WAX": "epilare bikini & brazilian",
+    "THREADING": "epilare cu ață",
+    "SUGARING": "sugaring",
+    "LASER_HAIR_REMOVAL": "epilare laser",
+
+    "CUSTOM_TATTOO": "tatuaj personalizat",
+    "FLASH_TATTOO": "tatuaj flash",
+    "TATTOO_COVERUP": "acoperire tatuaj",
+    "FINE_LINE_TATTOO": "tatuaj fine line",
+    "BLACKWORK_TATTOO": "tatuaj blackwork",
+    "WATERCOLOR_TATTOO": "tatuaj acuarelă",
+    "TATTOO_TOUCH_UP": "retuș tatuaj",
+
+    "MICROBLADING": "microblading",
+    "POWDER_BROWS": "sprâncene pudrate",
+    "BROW_LAMINATION": "laminare sprâncene",
+    "BROW_TINTING": "vopsire sprâncene",
+    "BROW_SHAPING": "modelare sprâncene",
+    "LASH_EXTENSIONS": "extensii gene",
+    "LASH_LIFT_AND_TINT": "lift & vopsire gene",
+    "NANO_BROWS": "nano sprâncene",
+
+    "FULL_BODY_SPRAY_TAN": "bronzare spray corp întreg",
+    "AIRBRUSH_TAN": "bronzare airbrush",
+    "EXPRESS_TAN": "bronzare express",
+    "BRIDAL_TAN": "bronzare mireasă",
+
+    "TRADITIONAL_HENNA": "henna tradițională",
+    "BRIDAL_HENNA": "henna mireasă",
+    "JAGUA_TATTOO": "tatuaj jagua",
+    "GLITTER_TATTOO": "tatuaj cu sclipici",
+    "BODY_PAINTING": "pictură pe corp"
+  },
+  "STUDIOS": "Studiouri",
+  "SERVICES": "Servicii",
+  "STUDIO": "Studio",
+  "SERVICE": "Serviciu",
+  "PACKAGE": "Pachet",
+  "NAVIGATIONS":{
+    "HOME": "acasă",
+    "MY_STUDIO": "studioul meu",
+    "CONTACT": "contact",
+    "TOS": "termeni și condiții"
+  },
+  "MESSAGES": {
+    "LINK_COPIED": "Link copiat în clipboard",
+    "OPEN": "deschis",
+    "CLOSED": "închis momentan",
+    "OPEN_DAYS": "Deschis: ",
+    "CLOSED_ALL_WEEK": "Închis: Toată Săptămâna",
+    "OPENS_AT": "se deschide la",
+    "CLOSES_AT": "se închide la",
+    "TOO_CLOSE_TO_RESCHEDULE": "*Reprogramarea nu este permisă pentru programările atât de apropiate",
+    "CANCEL_PENALTY": "*Anulările tardive pot fi supuse unei penalizări",
+    "MORE_DETAILS": "Pentru mai multe detalii spletka.com/contact",
+    "MISSED_SCHEDULE": "Programările ratate afectează negativ prestatorii de servicii și alți utilizatori. Nerespectarea repetată a programărilor poate duce la suspendarea sau rezilierea accesului la serviciu.",
+    "RATING_GRATITUDE": "Vă mulțumim pentru evaluarea serviciului",
+    "DRAG_TO_REORDER": "Trageți pentru a reordona"
+  },
+  "ERRORS": {
+    "INVALID_EMAIL": "această adresă de email este invalidă",
+    "INVALID_PASSWORD": "această parolă este invalidă",
+    "INVALID_PHONE": "acest număr de telefon este invalid",
+    "CONFIRM_PASSWORD_MISMATCH": "parolele nu coincid",
+    "CONFIRM_REGISTRATION_FAILED": "Eroare: confirmarea înregistrării a eșuat, încercați să reîncărcați pagina și/sau verificați linkul URL.",
+    "CONTACT_US": "Contactați-ne dacă eroarea persistă!",
+    "PASSWORD_MUST_BE_STRING": "Parola trebuie să fie un șir de caractere",
+    "PASSWORD_EXCEEDS_PROCESSING_LENGTH": "Parola depășește lungimea maximă permisă",
+    "PASSWORD_MIN_LENGTH": "Parola trebuie să aibă cel puțin 12 caractere",
+    "PASSWORD_MAX_LENGTH": "Parola nu trebuie să depășească 48 de caractere",
+
+    "SETUP": {
+      "PROFILE": {
+        "TITLE": "Formularul de Profil al Studioului este Invalid",
+        "INVALID_PROFILE": "Formularul de Profil al Studioului este Invalid",
+        "MISSING_STUDIO_NAME": "Numele studioului este obligatoriu",
+        "TOO_SHORT_STUDIO_NAME": "Numele studioului trebuie să aibă cel puțin 3 caractere",
+        "MISSING_STUDIO_LINK": "Linkul studioului este obligatoriu",
+        "TOO_SHORT_STUDIO_LINK": "Linkul studioului trebuie să aibă cel puțin 3 caractere",
+        "MISSING_STUDIO_TYPES": "Trebuie selectat cel puțin un tip de studio",
+        "MISSING_CONTACT_EMAIL": "Emailul de contact este obligatoriu",
+        "INVALID_CONTACT_EMAIL": "Introduceți o adresă de email de contact validă",
+        "MISSING_CONTACT_PHONE": "Telefonul de contact este obligatoriu",
+        "INVALID_CONTACT_PHONE": "Introduceți un număr de telefon de contact valid",
+        "INVALID_INSTAGRAM": "Introduceți un URL valid de profil Instagram",
+        "INVALID_FACEBOOK": "Introduceți un URL valid de profil Facebook",
+        "INVALID_WA_PHONE": "Introduceți un număr de telefon WhatsApp valid"
+      },
+      "LOCATION": {
+        "TITLE": "Formularul de Locație este Invalid",
+        "INVALID_LOCATION": "Formularul de Locație al Studioului este Invalid",
+        "MISSING_COUNTRY": "Țara studioului este obligatorie",
+        "MISSING_CITY": "Orașul studioului este obligatoriu",
+        "MISSING_STREET": "Strada studioului este obligatorie",
+        "MISSING_BUILDING_NUMBER": "Numărul clădirii studioului este obligatoriu",
+        "MISSING_APARTMENT_NUMBER": "Numărul apartamentului studioului este obligatoriu",
+        "INVALID_LATITUDE": "Introduceți o latitudine între -90 și 90",
+        "INVALID_LONGITUDE": "Introduceți o longitudine între -180 și 180",
+        "MISSING_LATITUDE": "Latitudinea este obligatorie",
+        "MISSING_LONGITUDE": "Longitudinea este obligatorie"
+      },
+      "MEDIA": {
+        "TITLE": "Formularul Media este Invalid",
+        "INVALID_MEDIA": "Formularul Media este Invalid",
+        "MISSING_THUMBNAIL": "O miniatură este obligatorie",
+        "INVALID_HERO_IMAGES_COUNT": "Trebuie să furnizați între 1 și 3 imagini principale",
+        "INVALID_HERO_IMAGE": "Una sau mai multe imagini principale sunt invalide"
+      },
+      "SCHEDULE": {
+        "TITLE": "Formularul de Program este Invalid",
+        "INVALID_SCHEDULES_ARRAY":          "Formularul de programe este malformat",
+        "MISSING_SCHEDULES":                "Lista de programe lipsește",
+        "EMPTY_SCHEDULES":                  "Cel puțin un program este obligatoriu",
+        "MISSING_EFFECTIVE_FROM":           "Data de intrare în vigoare este obligatorie",
+        "EFFECTIVE_FROM_INVALID_FORMAT":    "Data de intrare în vigoare este invalidă",
+        "MISSING_EFFECTIVE_TO":             "Data de expirare este obligatorie",
+        "EFFECTIVE_TO_INVALID_FORMAT":      "Data de expirare este invalidă",
+        "EFFECTIVE_RANGE_INVALID":          "Data de expirare trebuie să fie după data de intrare în vigoare",
+        "INVALID_SCHEDULE":                 "Programul este invalid",
+        "INVALID_DAYS_AMOUNT":              "Numărul de zile este invalid",
+        "INVALID_DAY":                      "Ziua este invalidă",
+        "MISSING_DAY_NAME":                 "Numele zilei este obligatoriu",
+        "INVALID_INTERVALS":                "Intervalele sunt invalide",
+        "MISSING_INTERVALS":                "Cel puțin un interval este obligatoriu",
+        "OVERLAPPING_INTERVALS":            "Intervalele se suprapun",
+        "INVALID_INTERVAL":                 "Intervalul este invalid",
+        "INVALID_INTERVAL_START":           "Introduceți un start de interval valid",
+        "INVALID_INTERVAL_END":             "Introduceți un sfârșit de interval valid",
+        "INVALID_INTERVAL_RANGE":           "Sfârșitul intervalului trebuie să fie după începutul intervalului"
+      },
+      "EXCEPTIONS": {
+        "TITLE": "Formularul de Excepții Program este Invalid",
+        "INVALID_EXCEPTIONS": "Formularul de Excepții este Invalid",
+        "INVALID_EXCEPTIONS_ARRAY": "Excepțiile trebuie să fie un Array",
+        "INVALID_EXCEPTION": "excepția este invalidă",
+        "INVALID_EXCEPTION_TYPE": "selectați un tip de excepție valid",
+        "INVALID_INTERVALS": "intervalele sunt invalide",
+        "MISSING_INTERVALS": "cel puțin un interval este obligatoriu",
+        "INVALID_APPLIES_TO": "data sau intervalul selectat este invalid.",
+        "OVERLAPPING_INTERVALS": "intervalele se suprapun",
+        "INVALID_INTERVAL": "intervalul este invalid",
+        "INVALID_INTERVAL_START": "introduceți un start de interval valid",
+        "INVALID_INTERVAL_END": "introduceți un sfârșit de interval valid",
+        "INVALID_INTERVAL_RANGE": "intervalul este invalid"
+      },
+      "CATEGORIES": {
+        "TITLE": "Formularul de Categorii este Invalid",
+        "EMPTY_NAME": "numele este obligatoriu",
+        "DUPLICATE_NAME": "numele trebuie să fie unic"
+      },
+      "SERVICES": {
+        "TITLE": "Formularul de Servicii este Invalid",
+        "REQUIRED": "Cel puțin un serviciu este obligatoriu",
+        "INVALID_SERVICE": "este invalid",
+        "MISSING_LOCAL_ID": "id local lipsă",
+        "MISSING_NAME": "numele este obligatoriu",
+        "MISSING_LINK": "linkul este obligatoriu",
+        "MISSING_CATEGORY": "categoria este obligatorie",
+        "MISSING_CURRENCY": "moneda este obligatorie",
+        "INVALID_PRICE": "prețul este invalid",
+        "INVALID_DURATION": "durata este invalidă",
+        "INVALID_SERVICE_TYPES": "tipurile de servicii sunt invalide",
+        "INVALID_THUMBNAIL": "miniatura este obligatorie",
+        "INVALID_GALLERY": "galeria este invalidă",
+        "DUPLICATE_LINK": "linkul trebuie să fie unic",
+        "MISSING_PRICE": "prețul este obligatoriu",
+        "MISSING_DURATION": "durata este obligatorie"
+      },
+      "PACKAGES": {
+        "TITLE": "Formularul de Pachete este Invalid",
+        "INVALID_PACKAGE": "este invalid",
+        "MISSING_LOCAL_ID": "id local lipsă",
+        "MISSING_NAME": "numele este obligatoriu",
+        "MISSING_LINK": "linkul este obligatoriu",
+        "MISSING_CURRENCY": "moneda este obligatorie",
+        "INVALID_PRICE": "prețul este invalid",
+        "INVALID_DURATION": "durata este invalidă",
+        "MISSING_SERVICES": "serviciile sunt obligatorii",
+        "INVALID_SERVICES": "servicii invalide",
+        "DUPLICATE_SERVICES": "conține servicii duplicate",
+        "DUPLICATE_LINK": "linkul trebuie să fie unic",
+        "MISSING_PRICE": "prețul este obligatoriu",
+        "MISSING_DURATION": "durata este obligatorie"
+      },
+      "DISCOUNTS": {
+        "TITLE": "Formularul de Reduceri este Invalid",
+        "INVALID_DISCOUNT": "este invalid",
+        "MISSING_LOCAL_ID": "id lipsă",
+        "MISSING_ARTICLE": "selectați un articol",
+        "INVALID_PERCENTAGE": "procentul este invalid",
+        "MISSING_ARTICLE_LOCAL_ID": "id articol lipsă",
+        "INVALID_ARTICLE_TYPE": "tipul de articol este invalid",
+        "DUPLICATE_ARTICLE_TARGET": "reducerea există deja pentru articolul selectat",
+        "MISSING_PERCENTAGE": "procentul de reducere este obligatoriu"
+      },
+      "BOOKING_RULES": {
+        "TITLE": "Formularul de Reguli de Rezervare este Invalid",
+        "INVALID_BOOKING_RULES": "Regulile de rezervare ale studioului sunt invalide",
+        "INVALID_EMAIL_REMINDERS": "Reminderul prin email trebuie să fie adevărat sau fals",
+        "INVALID_SMS_REMINDERS": "Reminderul prin SMS trebuie să fie adevărat sau fals",
+        "INVALID_MIN_AHEAD": "Timpul minim de programare în avans trebuie să fie de cel puțin 30 de minute",
+        "INVALID_MAX_AHEAD": "Timpul maxim de programare în avans trebuie să fie de cel puțin 7 zile",
+        "MIN_AHEAD_EXCEEDS_MAX_AHEAD": "Timpul minim de programare în avans nu poate depăși timpul maxim",
+        "MISSING_MIN_AHEAD": "Timpul minim de programare în avans este obligatoriu",
+        "MISSING_MAX_AHEAD": "Timpul maxim de programare în avans este obligatoriu"
+      },
+      "PUBLISH": {
+        "TITLE_ERROR": "Publicare Indisponibilă - Corectați Erorile Existente",
+        "TITLE_MODIFY": "Publicare Indisponibilă - Salvați Formularele Modificate"
+      }
+    }
+  },
+  "TEXTFIELD_TITLES": {
+    "STUDIO_TYPE": "Tip Studio",
+    "STUDIO_NAME": "Nume Studio",
+    "STUDIO_LINK": "Link Studio",
+    "CATEGORY_NAME": "Nume Categorie",
+    "EMAIL": "Adresă E-mail",
+    "PHONE": "Număr de Telefon",
+    "MESSAGE": "Mesaj",
+    "PASSWORD": "Parolă",
+    "CONFIRM_PASSWORD": "Confirmați Parola",
+    "COMMENT": "Comentariu",
+    "ADDITIONAL": "Notă suplimentară",
+    "INSTAGRAM": "Link Instagram",
+    "FACEBOOK": "Link Facebook",
+    "CONTACT_EMAIL": "Email de Contact",
+    "CONTACT_PHONE": "Telefon de Contact",
+    "WHATSAPP": "Telefon WhatsApp",
+    "SEARCH_TAGS": "Etichete de Căutare",
+    "COUNTRY": "Țară",
+    "CITY": "Oraș",
+    "STREET": "Stradă",
+    "BUILDING_NUMBER": "Număr Clădire",
+    "APARTMENT_NUMBER": "Număr Apartament",
+    "LATITUDE": "Latitudine",
+    "LONGITUDE": "Longitudine",
+    "THUMBNAIL": "Miniatură",
+    "HERO_IMAGES": "Imagini Principale"
+  },
+  "MY_STUDIO": {
+    "LOGIN": {
+      "TITLE": "Autentificare",
+      "TO_REGISTER": {
+        "NORMAL": "nu aveți cont?",
+        "UNDERLINED": "înregistrați-vă aici!"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Înregistrare",
+      "TO_TERMS": {
+        "NORMAL": "aveți nevoie de mai multe informații?",
+        "UNDERLINED": "citiți termenii și condițiile"
+      }
+    },
+    "CONFIRM": {
+      "TITLE": "Confirmați Adresa de E-mail",
+      "MESSAGES": {
+        "EMAIL_CONFIRMATION_REQUIRED": "Email trimis la:",
+        "INSTRUCTION": "faceți clic pe linkul primit pentru a vă verifica contul",
+        "INVALID_EMAIL": "Adresă incorectă?",
+        "BACK": "Înapoi",
+        "EMAIL_NOT_RECEIVED": "Mesajul nu a fost primit?",
+        "SEND_AGAIN": "Retrimite"
+      }
+    },
+    "CONFIRMED": {
+      "TITLE": "Înregistrare Confirmată",
+      "BODY": "Înregistrare reușită pentru adresa de email:"
+    }
+  },
+  "FAQS": {
+    "TITLE_FAQ": "Întrebări Frecvente",
+    "TITLE_DIRECT": "Întrebați-ne Direct!",
+    "QUESTIONS": [
+      {"QUESTION": "Cum îmi listez salonul pe platformă?", "ANSWER": "Contactați-ne și primiți ghidul de integrare, care vă instruiește cum să furnizați detalii exacte despre salon, să încărcați fotografii, să listați serviciile și să setați disponibilitatea. Ghidul nostru pas cu pas face totul simplu."},
+      {"QUESTION": "Pot gestiona programările prin platformă?", "ANSWER": "Da, puteți vizualiza, confirma, reprograma sau anula programările direct prin platformă. Veți primi și notificări pentru rezervările noi."},
+      {"QUESTION": "Cum îmi setez serviciile, prețurile și duratele?", "ANSWER": "Puteți adăuga, edita sau elimina servicii oricând din profilul dumneavoastră. Setați prețul, durata și orice note speciale pentru fiecare serviciu, pentru a reflecta oferta dumneavoastră cu acuratețe."},
+      {"QUESTION": "Pot gestiona mai mulți angajați?", "ANSWER": "Nu, platforma este destinată prestatorilor individuali de servicii. Scopul este de a egala șansele față de marile francize, folosind date și statistici pentru a valorifica expertiza structurală."},
+      {"QUESTION": "Cum gestionez anulările sau neprezentările?", "ANSWER": "Platforma blochează automat neprezentările și poate aplica taxe de anulare personalizate pentru programările viitoare."},
+      {"QUESTION": "Voi fi plătit prin platformă?", "ANSWER": "Nu, în prezent platforma nu procesează plăți. Primiți plățile direct de la clienți la salon."},
+      {"QUESTION": "Pot oferi promoții sau reduceri?", "ANSWER": "Puteți crea oferte speciale sau pachete pentru a atrage clienți noi și/sau a-i fideliza pe cei existenți."},
+      {"QUESTION": "Cum gestionez informațiile despre clienți?", "ANSWER": "Platforma oferă un sistem securizat de gestionare a clienților. Puteți vizualiza istoricul rezervărilor, datele de contact și notițele pentru fiecare client, în conformitate cu reglementările privind confidențialitatea."},
+      {"QUESTION": "Pot urmări performanța salonului meu?", "ANSWER": "Da. Deși tablourile de bord actuale oferă informații esențiale, lansăm activ actualizări frecvente pentru a oferi o experiență mai robustă. În curând veți avea acces la valori complete — inclusiv venituri, servicii populare, clasamente locale și comportamentul clienților recurenți. Toate concepute pentru a vă ajuta să vă extindeți afacerea."},
+      {"QUESTION": "Există suport pentru clienți dacă am nevoie de ajutor?", "ANSWER": "Da, platforma oferă suport dedicat pentru proprietari, inclusiv tutoriale video, documentație și asistență prin email pentru orice problemă sau întrebare."},
+
+      {"QUESTION": "Ce servicii pot rezerva prin platformă?", "ANSWER": "Puteți rezerva o gamă largă de servicii, inclusiv tuns, coafat, colorat, faciale, manichiură, pedichiură, masaj terapeutic, tratamente pentru piele, epilare și multe altele."},
+      {"QUESTION": "Cum găsesc un salon în apropierea mea?", "ANSWER": "Folosiți funcția de căutare după locație pentru a găsi toate serviciile din zona dumneavoastră."},
+      {"QUESTION": "Pot rezerva mai multe servicii într-o singură programare?", "ANSWER": "Da, multe saloane vă permit să rezervați mai multe servicii într-o singură programare. Verificați profilul salonului pentru pachetele disponibile de combinații de servicii."},
+      {"QUESTION": "Cum plătesc pentru programarea mea?", "ANSWER": "Plata se face în persoană la prestatorul de servicii. Platforma nu procesează plăți, deoarece considerăm că o platformă de procesare a plăților are stimulente greșite pentru a exploata algoritmic prestatorii de servicii."},
+      {"QUESTION": "Pot rezerva o programare pentru altcineva?", "ANSWER": "Da, puteți programa programări pentru familie sau prieteni furnizând detaliile acestora în timpul procesului de rezervare."},
+      {"QUESTION": "Salonii oferă programe de fidelizare sau reduceri?", "ANSWER": "Multe saloane oferă recompense de fidelizare sau oferte promoționale. Verificați profilul individual al salonului pentru ofertele disponibile."},
+      {"QUESTION": "Sunt informațiile mele personale în siguranță?", "ANSWER": "Absolut. Folosim măsuri de securitate standard în industrie pentru a vă proteja informațiile personale."},
+      {"QUESTION": "Ce trebuie să fac dacă întâmpin o problemă cu rezervarea mea?", "ANSWER": "Dacă întâmpinați probleme, contactați salonul direct prin platformă sau adresați-vă echipei noastre de suport pentru asistență."}
+    ],
+    "ANSWER_NOT_FOUND": {
+      "NORMAL": "Nu ați găsit răspuns la întrebarea dumneavoastră?",
+      "UNDERLINED": "Întrebați-ne direct!"
+    }
+  },
+  "TOS": {
+    "TITLE": "Termeni și Condiții",
+    "TERMS": [
+      {
+        "HEADER": "Introducere",
+        "BODY": "Acești Termeni și Condiții (\"Termenii\") guvernează accesul la și utilizarea site-ului web https://spletka.com (\"Site-ul\") și a serviciilor disponibile prin intermediul acestuia (\"Serviciul\"). Site-ul este operat sub denumirea SPLETKA de către o persoană fizică rezidentă în Republica Serbia (\"SPLETKA\", \"noi\", \"nouă\" sau \"nostru\"). Prin accesarea sau utilizarea Site-ului sau Serviciului, sunteți de acord să fiți obligat juridic de acești Termeni. Dacă nu sunteți de acord, nu trebuie să utilizați Site-ul sau Serviciul."
+      },
+      {
+        "HEADER": "Descrierea Serviciului",
+        "BODY": "SPLETKA este o platformă software-as-a-service destinată să permită titularilor de conturi înregistrați să prezinte servicii legate de studio prin text și imagini și să permită potențialilor clienți să navigheze printre aceste servicii și să solicite rezervări. Vizitatorii ocazionali sau anonimi pot naviga conținutul public disponibil fără a crea un cont. SPLETKA nu acționează ca parte la niciun acord între prestatorii de servicii și clienții acestora."
+      },
+      {
+        "HEADER": "Eligibilitate și Disponibilitate",
+        "BODY": "Serviciul este disponibil utilizatorilor situați pe tot continentul european. Prin utilizarea Serviciului, declarați că aveți capacitatea juridică de a încheia acorduri obligatorii conform legii aplicabile. Dacă utilizați Serviciul în numele altei persoane sau entități, confirmați că sunteți autorizat să faceți acest lucru."
+      },
+      {
+        "HEADER": "Conturi",
+        "BODY": "Doar proprietarii înregistrați pot crea și menține un cont pe Site. Titularii de conturi sunt responsabili pentru menținerea confidențialității datelor de autentificare și pentru toate activitățile desfășurate prin contul lor. Sunteți de acord să notificați imediat SPLETKA cu privire la orice acces neautorizat sau breșă de securitate. SPLETKA nu este responsabilă pentru pierderile rezultate din utilizarea neautorizată a contului."
+      },
+      {
+        "HEADER": "Suspendarea și Rezilierea Contului",
+        "BODY": "SPLETKA își rezervă dreptul de a suspenda sau rezilia conturi, temporar sau permanent, la propria discreție, dacă un utilizator încalcă acești Termeni, legea aplicabilă sau se angajează în comportamente care pot dăuna Serviciului, altor utilizatori sau terților. Rezilierea poate duce la pierderea accesului la datele contului și conținutul încărcat."
+      },
+      {
+        "HEADER": "Conținut Utilizator",
+        "BODY": "Utilizatorii înregistrați pot încărca și publica conținut, inclusiv text și imagini (\"Conținut Utilizator\"). Utilizatorii păstrează dreptul de proprietate asupra Conținutului lor. Prin încărcarea Conținutului, acordați SPLETKA o licență neexclusivă, la nivel mondial, fără redevențe, de a găzdui, stoca, reproduce, afișa, distribui și procesa un astfel de conținut exclusiv pentru operarea, îmbunătățirea și promovarea Serviciului și brandului SPLETKA. Declarați și garantați că dețineți toate drepturile necesare pentru a încărca Conținutul și că acesta nu încalcă nicio lege sau drepturi ale terților."
+      },
+      {
+        "HEADER": "Conținut Interzis",
+        "BODY": "Utilizatorii nu pot încărca, publica sau distribui conținut ilegal, înșelător, abuziv, defăimător, obscen, dăunător, discriminatoriu, contrafăcut sau care în alt mod încalcă legile aplicabile sau drepturile terților. SPLETKA își rezervă dreptul de a elimina orice conținut care încalcă acești Termeni sau prezintă riscuri juridice sau de reputație."
+      },
+      {
+        "HEADER": "Abonamente și Plăți",
+        "BODY": "Un abonament activ este necesar pentru menținerea unui cont pe Site. Taxa de abonament este percepută pe o bază recurentă până la anulare. Prin abonare, autorizați facturarea recurentă folosind metoda de plată selectată. Taxele de abonament nu sunt rambursabile, cu excepția cazurilor în care rambursările sunt impuse de legea aplicabilă; prin plata abonamentului, vă exprimați explicit acordul pentru executarea imediată și recunoașteți că pierdeți astfel dreptul de retragere. SPLETKA își rezervă dreptul de a modifica prețurile cu notificare prealabilă."
+      },
+      {
+        "HEADER": "Anulare",
+        "BODY": "Utilizatorii pot anula abonamentul oricând prin instrumentele de gestionare a contului disponibile. Anularea va intra în vigoare la sfârșitul perioadei de facturare curente. Nu se aplică taxe suplimentare de anulare."
+      },
+      {
+        "HEADER": "Feedback",
+        "BODY": "Utilizatorii pot trimite voluntar feedback, sugestii sau idei referitoare la Serviciu. Prin trimiterea de feedback, sunteți de acord că SPLETKA poate utiliza, implementa și comercializa un astfel de feedback fără restricții și fără obligația de compensație, redevențe sau recunoaștere."
+      },
+      {
+        "HEADER": "Declinări de Responsabilitate",
+        "BODY": "Serviciul este furnizat \"ca atare\" și \"pe măsura disponibilității\". SPLETKA nu oferă garanții de niciun fel, fie exprese sau implicite, inclusiv dar fără a se limita la comercializabilitate, adecvare pentru un anumit scop sau neîncălcare. SPLETKA nu garantează disponibilitate neîntreruptă, funcționare fără erori sau acuratețea oricărui conținut."
+      },
+      {
+        "HEADER": "Limitarea Răspunderii",
+        "BODY": "În măsura maximă permisă de legea aplicabilă, SPLETKA nu va fi răspunzătoare pentru niciun prejudiciu indirect, incidental, consecvent, special sau punitiv, inclusiv pierderi de profituri, date, afaceri sau goodwill, rezultând din sau legat de utilizarea Serviciului. Răspunderea totală nu va depăși suma plătită de utilizator SPLETKA în cele douăsprezece luni precedente, cu excepția cazurilor prevăzute de lege."
+      },
+      {
+        "HEADER": "Legea Aplicabilă",
+        "BODY": "Acești Termeni sunt guvernați și interpretați în conformitate cu legile Republicii Serbia. Acolo unde se aplică normele obligatorii de protecție a consumatorilor ale Uniunii Europene, astfel de dispoziții vor prevala în măsura necesară."
+      },
+      {
+        "HEADER": "Modificări ale Termenilor",
+        "BODY": "SPLETKA poate actualiza periodic acești Termeni. Termenii actualizați vor intra în vigoare la publicarea pe Site. Continuarea utilizării Serviciului după modificări constituie acceptarea Termenilor revizuiți."
+      },
+      {
+        "HEADER": "Informații de Contact",
+        "BODY": "Pentru întrebări, notificări sau comunicări juridice privind acești Termeni, utilizatorii trebuie să contacteze SPLETKA prin pagina de contact disponibilă la https://spletka.com/contact."
+      }
+    ]
+  },
+  "RESERVATION_STATUS": {
+    "PENDING_CONFIRMATION": "În Așteptarea Confirmării",
+    "CONFIRMATION_EXPIRED": "Perioada de Confirmare a Expirat",
+    "CONFIRMED": "Confirmat",
+    "USER_CANCELLED": "Anulat de Utilizator",
+    "USER_LATE_CANCELLED": "Anulat Tardiv de Utilizator",
+    "OWNER_CANCELLED": "Anulat de Proprietar",
+    "OWNER_LATE_CANCELLED": "Anulat Tardiv de Proprietar",
+    "COMPLETED": "Finalizat",
+    "MISSED": "Ratat"
+  },
+  "RESERVATION_OVERVIEW": {
+    "TITLE": "Prezentare Rezervare",
+    "STATUS": {
+      "PENDING_CONFIRMATION": "în așteptarea confirmării",
+      "CONFIRMATION_EXPIRED": "confirmare expirată",
+      "CONFIRMED": "confirmat",
+      "USER_CANCELLED": "anulat",
+      "OWNER_CANCELLED": "anulat",
+      "COMPLETED": "finalizat",
+      "MISSED": "neprezentare"
+    },
+    "OVERVIEW": {
+      "STUDIO_NAME": "studio",
+      "CATEGORY": "categorie",
+      "SERVICE_NAME": "nume serviciu",
+      "SERVICE_TYPE": "tip serviciu",
+      "PRICE": "preț",
+      "DURATION": "durată",
+      "DATE": "dată",
+      "CONTACT_PHONE": "contact",
+      "ADDRESS": "adresă",
+      "STATUS": "status"
+    },
+    "POST_COMMENT": {
+      "TITLE": "Vă Mulțumim!",
+      "POSITIVITY": {
+        "LOW": {
+          "PAR1": "Ne pare rău că experiența dumneavoastră nu a fost satisfăcătoare",
+          "PAR2": "Feedback-ul dumneavoastră este valoros și va primi o atenție specială, sperăm că rămâneți alături de noi în timp ce îmbunătățim platforma"
+        },
+        "MEDIUM": {
+          "PAR1": "Vă mulțumim că ne-ați împărtășit experiența",
+          "PAR2": "Feedback-ul dumneavoastră este valoros și va contribui la îmbunătățirea atât a studioului, cât și a platformei"
+        },
+        "HIGH": {
+          "PAR1": "Vă mulțumim pentru recenzia pozitivă!",
+          "PAR2": "Dacă aveți timp, recenzarea studioului pe Google Maps este o modalitate excelentă de a arăta sprijin"
+        }
+      }
+    }
+  },
+  "SCHEDULE": {
+    "TITLE": "Alegeți Intervalul Orar"
+  },
+  "ON_RESERVE": {
+    "LINK_NOT_FOUND": {
+      "NORMAL": "Nu ați primit linkul?",
+      "UNDERLINED": "Retrimite"
+    }
+  },
+  "REQUEST_STATUS": {
+    "SUCCESS": {
+      "TITLE": "trimis cu succes",
+      "BODY": "solicitarea dumneavoastră a fost procesată cu succes"
+    },
+    "FAILED": {
+      "TITLE": "trimitere eșuată",
+      "BODY": "solicitarea dumneavoastră nu a putut fi procesată"
+    }
+  },
+  "DASHBOARD": {
+    "TITLE": "Tablou de Bord Studio",
+    "STEPS": {
+      "MAIN": "tablou de bord",
+      "SCHEDULE": "program",
+      "RESERVATIONS": "rezervări",
+      "RATINGS": "evaluări",
+      "CLIENTS": "clienți",
+      "STATISTICS": "statistici",
+      "SETUP": "configurare studio"
+    },
+    "MAIN": {
+      "TITLE": "Studioul Meu",
+      "ACTIONS_NEEDED_TABLE_TITLE": "Acțiuni Necesare",
+      "TODAYS_SCHEDULE_TABLE_TITLE": "Programul de Azi"
+    },
+    "SCHEDULE": {
+      "EMPTY_SCHEDULE": "Nicio rezervare pentru această perioadă"
+    },
+    "RESERVATIONS": {
+      "TITLE": "Prezentare Rezervări",
+      "NO_RESERVATIONS": "Nu există rezervări programate în prezent sau în trecut. Orice rezervări viitoare vor apărea și vor rămâne vizibile aici pentru referință.",
+      "STATUS": "Status",
+      "BOOKING_INFO": "Informații Rezervare",
+      "ARTICLE_INFO": "Informații Articol",
+      "RATING": "Evaluare",
+      "ADDONS": "Suplimente",
+      "DATE_FILTER": "Dată",
+      "STATUS_FILTER": "Status",
+      "ARTICLE_FILTER": "Articol",
+      "SEARCH_FILTER": "Căutare",
+      "ARTICLE_PLACEHOLDER": "Selectați Articol",
+      "STATUS_PLACEHOLDER": "Selectați Status",
+      "SEARCH_PLACEHOLDER": "caută..."
+    },
+    "REVIEWS": {
+      "TITLE": "Prezentare Recenzii",
+      "NO_RATINGS": "Nu au fost făcute recenzii. Orice recenzii viitoare vor apărea și vor rămâne vizibile aici pentru referință.",
+      "AVERAGE_RATING": "Evaluare Medie",
+      "FIVE_STAR": "Evaluări de 5 stele",
+      "ONE_TWO_STAR": "Evaluări de 1-2 stele",
+      "REVIEWS": "recenzii",
+      "UNRATED_BOOKINGS": "Rezervări Neevaluate"
+    }
+  },
+  "SETUP": {
+    "TITLE": "Configurare Studio",
+    "STEPS": {
+      "INTRO": "introducere",
+      "PROFILE": "profilul studioului",
+      "LOCATION": "locație",
+      "MEDIA": "media studio",
+      "SCHEDULE": "program",
+      "EXCEPTIONS": "excepții program",
+      "CATEGORIES": "categorii",
+      "SERVICES": "servicii",
+      "PACKAGES": "pachete",
+      "DISCOUNTS": "reduceri",
+      "BOOKING_RULES": "reguli de rezervare",
+      "PUBLISH": "publică",
+      "DASHBOARD": "tablou de bord"
+    },
+    "INTRO": {
+      "TITLE": "Configurați Studioul",
+      "PAR1": "Această configurare stabilește baza operațională a studioului dumneavoastră. Detaliile exacte ale afacerii sporesc încrederea clienților, permit descoperirea precisă și asigură funcționarea fiabilă a motorului de rezervare.",
+      "PAR2": "Fiecare secțiune influențează direct modul în care clienții percep brandul dumneavoastră, de la imaginile listării până la disponibilitatea programului și structura serviciilor.",
+      "PAR3": "Toate informațiile pot fi editate oricând, permițând studioului să evolueze fără întreruperi operaționale.",
+      "BUTTON": "Începeți Configurarea"
+    },
+    "PROFILE": {
+      "TITLE": "Profilul Studioului",
+      "PAR1": "Informațiile exacte de contact asigură că confirmările de rezervare ajung la clienți fără probleme și îmbunătățesc fiabilitatea platformei."
+    },
+    "LOCATION": {
+      "TITLE": "Locație",
+      "PAR1": "Datele precise de locație îmbunătățesc clasamentul în căutări, acuratețea navigației și reduc întârzierile cauzate de erori de cartografiere."
+    },
+    "MEDIA": {
+      "TITLE": "Încărcare Media",
+      "PAR1": "Încărcați imagini de înaltă rezoluție care reprezintă cu acuratețe spațiul, tratamentele și rezultatele dumneavoastră. Evitați fotografiile neclare, întunecate, cu filtre excesive sau înșelătoare.",
+      "SELECT": "Faceți clic sau trageți & plasați pentru a încărca",
+      "CHANGE": "Faceți clic pentru a schimba imaginea",
+      "REMOVE": "Faceți clic pentru a elimina imaginea",
+      "INVALID_TYPE": "Eroare: Tip de fișier invalid",
+      "MAX_REACHED": "Eroare: Numărul maxim de imagini a fost deja atins"
+    },
+    "SCHEDULE": {
+      "TITLE": "Program de Lucru",
+      "PAR1": "Disponibilitatea exactă previne conflictele de rezervare și protejează fluxul operațional.",
+      "SCHEDULE": "Program",
+      "ADD_INTERVAL": "adaugă interval",
+      "ADD_SCHEDULE": "adaugă program",
+      "EFFECTIVE_FROM": "În Vigoare De La",
+      "EFFECTIVE_TO": "În Vigoare Până La",
+      "START_TIME": "Ora de Început",
+      "END_TIME": "Ora de Sfârșit",
+      "INTERVAL": "Interval",
+      "DEFINE_INTERVAL": "Definiți ora de început și de sfârșit"
+    },
+    "EXCEPTIONS": {
+      "TITLE": "Excepții Program",
+      "PAR1": "Configurați datele sau perioadele în care studioul dumneavoastră este indisponibil, fie zile închise individuale, intervale de date continue sau sărbători anuale recurente. Fiecare închidere poate fi aplicată pentru întreaga zi sau pentru intervale orare selectate, permițându-vă să gestionați cu acuratețe excepțiile față de programul regulat.",
+      "ADD": "adaugă excepție",
+      "STUDIO_CLOSED": "Studio Închis:",
+      "STUDIO_IS_CLOSED": "Studioul este complet închis în perioada excepției selectate",
+      "STUDIO_IS_INTERVAL_CLOSED": "Sau specificați când studioul va fi închis în această perioadă.",
+      "EXCEPTION": "Excepție",
+      "LABEL": "Etichetă Excepție",
+      "TYPE": "Tip de Excepție",
+      "ONEOFF": "Unică",
+      "RANGE": "Interval",
+      "ANNUAL": "Anuală"
+    },
+    "CATEGORIES": {
+      "TITLE": "Categorii de Servicii",
+      "PAR1": "Definiți și organizați categoriile care vor structura serviciile dumneavoastră. Aceste categorii determină cum sunt grupate și prezentate ofertele vizitatorilor pe pagina studioului, influențând direct experiența utilizatorului.",
+      "ADD": "adaugă categorie",
+      "CATEGORY": "Categorie"
+    },
+    
+    "SERVICES": {
+      "TITLE": "Servicii",
+      "PAR1": "Configurați serviciile oferite, descrierile, duratele și prețurile acestora.",
+      "ADD": "adaugă serviciu",
+      "SERVICE_NAME": "Nume Serviciu",
+      "SERVICE_LINK": "Link Serviciu",
+      "SERVICE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonservis",
+      "TYPE": "Tip Serviciu",
+      "PRICE": "Preț",
+      "CURRENCY": "Monedă",
+      "DURATION": "Durată (min)",
+      "PREREQ": "Serviciu Prerequizit",
+      "DESCRIPTION": "Descriere",
+      "THUMBNAIL": "Miniatură",
+      "THUMBNAIL_PLACEHOLDER": "imagine pătrată · 1080x1080",
+      "GALLERY": "Galerie Serviciu",
+      "GALLERY_PLACEHOLDER": "imagini pătrate · 1080x1080 · Trageți pentru a reordona."
+    },
+    "PACKAGES": {
+      "TITLE": "Pachete",
+      "PAR1": "Serviciile grupate cresc valoarea medie a comenzii, simplificând totodată luarea deciziilor pentru clienți.",
+      "ADD": "adaugă pachet",
+      "PACKAGE_NAME": "Nume Pachet",
+      "PACKAGE_LINK": "Link Pachet",
+      "PACKAGE_LINK_PLACEHOLDER": "https://spletka.com/malavelora/bonpaket",
+      "DESCRIPTION": "Descriere"
+    },
+    "DISCOUNTS": {
+      "TITLE": "Reduceri",
+      "PAR1": "Configurați reduceri pentru serviciile și pachetele listate.",
+      "ADD": "adaugă reducere",
+      "DISCOUNT": "Reducere",
+      "ARTICLE": "Articol",
+      "PERCENTAGE": "Procent"
+    },
+    "BOOKING_RULES": {
+      "TITLE": "Reguli de Rezervare & Notificări",
+      "PAR1": "Definiți reguli de rezervare care contribuie la creșterea satisfacției atât a clienților, cât și a dumneavoastră.",
+      "EMAIL_REMINDERS_TITLE": "Remindere prin email — trimise cu 24h înainte de programare",
+      "SMS_REMINDERS_TITLE": "Remindere prin SMS — trimise cu 2h înainte de programare (€0,02 per SMS)",
+      "VISIBLE_TITLE": "Vizibil - studioul și articolele sunt vizibile în listele navigabile de pe pagina principală",
+      "MIN_AHEAD_TITLE": "Timp Minim de Programare în Avans",
+      "MAX_AHEAD_TITLE": "Timp Maxim de Programare în Avans"
+    },
+    "PUBLISH": {
+      "TITLE": "Publică",
+      "PAR1": "După finalizarea configurării, publicați studioul în comunitatea SPLETKA."
+    }
+  }
+}

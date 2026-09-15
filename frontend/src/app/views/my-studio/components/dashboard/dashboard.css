@@ -1,0 +1,4 @@
+
+.padding-start{
+    padding-left: min(10dvw + var(--spacing) * 2, 64px + var(--spacing) * 2);
+}
