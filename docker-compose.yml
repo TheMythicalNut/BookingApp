@@ -1,0 +1,113 @@
+services:
+  redis:
+    image: redis:7
+    container_name: spletka-redis
+    command: redis-server --requirepass LP6VhQiRaT6mR6p4
+    expose: ['6379']
+    restart: unless-stopped
+    networks:
+      - web
+  postgres:
+    image: postgres:16
+    container_name: spletka-postgres
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: apppassword
+      POSTGRES_DB: appdb
+    expose: ['5432']
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db-init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - web
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U appuser -d appdb"]
+      interval: 1s
+      retries: 3
+
+  backend:
+    build:
+      context: ./backend
+    container_name: spletka-backend
+    depends_on:
+      redis:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=appuser
+      - DB_PASSWORD=apppassword
+      - DB_NAME=appdb
+      - DB_SSL=false
+      - JWT_SECRET=uYVD12Q77qC4yCy9e8k3gIkV6vjVJQO5UtdF8MZpPcQdo18JxX
+      
+      - R2_ACCOUNT_ID=
+      - R2_ACCESS_KEY_ID=
+      - R2_SECRET_ACCESS_KEY=
+      - R2_BUCKET_NAME=
+      - R2_ENDPOINT=
+      - R2_PUBLIC_URL=
+      - MAX_FILE_SIZE=5242880
+      
+      - SMTP_HOST=smtp-relay.brevo.com
+      - SMTP_PORT=587
+      - SMTP_SECURE=false
+      - SMTP_FROM_NAME=SPLETKA
+      - SMTP_FROM_ADDRESS=
+      - SMTP_RECEIVE_ADDRESS=
+      - SMTP_USER=
+      - SMTP_PASS=
+
+      - REDIS_HOST=spletka-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=LP6VhQiRaT6mR6p4
+
+      - ADMIN_PASSWORD=$2y$10$6pWRWj7x7wb/.1R1UwXA.u8Avuvj9zNMnksgEvfshkFzU/vcCQ2jW
+      
+    ports:
+      - "3000:3000"
+    networks:
+      - web
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: spletka-frontend
+    depends_on:
+      - backend
+    environment:
+      - API_URL=https://spletka.com/api
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./frontend/nginx.conf:/etc/nginx/conf.d
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/www/certbot
+    command: ["nginx", "-g", "daemon off;"]
+    networks:
+      - web
+
+  certbot:
+    image: certbot/certbot
+    container_name: spletka-certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/www/certbot
+    entrypoint: >
+      sh -c "trap exit TERM; while :; do sleep 12h & wait $${!}; certbot renew --webroot -w /var/www/certbot; done"
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
+
+volumes:
+  db_data:
+  certbot-etc:
+  certbot-var:
